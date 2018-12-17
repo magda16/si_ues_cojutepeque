@@ -115,7 +115,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="formestudiante" name="formestudiante" method="POST" class="form-horizontal form-label-left">
+                    <form id="formestudiante" name="formestudiante" action="../../../build/configuraciones/sql/estudiante/guardar_estudiante.php"  method="POST" class="form-horizontal form-label-left">
 
                       <input type="hidden" name="bandera" id="bandera">
 

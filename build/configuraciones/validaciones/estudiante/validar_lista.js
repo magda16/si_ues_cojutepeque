@@ -178,7 +178,7 @@ $(document).ready(function(){
       var id = $('#facultad').val()
       $.ajax({
         type: 'POST',
-        url: '../../../produccion/administracion/estudiante/comboCarrera_add.php',
+        url: '../../../produccion/administracion/estudiante/comboCarrera_lista.php',
         data: {'id': id}
       })
       .done(function(listas_rep){
@@ -189,17 +189,7 @@ $(document).ready(function(){
       })
     })
   
-    $.ajax({
-      type: 'POST',
-      url: '../../../produccion/administracion/estudiante/comboCarrera_lista.php',
-      data: {'id': id}
-    })
-    .done(function(listas_rep){
-      $('#carrera').html(listas_rep)
-    })
-    .fail(function(){
-      alert('Hubo un errror al cargar las Carreras')
-    })
+   
 
 
 
