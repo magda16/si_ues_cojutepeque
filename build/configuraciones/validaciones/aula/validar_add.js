@@ -49,9 +49,8 @@ $(document).ready(function(){
         minlength: 3,
         maxlength: 200
       },
-      
-      alfanumOespacio: {
-        letrasOespacio: true,
+      ubicacion: {
+        alfanumOespacio: true,
         required: true,
         minlength: 3,
         maxlength: 200
@@ -83,7 +82,6 @@ $(document).ready(function(){
 
 });
     
-
 
     $("#nombre").blur(function(){
       var nombre = $("#nombre").val();
@@ -144,6 +142,46 @@ $(document).ready(function(){
               function(){
                   //event to perform on click of ok button of sweetalert
                   location.href='../../../produccion/administracion/aula/registrar_aula.php';
+              })
+                  
+          }                
+        })
+        .fail(function(){
+          alert('Hubo un error al cargar la Pagina')
+        })
+      }
+      
+    });
+
+    $("#btneditar").click(function(){
+      if($("#formaula").valid()){
+        $('#bandera').val("edit");
+        $.ajax({
+          type: 'POST',
+          url: '../../../build/configuraciones/sql/aula/crud_aula.php',
+          data: $("#formaula").serialize()
+        })
+        .done(function(resultado_ajax){
+          if(resultado_ajax === "Exito"){
+            swal({ 
+              title:'Éxito',
+              text: 'Datos Almacenados',
+              type: 'success'
+            },
+              function(){
+                //event to perform on click of ok button of sweetalert
+                location.href='../../../produccion/administracion/aula/lista_aula.php';
+            })
+          }
+          if(resultado_ajax === "Error"){
+            swal({ 
+              title:'Advertencia',
+              text: 'Sin Conexión Dase Datos',
+              type: 'warning'
+            },
+              function(){
+                  //event to perform on click of ok button of sweetalert
+                  location.href='../../../produccion/administracion/aula/lista_aula.php';
               })
                   
           }                

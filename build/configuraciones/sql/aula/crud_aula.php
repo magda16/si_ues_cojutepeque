@@ -33,11 +33,13 @@
      
       $baccion=$_POST["baccion"];
       $nombre=$_POST["nombre"];
+      $ubicacion=$_POST["ubicacion"];
+      $capacidad=$_POST["capacidad"];
       
       $result = 0;
       $con=conectarMysql();
 
-      $consulta  = "UPDATE carrera set nombre_ca='$nombre' where idcarrera=".$baccion;
+      $consulta  = "UPDATE aula set nombre_au='$nombre', ubicacion_au='$ubicacion', cantidad_au='$capacidad' where idaula=".$baccion;
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";
