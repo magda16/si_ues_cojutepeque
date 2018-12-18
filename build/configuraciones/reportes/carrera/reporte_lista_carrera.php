@@ -52,10 +52,8 @@
     </tr>
     
     <tr>
-      <td>&nbsp;</td>
-      <td align="center" colspan="3"></td>
-      <td align="right"><strong><?php $fechaActual = date('d-m-Y'); echo "Fecha Consulta: ".$fechaActual; ?></strong><br>
-      <strong><?php $fechaActual = date('h:i:s a'); echo "Hora Consulta: ".$fechaActual; ?></strong></td>
+      <td align="center" colspan="5"><strong><?php $fechaActual = date('d-m-Y'); echo "Fecha Consulta: ".$fechaActual; ?></strong>
+      <strong><?php $fechaActual = date('h:i:s a'); echo "   Hora Consulta: ".$fechaActual; ?></strong></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
