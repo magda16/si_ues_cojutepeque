@@ -85,11 +85,13 @@
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
                       </li>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Reporte" href="../../../build/configuraciones/reportes/carrera/reporte_lista_carrera.php"><i class="fa fa-print"></i></a>
+                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    
+                  
 
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
