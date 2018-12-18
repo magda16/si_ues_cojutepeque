@@ -43,36 +43,14 @@
  <?php date_default_timezone_set("America/El_Salvador"); ?>
   <table align="center" width="900" border="0" >
     <?php function encabezado(){
-       /* require "../../conexion.php"; 
-        $con=conectarMysql();
-        $con=conectarMysql();
-        $consulta  = "SELECT * FrOM carrera";
-        $result = $con->query($consulta);
-        if ($result) {
-            while ($fila = $result->fetch_object()) {
-                $codigo=$fila->codigo_ca;
-                $nombre=$fila->nombre_ca;
-                $duracion=$fila->duracion_ca." A&ntilde;os";
-                $estado=$fila->estado_ca;
-                $observacion=$fila->observacion_ca;
-                if($estado==1){
-                $estado_ca="Activa";
-                }else{
-                $estado_ca="Inactiva";
-                }
-            }//fin while
-        }*/
+       
     ?>
-    <!--
+    
     <tr>
-      <td rowspan="4"><img src="<?php //echo $logoR; ?>" width="200" height="200" /></td>
-      <td></td>
-      <td align="center" colspan="2"><strong><?php //echo strtoupper($nombreR); ?><strong><br>
-                                    <strong><?php //echo strtoupper($direccionR); ?><strong><br></td> 
-                                    
-      <td>&nbsp;</td>
+      <td colspan="5"><img src="../../../../produccion/images/encabezado.png" width="" height="" /></td>
+      
     </tr>
-    -->
+    
     <tr>
       <td>&nbsp;</td>
       <td align="center" colspan="3"></td>
