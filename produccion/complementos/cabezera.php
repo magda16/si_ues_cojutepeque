@@ -36,5 +36,8 @@
     <script src="../../../vendors/alertas/dist/sweetalert-dev.js"></script>
     <link rel="stylesheet" type="text/css" href="../../../vendors/alertas/dist/sweetalert.css"/>
 
+    <!-- Para la Ayuda Hopscotch -->
+    <link href="../../../vendors/hopscotch/css/hopscotch.min.css" rel="stylesheet"></link>
+
     <!-- Custom Theme Style -->
     <link href="../../../build/css/custom.min.css" rel="stylesheet">
