@@ -83,7 +83,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Aula" href="../../../produccion/administracion/aula/registrar_aula.php" ><i class="fa fa-plus-circle"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>

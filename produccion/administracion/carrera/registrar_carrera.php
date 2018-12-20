@@ -108,7 +108,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Lista Carreras" href="../../../produccion/administracion/carrera/lista_carrera.php" ><i class="fa fa-list"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>

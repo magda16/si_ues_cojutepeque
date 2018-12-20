@@ -168,7 +168,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono_r">Tel&eacute;fono: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="telefono_r"  name="telefono_r" required="required" tabindex="3" placeholder="Digite Número de Teléfono" value="<?php echo $telefono; ?>">
+                        <input type="text" class="form-control has-feedback-left" id="telefono_r" data-inputmask="'mask': '9999-9999'" name="telefono_r" required="required" tabindex="3" placeholder="Digite Número de Teléfono" value="<?php echo $telefono; ?>">
                         <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="resultelerror"></span>

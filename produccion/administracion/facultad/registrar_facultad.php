@@ -108,13 +108,29 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Lista Facultades" href="../../../produccion/administracion/facultad/lista_facultad.php" ><i class="fa fa-list"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
+                    <?php
+                      require '../../../build/configuraciones/conexion.php';
+                      $con=conectarMysql();
+                      $consulta  = "SELECT rf.id_re_fa, rf.nombre_rf, rf.apellido_rf FROM representante_facultad AS rf LEFT JOIN facultad AS f ON rf.id_re_fa=f.id_re_fafk WHERE f.id_re_fafk IS NULL ORDER BY nombre_rf";
+                      $result = $con->query($consulta);
+                      $obtenerfilas=mysqli_num_rows($result);
+                      /*echo "<script language='javascript'>";
+                      echo "alert($obtenerfilas);";
+                      echo "</script>";*/
+
+
+                      if ($obtenerfilas==0) {
+                        echo "<div class='alert alert-danger alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>×</span></button><strong>Advertencia!</strong> Necesita Agregar un Representante para Administrar la Facultad.</div>";
+                      }
+
+                    ?>
                     <form id="formfacultad" name="formfacultad" method="POST" class="form-horizontal form-label-left">
 
                       <input type="hidden" name="bandera" id="bandera">
@@ -132,7 +148,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono_f">Tel&eacute;fono: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="telefono_f" name= "telefono_f" required="required" tabindex="2" placeholder="Digite Número de Teléfono">
+                        <input type="text" class="form-control has-feedback-left" id="telefono_f" name= "telefono_f" data-inputmask="'mask': '9999-9999'" required="required" tabindex="2" placeholder="Digite Número de Teléfono">
                         <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="error"></span>
@@ -154,9 +170,7 @@
                         <select class="form-control" id="representante" name="representante" tabindex="4">
                           <option selected="selected" value="">Seleccione Representante...</option>
                           <?php
-                            require '../../../build/configuraciones/conexion.php';
-                            $con=conectarMysql();
-                            $sql_fa  = "Select rf.id_re_fa, rf.nombre_rf, rf.apellido_rf from representante_facultad as rf left join facultad as f on rf.id_re_fa=f.id_re_fafk where f.id_re_fafk is null ORDER BY nombre_rf";
+                            $sql_fa  = "SELECT rf.id_re_fa, rf.nombre_rf, rf.apellido_rf FROM representante_facultad AS rf LEFT JOIN facultad AS f ON rf.id_re_fa=f.id_re_fafk WHERE f.id_re_fafk IS NULL ORDER BY nombre_rf";
                             $result = $con->query($sql_fa);
                             if ($result) {
                               while ($fila = $result->fetch_object()) {

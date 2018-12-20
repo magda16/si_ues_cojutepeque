@@ -108,7 +108,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Lista Representantes" href="../../../produccion/administracion/representante/lista_representante.php"><i class="fa fa-list"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -153,7 +153,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono_r">Tel&eacute;fono: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="telefono_r"  name="telefono_r" required="required" tabindex="3" placeholder="Digite Número de Teléfono">
+                        <input type="text" class="form-control has-feedback-left" id="telefono_r"  name="telefono_r" data-inputmask="'mask': '9999-9999'" required="required" tabindex="3" placeholder="Digite Número de Teléfono">
                         <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="resultelerror"></span>

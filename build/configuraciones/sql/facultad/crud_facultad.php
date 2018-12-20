@@ -32,12 +32,14 @@
       function obtenerResultado(){
      
       $baccion=$_POST["baccion"];
-      $nombre=$_POST["nombre"];
+      $telefono=$_POST["telefono_f"];
+      $correo=$_POST["correo_f"];
+      $represent=$_POST["represent"];
       
       $result = 0;
       $con=conectarMysql();
 
-      $consulta  = "UPDATE carrera set nombre_ca='$nombre' where idcarrera=".$baccion;
+      $consulta  = "UPDATE facultad set telefono_fa='$telefono', correo_fa='$correo', id_re_fafk='$represent' where idfacultad=".$baccion;
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";

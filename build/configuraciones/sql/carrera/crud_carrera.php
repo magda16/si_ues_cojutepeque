@@ -13,11 +13,11 @@
         $nombre=$_POST["nombre"];
         $duracion=$_POST["duracion"];
         $facultad=$_POST["facultad"];
+        $observacion = "Registro";
         $result = 0;
-      
         $con=conectarMysql();
   
-        $consulta  = "INSERT INTO carrera(codigo_ca,nombre_ca,duracion_ca,estado_ca,idfacultadfk)  VALUES('$codigo','$nombre','$duracion','1','$facultad')";
+        $consulta  = "INSERT INTO carrera(codigo_ca,nombre_ca,duracion_ca,estado_ca, observacion_ca, idfacultadfk)  VALUES('$codigo','$nombre','$duracion','1','$observacion','$facultad')";
         $result = $con->query($consulta);
           if ($result) {
             $msj = "Exito";

@@ -35,6 +35,8 @@
     <script src="../../../build/js/custom.min.js"></script>
     <!-- Validaciones -->
     <script src="../../../vendors/validar/jquery.validate.js"></script>
+    <!-- jquery.inputmask -->
+    <script src="../../../vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
     <!-- Datatables -->
     <script src="../../../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="../../../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -51,4 +53,6 @@
     <script src="../../../vendors/jszip/dist/jszip.min.js"></script>
     <script src="../../../vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="../../../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <!-- Para la Ayuda Hopscoth -->
+    <script src="../../../vendors/hopscotch/js/hopscotch.js"></script>
     

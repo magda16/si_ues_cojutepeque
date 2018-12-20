@@ -83,7 +83,7 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Facultad" href="../../../produccion/administracion/facultad/registrar_facultad.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>

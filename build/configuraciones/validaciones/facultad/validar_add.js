@@ -58,14 +58,9 @@ $(document).ready(function(){
           minlength: 9,
           maxlength: 9
         },
-        
         correo_f: {
           correo: true,
           required: true
-        },
-        facultad:{
-            required: true
-           
         },
         representante:{
             required: true,
@@ -89,7 +84,7 @@ $(document).ready(function(){
         },
         representante: {
             required: "Por favor, seleccione un representante."
-          }
+        }
       }
     });
   

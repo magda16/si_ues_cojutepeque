@@ -14,11 +14,12 @@
         $genero=$_POST["genero"];
         $telefono=$_POST["telefono_r"];
         $correo=$_POST["correo_r"];
+        $observacion = "Registro";
+
         $result = 0;
-      
         $con=conectarMysql();
   
-        $consulta  = "INSERT INTO representante_facultad(nombre_rf,apellido_rf,genero_rf,telefono_rf,correo_rf,estado_rf) VALUES ('$nombre','$apellido','$genero','$telefono','$correo', '1')";
+        $consulta  = "INSERT INTO representante_facultad(nombre_rf,apellido_rf,genero_rf,telefono_rf,correo_rf,estado_rf, observacion_rf) VALUES ('$nombre','$apellido','$genero','$telefono','$correo', '1','$observacion')";
         $result = $con->query($consulta);
           if ($result) {
             $msj = "Exito";

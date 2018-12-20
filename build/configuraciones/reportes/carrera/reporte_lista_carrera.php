@@ -42,13 +42,11 @@
 <form id="formulario" name="formulario" method="post" action="">
  <?php date_default_timezone_set("America/El_Salvador"); ?>
   <table align="center" width="900" border="0" >
-    <?php function encabezado(){
-       
+    <?php function encabezado(){  
     ?>
     
     <tr>
       <td colspan="5"><img src="../../../../produccion/images/encabezado.png" width="" height="" /></td>
-      
     </tr>
     
     <tr>
