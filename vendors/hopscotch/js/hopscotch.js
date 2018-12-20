@@ -594,7 +594,7 @@
     stepNums: null,
     nextBtn: 'Siguiente',
     prevBtn: 'Anterior',
-    doneBtn: 'Fin',
+    doneBtn: 'Salir',
     skipBtn: 'Omitir',
     closeTooltip: 'Cerrar'
   };

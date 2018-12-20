@@ -85,6 +85,8 @@
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Agregar Facultad" href="../../../produccion/administracion/facultad/registrar_facultad.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Reporte Facultad" href="../../../build/configuraciones/reportes/facultad/reporte_lista_facultad.php"><i class="fa fa-print"></i></a>
+                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

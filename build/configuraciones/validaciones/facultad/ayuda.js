@@ -8,32 +8,32 @@ var tour = {
     steps: [
       {
         target: 'paso1',
-        title: 'Paso',
+        title: 'Nombre',
         content: 'Aca debes digitar el nombre de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'paso2',
-        title: 'Paso',
-        content: 'Aca debes digitar el nombre de la Facultad.',
+        title: 'Tel&eacute;fono',
+        content: 'Aca debes digitar el n&uacute;mero tel&eacute;fono de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'paso3',
-        title: 'Paso',
-        content: 'Aca debes digitar el nombre de la Facultad.',
+        title: 'Correo Electr&oacute;nico',
+        content: 'Aca debes digitar el correo electr&oacute;nico de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'paso4',
-        title: 'Paso',
-        content: 'Aca debes digitar el nombre de la Facultad.',
+        title: 'Representante',
+        content: 'Aca debes seleccionar el representante de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'btnguardar',
-        title: 'Paso',
-        content: 'Aca debes digitar el nombre de la Facultad.',
+        title: 'Guardar',
+        content: 'Aca debes dar clic para guardar los datos ingresados.',
         placement: 'bottom'
       }
     ],

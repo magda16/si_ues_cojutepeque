@@ -113,7 +113,7 @@
                         <?php
                           require '../../../build/configuraciones/conexion.php';
                           $con=conectarMysql();
-                          $result = $con->query("SELECT * FROM representante_facultad WHERE estado_rf=1 ORDER By nombre_rf ASC");
+                          $result = $con->query("SELECT id_re_fa, nombre_rf, apellido_rf, genero_rf, telefono_rf, correo_rf, IF(EXISTS (SELECT * FROM facultad AS fa WHERE fa.id_re_fafk = rf.id_re_fa), 'no', 'si') AS editar FROM representante_facultad AS rf WHERE estado_rf=1 ORDER BY nombre_rf ASC");
                           $contador=1;
                           if ($result) {
                             while ($fila = $result->fetch_object()) {
@@ -125,9 +125,13 @@
                               echo "<td>" . $fila->telefono_rf . "</td>";
                               echo "<td>" . $fila->correo_rf. "</td>";
                               echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Mostrar Representante'><i class='fa fa-eye'></i></a>
-                                        <a class='btn btn-info' onclick='editarrepresentante(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Editar Representante'><i class='fa fa-edit'></i></a>
-                                        <a class='btn btn-danger' onclick='confirmar(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Representante'><i class='fa fa-long-arrow-down'></i></a>
-                                          </td>";
+                                        <a class='btn btn-info' onclick='editarrepresentante(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Editar Representante'><i class='fa fa-edit'></i></a>";
+                                        if($fila->editar=='si'){
+                                        echo "<a class='btn btn-danger' onclick='confirmar(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Representante'><i class='fa fa-long-arrow-down'></i></a>";
+                                      }else{
+                                        echo "<a class='btn btn-danger' onclick='confirmar(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='No Editable' disabled><i class='fa fa-long-arrow-down'></i></a>";
+                                      }
+                                        echo "</td>";
                               echo "</tr>";
                               $contador++;
 

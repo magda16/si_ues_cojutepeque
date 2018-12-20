@@ -51,7 +51,7 @@
     
     <tr>
       <td align="center" colspan="5"><strong><?php $fechaActual = date('d-m-Y'); echo "Fecha Consulta: ".$fechaActual; ?></strong>
-      <strong><?php $fechaActual = date('h:i:s a'); echo "   Hora Consulta: ".$fechaActual; ?></strong></td>
+      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $fechaActual = date('h:i:s a'); echo "Hora Consulta: ".$fechaActual; ?></strong></td>
     </tr>
     <tr>
       <td>&nbsp;</td>
@@ -61,7 +61,7 @@
     <tr>
       
       
-      <td colspan="5" align="center" style="font-size: 28px;"><strong>REPORTE LISTA DE CARRERAS ACTIVAS</strong></td>
+      <td colspan="5" align="center" style="font-size: 28px;"><strong>REPORTE DE FACULTADES ACTIVAS</strong></td>
       
     </tr>
     <tr>
@@ -70,11 +70,12 @@
 
     <tr style="font-size: 14px;">
       <td colspan="5" align="center"><table width="880" border="1" rules="all">
-        <tr bgcolor="#b2b2b2" style="font-size: 18px;">
+        <tr bgcolor="#b2b2b2" style="font-size: 18px;" align="center">
           <td width="50"><strong>N&deg;</strong></td>
-          <td width="300"><strong>C&oacute;digo</strong></td>
-          <td width="300"><strong>Carrera</strong></td>
-          <td width="300"><strong>Duraci&oacute;n</strong></td>
+          <td width="300"><strong>Facultad</strong></td>
+          <td width="300"><strong>Tel&eacute;fono</strong></td>
+          <td width="300"><strong>Correo</strong></td>
+         
         </tr>
       </table>
 
@@ -87,7 +88,7 @@
    
         require "../../conexion.php"; 
         $con=conectarMysql();
-        $consulta  = "SELECT * FROM carrera";
+        $consulta  = "SELECT rf.nombre_rf, rf.apellido_rf, rf.telefono_rf, rf.correo_rf, fa.nombre_fa, fa.telefono_fa, fa.correo_fa FROM representante_facultad AS rf, facultad AS fa WHERE rf.id_re_fa=fa.id_re_fafk";
         $result = $con->query($consulta);
         
         $cuantaspag=mysqli_num_rows($result);
@@ -104,9 +105,10 @@
           $contador++;
           echo "<tr style='font-size: 18px;'>";
           echo "<td width='50' align='center'>".$contador."</td>";
-          echo "<td width='300' >".$fila->codigo_ca."</td>";
-          echo "<td width='300' >".$fila->nombre_ca."</td>";
-          echo "<td width='300' >".$fila->duracion_ca." A&ntilde;os </td>";
+          echo "<td width='300' >".$fila->nombre_fa."</td>";
+          echo "<td width='300' >".$fila->telefono_fa."</td>";
+          echo "<td width='300' >".$fila->correo_fa."</td>";
+          
           echo "</tr>";
           if($contador%$numeroFilas==0){
             $numpagina++;
