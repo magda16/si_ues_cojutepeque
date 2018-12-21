@@ -40,4 +40,4 @@
     <link href="../../../vendors/hopscotch/css/hopscotch.min.css" rel="stylesheet"></link>
 
     <!-- Custom Theme Style -->
-    <link href="../../../build/css/custom.min.css" rel="stylesheet">
+    <link href="../../../build/css/custom.css" rel="stylesheet">

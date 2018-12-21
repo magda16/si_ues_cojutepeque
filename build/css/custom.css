@@ -144,7 +144,7 @@ html , body{
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2A3F54
+    background: #092556
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -326,7 +326,7 @@ html , body{
 }
 .nav_menu {
     float: left;
-    background: #EDEDED;
+    background: #ab032a;
     border-bottom: 1px solid #D9DEE4;
     margin-bottom: 10px;
     width: 100%;
@@ -360,7 +360,7 @@ body .container.body .right_col {
 .nav_title {
     width: 230px;
     float: left;
-    background: #2A3F54;
+    background: #092556;
     border-radius: 0;
     height: 57px
 }
@@ -488,7 +488,7 @@ body .container.body .right_col {
 .top_nav .nav .open>a,
 .top_nav .nav .open>a:focus,
 .top_nav .nav .open>a:hover {
-    background: #D9DEE4
+    background:#b90e0e
 }
 body {
     color: #73879C;
@@ -651,7 +651,7 @@ h3,
     margin-bottom: 10px
 }
 a {
-    color: #5A738E;
+    color: #F7F7F7;
     text-decoration: none
 }
 a,
@@ -671,6 +671,7 @@ a:active,
 }
 a:hover,
 a:focus {
+    color: #FFFFFF;
     text-decoration: none
 }
 .navbar {
@@ -802,7 +803,7 @@ a:focus {
 }
 .nav.side-menu>li.active>a {
     text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
-    background: linear-gradient(#334556, #2C4257), #2A3F54;
+    background: linear-gradient(#313884, #1070cc), #2b3138;
     box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0
 }
 .navbar-brand,
@@ -831,13 +832,13 @@ a:focus {
     text-decoration: none
 }
 .nav.navbar-nav>li>a {
-    color: #515356 !important
+    color: #FFFFFF !important
 }
 .nav.top_menu>li>a {
     position: relative;
     display: block;
     padding: 10px 15px;
-    color: #34495E !important
+    color: #FFF !important
 }
 .nav>li>a:hover,
 .nav>li>a:focus {
