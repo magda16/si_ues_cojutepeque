@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <?php include ("../../complementos/cabezera.php"); ?>
     <script type="text/javascript">
@@ -84,8 +84,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Ayuda" id="startTourBtn" ><i class="fa fa-question-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -98,15 +98,6 @@
                     <h2 style="color:RGB(205, 92, 92);">Registrar Facultad</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Lista Facultades" href="../../../produccion/administracion/facultad/lista_facultad.php" ><i class="fa fa-list"></i></a>
                       </li>
@@ -212,6 +203,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/facultad/validar_add.js"></script>
-    <script src="../../../build/configuraciones/validaciones/facultad/ayuda.js"></script>
+    <script src="../../../build/configuraciones/validaciones/facultad/ayuda_add.js"></script>
   </body>
 </html>

@@ -26,11 +26,11 @@
     <link href="../../../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Datatables -->
-    <link href="../../../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="../../../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
-    <link href="../../../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
-    <link href="../../../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
-    <link href="../../../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <link href="../../../vendors/datatables.net-bs/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../../../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.css" rel="stylesheet">
+    <link href="../../../vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.css" rel="stylesheet">
+    <link href="../../../vendors/datatables.net-responsive-bs/css/responsive.bootstrap.css" rel="stylesheet">
+    <link href="../../../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.css" rel="stylesheet">
 
     <!--Alertas -->
     <script src="../../../vendors/alertas/dist/sweetalert-dev.js"></script>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <?php include ("../../complementos/cabezera.php"); ?>
     <script type="text/javascript">
@@ -59,8 +59,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -73,15 +73,6 @@
                     <h2 style="color:RGB(205, 92, 92);">Lista de Facultades Activas.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Agregar Facultad" href="../../../produccion/administracion/facultad/registrar_facultad.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
@@ -126,8 +117,8 @@
                             echo "<td>" . $fila->telefono_fa . "</td>";
                             echo "<td>" . $fila->correo_fa . "</td>";
                             echo "<td>" . $fila->nombre_rf." ".$fila->apellido_rf. "</td>";
-                            echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Mostrar Facultad'><i class='fa fa-eye'></i></a>
-                                       <a class='btn btn-info' onclick='editarfacultad(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Editar Facultad'><i class='fa fa-edit'></i></a>
+                            echo "<td> <a id='paso1' class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Mostrar Facultad'><i class='fa fa-eye'></i></a>
+                                       <a id='paso2' class='btn btn-info' onclick='editarfacultad(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Editar Facultad'><i class='fa fa-edit'></i></a>
                                     </td>";
                             echo "</tr>";
                             $contador++;
@@ -176,6 +167,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/facultad/validar_list.js"></script>
-    
+    <script src="../../../build/configuraciones/validaciones/facultad/ayuda_list.js"></script>
   </body>
 </html>
