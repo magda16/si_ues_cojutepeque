@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <?php include ("../../complementos/cabezera.php"); ?>
     <script type="text/javascript">
@@ -73,15 +73,6 @@
                     <h2 style="color:RGB(205, 92, 92);">Lista de Carreras Activas.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Agregar Carrera" href="../../../produccion/administracion/carrera/registrar_carrera.php"><i class="fa fa-plus-circle"></i></a>
                       </li>

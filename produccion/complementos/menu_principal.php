@@ -44,11 +44,23 @@
                       <li><a href="../../administracion/carrera/lista_carrera_alta.php">Dar Alta</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-edit"></i> Asignaturas<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="../../administracion/asignaturas/registrar_asignaturas.php">Agregar</a></li>
+                      <li><a href="../../administracion/asignaturas/lista_estudiante.php">Modificar</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-edit"></i> Estudiante<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="../../administracion/estudiante/registrar_estudiante.php">Agregar</a></li>
                       <li><a href="../../administracion/estudiante/lista_estudiante.php">Modificar</a></li>
                       <li><a href="../../administracion/estudiante/lista_estudiante_alta.php">Dar Alta</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Recepci&oacute;n Documentos<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="../../administracion/recepcion_documentos/registrar_re_doc.php">Agregar</a></li>
+                      <li><a href="../../administracion/recepcion_documentos/lista_re_doc.php">Modificar</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Aula<span class="fa fa-chevron-down"></span></a>

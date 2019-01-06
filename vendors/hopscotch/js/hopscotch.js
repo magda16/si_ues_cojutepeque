@@ -2502,7 +2502,7 @@ __p += '<div class="hopscotch-content">' +
  } ;
 __p += '\n  </div>\n  <div class="hopscotch-actions">\n    ';
  if(buttons.showPrev){ ;
-__p += '<button class="hopscotch-nav-button prev hopscotch-prev">' +
+__p += '<button class="hopscotch-nav-button prev hopscotch-prev"><i class="fa fa-arrow-circle-left">&nbsp;&nbsp;&nbsp;</i>' +
 ((__t = ( i18n.prevBtn )) == null ? '' : __t) +
 '</button>';
  } ;
@@ -2514,7 +2514,7 @@ __p += '<button class="hopscotch-nav-button next hopscotch-cta">' +
  } ;
 __p += '\n    ';
  if(buttons.showNext){ ;
-__p += '<button class="hopscotch-nav-button next hopscotch-next">' +
+__p += '<button class="hopscotch-nav-button next hopscotch-next"><i class="fa fa-arrow-circle-right">&nbsp;&nbsp;&nbsp;</i>' +
 ((__t = ( i18n.nextBtn )) == null ? '' : __t) +
 '</button>';
  } ;
