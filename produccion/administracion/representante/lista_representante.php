@@ -59,8 +59,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -115,12 +115,12 @@
                               echo "<td>" . $fila->apellido_rf . "</td>";
                               echo "<td>" . $fila->telefono_rf . "</td>";
                               echo "<td>" . $fila->correo_rf. "</td>";
-                              echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Mostrar Representante'><i class='fa fa-eye'></i></a>
-                                        <a class='btn btn-info' onclick='editarrepresentante(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Editar Representante'><i class='fa fa-edit'></i></a>";
+                              echo "<td> <a id='paso1' class='btn btn-success openBtn' type='button' onclick='ver(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Mostrar Representante'><i class='fa fa-eye'></i></a>
+                                        <a id='paso2' class='btn btn-info' onclick='editarrepresentante(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Editar Representante'><i class='fa fa-edit'></i></a>";
                                         if($fila->editar=='si'){
                                         echo "<a class='btn btn-danger' onclick='confirmar(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Representante'><i class='fa fa-long-arrow-down'></i></a>";
                                       }else{
-                                        echo "<a class='btn btn-danger' onclick='confirmar(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='No Editable' disabled><i class='fa fa-long-arrow-down'></i></a>";
+                                        echo "<a id='paso3' class='btn btn-danger' onclick='confirmar(".$fila->id_re_fa.")' data-toggle='tooltip' data-placement='top' title='No Editable' disabled><i class='fa fa-long-arrow-down'></i></a>";
                                       }
                                         echo "</td>";
                               echo "</tr>";
@@ -204,6 +204,7 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/representante/validar_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/representante/ayuda_list.js"></script>
     
 	
   </body>

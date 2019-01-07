@@ -157,16 +157,18 @@
                       </div>
                       <br>
                       <h5> <strong><p style="color:RGB(0, 0, 128);"> Datos Certificado M&eacute;dico:</strong></p></h5>
-                      <div class='form-group'>
+                      <input type="radio" name="pagocertificado" value="Pendiente"> Pendiente<br>
+                      <input type="radio" name="pagocertificado" value="Cancelado"> Cancelado<br>
+                     <!-- <div class='form-group'>
                         <label class='col-md-3 col-sm-3 col-xs-12 control-label'>Pago de Certificado M&eacute;dico ($) : <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <br>
                         <div class="radio col-md-6 col-sm-6 col-xs-12">
-                        <label>
-                        <input type="radio" class="flat" id="pendiente" value="Pendiente" name="pagocertificado" checked> Pendiente </label>
-                        <label>
-                        <input type="radio" class="flat" id="cancelado" value="Cancelado" name="pagocertificado"> Cancelado </label>
+                          <label>
+                          <input type="radio" class="flat" id="pagocertificado" value="Pendiente" name="pagocertificado" checked> Pendiente </label>
+                          <label>
+                          <input type="radio" class="flat" id="pagocertificado" value="Cancelado" name="pagocertificado"> Cancelado </label>
                         </div>
-                        </div>
+                      </div> -->
 
                         <div class="form-group" id="cm">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="certificado_medico">Certificado M&eacute;dico: <span class="required" style="color: #CD5C5C;"> </span>
@@ -249,6 +251,32 @@
               </div>
             </div>
 
+            <!-- Modal -->
+            <div class="modal fade" id="mostrar_imagen" name="mostrar_imagen" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog ">
+                        <div class="modal-content">
+
+                          <div class="modal-header">
+                          <center>
+                            <h4 class="modal-title" id="nombre_modal"> </h4></center>
+                          </div>
+                          <div class="modal-body1">
+                            <div id="preview" class="thumbnail">
+                                          
+                            <iframe src=""  frameborder="0"> </iframe>
+
+                            </div>
+                            <div class="clearfix"></div>
+
+                          </div>
+                          <div class="modal-footer">
+                          <button type="button" class="btn btn-round btn-default" data-dismiss="modal"><i class="fa fa-ban">  Cancelar</i></button>
+                          </div>
+                            
+                        </div>
+                      </div>
+              </div>
+              <!-- Fin Modal -->
    
             </div>
           

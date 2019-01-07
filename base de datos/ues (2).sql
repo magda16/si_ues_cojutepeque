@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 06-01-2019 a las 10:28:20
+-- Tiempo de generación: 07-01-2019 a las 11:42:15
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -506,23 +506,21 @@ INSERT INTO `facultad` (`idfacultad`, `nombre_fa`, `telefono_fa`, `correo_fa`, `
 DROP TABLE IF EXISTS `plan_estudio`;
 CREATE TABLE IF NOT EXISTS `plan_estudio` (
   `idplanestudio` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_pe` text NOT NULL,
   `anio_pe` varchar(4) NOT NULL,
   `estado_pe` int(11) NOT NULL,
   `estadolleno_pe` int(11) NOT NULL,
   `idcarrerafk` int(11) NOT NULL,
   PRIMARY KEY (`idplanestudio`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `plan_estudio`
 --
 
-INSERT INTO `plan_estudio` (`idplanestudio`, `nombre_pe`, `anio_pe`, `estado_pe`, `estadolleno_pe`, `idcarrerafk`) VALUES
-(1, 'IngenierÃ­a de Sistemas InformÃ¡ticos 1998', '1998', 1, 0, 5),
-(2, 'Licenciatura en EnseÃ±anza del InglÃ©s 2016', '2016', 1, 0, 4),
-(3, 'Ingenieria Agroindustrial 2009', '2009', 1, 0, 12),
-(4, 'Tecnico en Informatica 2016', '2016', 1, 0, 13);
+INSERT INTO `plan_estudio` (`idplanestudio`, `anio_pe`, `estado_pe`, `estadolleno_pe`, `idcarrerafk`) VALUES
+(1, '1998', 1, 0, 5),
+(2, '2017', 1, 0, 1),
+(3, '2016', 1, 0, 4);
 
 -- --------------------------------------------------------
 

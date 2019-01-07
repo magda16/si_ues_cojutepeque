@@ -104,8 +104,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/representante/validar_edit.js"></script>
-    
+    <script src="../../../build/configuraciones/validaciones/representante/ayuda_edit.js"></script>
 	
   </body>
 </html>

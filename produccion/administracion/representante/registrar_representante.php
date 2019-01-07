@@ -190,6 +190,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/representante/validar_add.js"></script>
-    <script src="../../../build/configuraciones/validaciones/facultad/ayuda_add.js"></script>
+    <script src="../../../build/configuraciones/validaciones/representante/ayuda_add.js"></script>
   </body>
 </html>

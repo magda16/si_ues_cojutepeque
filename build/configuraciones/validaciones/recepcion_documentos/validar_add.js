@@ -2,8 +2,18 @@
 
   $('#privada').hide();
   
-  
 
+  $('input[type=file]').change(function() {
+    var file = (this.files[0].name).toString();
+    var reader = new FileReader();
+      
+      reader.onload = function (e) {
+          $('#preview iframe').attr('src', e.target.result);
+      }
+       
+      reader.readAsDataURL(this.files[0]);
+  });
+  
   $("#formredoc").validate({
     errorPlacement: function (error, element) {
           $(element).closest('.form-group').find('.help-block').html(error.html());
@@ -71,6 +81,7 @@ $('#facultad').on('change', function(){
 });
 
 
+
 $('#carrera').on('change', function(){
   var idfa = $('#facultad').val()
   var idca = $('#carrera').val()
@@ -86,11 +97,6 @@ $('#carrera').on('change', function(){
       alert('Hubo un error al cargar los Estudiantes')
     })
 });
-
-
-
-
-
 
 
 $("#estudiante").on('change', function(){
@@ -119,12 +125,11 @@ $("#estudiante").on('change', function(){
   })
 });
 
-
-
-
-
-
-
+$('#mostrar_dui').on('click', function(){
+  alert($('#dui').val());
+  $("#nombre_modal").text("Mostrar DUI");
+  $('#mostrar_imagen').modal({show:true});
+});
 
 $("#btnguardar").click(function(){
   if($("#formredoc").valid()){
