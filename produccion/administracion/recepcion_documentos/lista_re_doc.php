@@ -76,8 +76,6 @@
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Agregar Documentos" href="../../../produccion/administracion/recepcion_documentos/registrar_re_doc.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Reporte Documentos" href="../../../build/configuraciones/reportes/recepcion_documentos/reporte_lista_facultad.php"><i class="fa fa-print"></i></a>
-                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -125,6 +123,10 @@
                       <input type="hidden" id="id" name="id">
                     </form>
 
+                    <form id="fromimprecepciondocumentos" name="fromimprecepciondocumentos" action="../../../build/configuraciones/reportes/recepcion_documentos/reporte_comprobante_estudiante.php" method="POST">
+                      <input type="hidden" id="idimp" name="idimp">
+                    </form>
+
                     <div>
                         <div class="ln_solid"></div>
                         <p style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios Editables.</p> 
@@ -166,6 +168,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/recepcion_documentos/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/facultad/ayuda_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/recepcion_documentos/ayuda_list.js"></script>
   </body>
 </html>

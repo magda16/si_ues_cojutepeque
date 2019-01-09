@@ -31,8 +31,9 @@
                         echo "<td>" . $fila->carnet_es. "</td>";
                         echo "<td>" . $fila->nombre_es . "</td>";
                         echo "<td>" . $fila->apellido_es. "</td>";
-                        echo "<td> <a id='paso1' class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Mostrar Facultad'><i class='fa fa-eye'></i></a>
-                                <a id='paso2' class='btn btn-info' onclick='editarrecepciondocumentos(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Editar Facultad'><i class='fa fa-edit'></i></a>
+                        echo "<td> 
+                                <a id='paso1' class='btn btn-info' onclick='editarrecepciondocumentos(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Editar Facultad'><i class='fa fa-edit'></i></a>
+                                <a id='paso2' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Imprimir Comprobante'><i class='fa fa-print'></i></a>
                             </td>";
                         echo "</tr>";
                         $contador++;
@@ -42,3 +43,4 @@
             ?>
         </tbody>
     </table>
+    

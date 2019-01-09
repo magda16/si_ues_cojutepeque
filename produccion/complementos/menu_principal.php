@@ -77,13 +77,6 @@
                       <li><a href="../../administracion/empleado/lista_empleado_alta.php">Dar Alta</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> Estudiante<span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="../../administracion/estudiante/registrar_estudiante.php">Agregar</a></li>
-                      <li><a href="../../administracion/estudiante/lista_estudiante.php">Modificar</a></li>
-                      <li><a href="../../administracion/estudiante/lista_estudiante_alta.php">Dar Alta</a></li>
-                    </ul>
-                  </li>
                   <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="tables.html">Tables</a></li>

@@ -119,11 +119,7 @@ $(document).ready(function(){
 
 
 
-  $("#correo_r").keypress(function(e) {
-       if(e.which == 13) {
-          $('#btneditar').click();
-       }
-    });
+  
 
   $("#btneditar").click(function(){
     if($("#formrepresentante").valid()){

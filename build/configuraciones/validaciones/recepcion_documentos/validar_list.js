@@ -47,6 +47,14 @@ $.ajax({
     $("#fromrecepciondocumentos").submit();
   }
 
+  function imprecepciondocumentos(id){
+    $('#idimp').val(id);
+    alert($('#idimp').val());
+    $("#fromimprecepciondocumentos").submit();
+  }
+  
+
+
 
   $("#carrera").on('change', function(){
   

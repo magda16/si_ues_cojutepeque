@@ -120,7 +120,7 @@ $(document).ready(function(){
 
     $("#correo_r").blur(function(){
       var nombre = $("#correo_r").val();
-      var tabla = "representante_facultad";
+      var tabla = "representante_facultad"; 
       var nombre_campo = "correo_rf";
       if(nombre.length>5){
           $.ajax({
@@ -140,13 +140,6 @@ $(document).ready(function(){
           })
         }
     });
-
-  
-    $("#correo_r").keypress(function(e) {
-         if(e.which == 13) {
-            $('#btnguardar').click();
-         }
-      });
   
     $("#btnguardar").click(function(){
       if($("#formrepresentante").valid()){
