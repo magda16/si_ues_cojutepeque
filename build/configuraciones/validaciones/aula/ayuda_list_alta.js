@@ -7,39 +7,15 @@ var tour = {
     id: 'hello-hopscotch',
     steps: [
       {
-        target: 'nombres_r',
-        title: 'Nombres',
-        content: 'Debe Ingresar los Nombres de el Representante de Facultad.',
-        placement: 'bottom'
+        target: 'paso1',
+        title: 'Mostrar Aula',
+        content: 'Debe Dar Clic para Mostrar Todos los Datos de el Aula.',
+        placement: 'left'
       },
       {
-        target: 'apellidos_r',
-        title: 'Apellidos',
-        content: 'Debe Ingresar los Apellidos de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'genero',
-        title: 'Genero',
-        content: 'Debe Verificar que este Marcado el Genero Correspondiente al Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'telefono_r',
-        title: 'Tel&eacute;fono',
-        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'correo_r',
-        title: 'Correo',
-        content: 'Debe Ingresar el Correo Electr&oacute;nico de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'btnguardar',
-        title: 'Guardar',
-        content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
+        target: 'paso2',
+        title: 'Dar Alta Aula',
+        content: 'Debe Dar clic para Dar Alta a los Datos de el Aula.',
         placement: 'left'
       }
     ],
@@ -75,7 +51,7 @@ var tour = {
         mgr.createCallout({
           id: calloutId,
           target: startBtnId,
-          placement: 'right',
+          placement: 'left',
           title: 'Ayuda',
           content: 'Clic para iniciar!',
           yOffset: -25,

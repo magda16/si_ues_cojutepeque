@@ -50,7 +50,7 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td colspan="3"><img src="../../../../produccion/images/encabezado.png" width="" height="" /></td>
+    <td colspan="3" align="center"><img src="../../../../produccion/images/encabezado.png" width="" height="" /></td>
     <td>&nbsp;</td>
   </tr>
   <tr>

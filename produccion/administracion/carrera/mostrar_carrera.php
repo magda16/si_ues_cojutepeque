@@ -33,7 +33,9 @@
             <div class="x_content">                
                     <table class="table table-striped">
                         <thead>
-                            
+                            <tr>
+                                <th><h5 style="color:RGB(205, 92, 92);">Estado Carrera:</h5></th>
+                            </tr>
                             <tr>
                                 <th style="padding-left:40px;" class="text-left"><b><i class=""></i>   Estado:<span style="color:	#000080;"> '</span></b></th>
                                 <th><label class="text-center"><?php echo $estado_ca; ?></label></th>
@@ -42,6 +44,9 @@
                                 <th style="padding-left:40px;" class="text-left"><b><i class=""></i>   Observaci&oacute;n:<span style="color:	#000080;"> '</span></b></th>
                                 <th><label class="text-center"><?php echo $observacion; ?></label></th>
                             </tr> 
+                            <tr>
+                                <th><h5 style="color:RGB(205, 92, 92);">Datos Carrera:</h5></th>
+                            </tr>
                             <tr>
                                 <th style="padding-left:40px;" class="text-left"><b><i class=""></i>   C&oacute;digo:<span style="color:	#000080;"> '</span></b></th>
                                 <th><label class="text-center"><?php echo $codigo; ?></label></th>
@@ -64,7 +69,8 @@
                     </table> 
             </div>         
         </div>
-    </div><br><br><br>
+    </div>
+    <div class="clearfix"></div>
     </div>
                         <div class="modal-footer">
                           <p align="left"" style="color: RGB(0, 0, 128);">( ' ) Campos no Editables.</p>

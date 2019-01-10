@@ -9,13 +9,13 @@ var tour = {
       {
         target: 'telefono_r',
         title: 'Tel&eacute;fono',
-        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono del Representante de Facultad.',
+        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de el Representante de Facultad.',
         placement: 'bottom'
       },
       {
         target: 'correo_r',
         title: 'Correo',
-        content: 'Debe Ingresar el Correo Electr&oacute;nico del Representante de Facultad.',
+        content: 'Debe Ingresar el Correo Electr&oacute;nico de el Representante de Facultad.',
         placement: 'bottom'
       },
       {

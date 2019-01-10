@@ -8,14 +8,14 @@ var tour = {
     steps: [
       {
         target: 'paso1',
-        title: 'Mostrar Representante de la Facultad',
-        content: 'Debe Dar Clic para Mostrar Todos los Datos del Representante de Facultad.',
+        title: 'Mostrar Representante de Facultad',
+        content: 'Debe Dar Clic para Mostrar Todos los Datos de el Representante de Facultad.',
         placement: 'left'
       },
       {
         target: 'paso2',
-        title: 'Dar Alta Representante de la Facultad',
-        content: 'Debe Dar clic para Dar Alta a los Datos del Representante de Facultad.',
+        title: 'Dar Alta Representante de Facultad',
+        content: 'Debe Dar clic para Dar Alta a los Datos de el Representante de Facultad.',
         placement: 'left'
       }
     ],

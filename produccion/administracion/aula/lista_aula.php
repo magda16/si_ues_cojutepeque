@@ -59,8 +59,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -112,9 +112,9 @@
                               echo "<td>" . $fila->nombre_au . "</td>";
                               echo "<td>" . $fila->ubicacion_au . "</td>";
                               echo "<td>" . $fila->cantidad_au . "</td>";
-                              echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idaula.")' data-toggle='tooltip' data-placement='top' title='Mostrar Aula'><i class='fa fa-eye'></i></a>
-                                        <a class='btn btn-info' onclick='editaraula(".$fila->idaula.")' data-toggle='tooltip' data-placement='top' title='Editar Aula'><i class='fa fa-edit'></i></a>
-                                        <a class='btn btn-danger' onclick='confirmar(".$fila->idaula.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Aula'><i class='fa fa-long-arrow-down'></i></a>
+                              echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idaula.")' data-toggle='tooltip' data-placement='top' title='Mostrar Aula'><i class='fa fa-eye'></i></a>
+                                        <a id='paso2' class='btn btn-info' onclick='editaraula(".$fila->idaula.")' data-toggle='tooltip' data-placement='top' title='Editar Aula'><i class='fa fa-edit'></i></a>
+                                        <a id='paso3' class='btn btn-danger' onclick='confirmar(".$fila->idaula.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Aula'><i class='fa fa-long-arrow-down'></i></a>
                                           </td>";
                               echo "</tr>";
                               $contador++;
@@ -199,7 +199,7 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/aula/validar_list.js"></script>
-    
+    <script src="../../../build/configuraciones/validaciones/aula/ayuda_list"></script>
 	
   </body>
 </html>

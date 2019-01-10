@@ -117,7 +117,7 @@
                             echo "<td>" . $fila->telefono_fa . "</td>";
                             echo "<td>" . $fila->correo_fa . "</td>";
                             echo "<td>" . $fila->nombre_rf." ".$fila->apellido_rf. "</td>";
-                            echo "<td> <a id='paso1' class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Mostrar Facultad'><i class='fa fa-eye'></i></a>
+                            echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Mostrar Facultad'><i class='fa fa-eye'></i></a>
                                        <a id='paso2' class='btn btn-info' onclick='editarfacultad(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Editar Facultad'><i class='fa fa-edit'></i></a>
                                     </td>";
                             echo "</tr>";

@@ -9,19 +9,19 @@ var tour = {
       {
         target: 'carnet',
         title: 'Carnet',
-        content: 'Debe Ingresar el Carnet de Estudiante.',
+        content: 'Debe Ingresar el Carnet de el Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'nombre_e',
         title: 'Nombres',
-        content: 'Debe Ingresar los Nombres de Estudiante.',
+        content: 'Debe Ingresar los Nombres de el Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'apellido_e',
         title: 'Apellidos',
-        content: 'Debe Ingresar los Apellidos de Estudiante.',
+        content: 'Debe Ingresar los Apellidos de el Estudiante.',
         placement: 'bottom'
       },
       {
@@ -33,31 +33,31 @@ var tour = {
       {
         target: 'nit_e',
         title: 'NIT',
-        content: 'Debe Ingresar el N&uacute;mero de NIT de Estudiante.',
+        content: 'Debe Ingresar el N&uacute;mero de NIT de el Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'dui_e',
         title: 'DUI',
-        content: 'Debe Ingresar el N&uacute;mero de DUI de Estudiante.',
+        content: 'Debe Ingresar el N&uacute;mero de DUI de el Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'telefono_e',
         title: 'Tel&eacute;fono',
-        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de Estudiante.',
+        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de el Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'correo_e',
         title: 'Correo Electr&oacute;nico',
-        content: 'Debe Ingresar el Correo Electr&oacute;nico de Estudiante.',
+        content: 'Debe Ingresar el Correo Electr&oacute;nico de el Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'direccion_e',
         title: 'Direcci&oacute;n',
-        content: 'Debe Ingresar la Direcci&oacute; de Estudiante.',
+        content: 'Debe Ingresar la Direcci&oacute; de el Estudiante.',
         placement: 'bottom'
       },
       {
