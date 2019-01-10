@@ -7,38 +7,14 @@ var tour = {
     id: 'hello-hopscotch',
     steps: [
       {
-        target: 'nombres_r',
-        title: 'Nombres',
-        content: 'Debe Ingresar los Nombres de el Representante de Facultad.',
+        target: 'nombre',
+        title: 'Nombre',
+        content: 'Debe Ingresar el Nombre de la Carrera.',
         placement: 'bottom'
       },
       {
-        target: 'apellidos_r',
-        title: 'Apellidos',
-        content: 'Debe Ingresar los Apellidos de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'genero',
-        title: 'Genero',
-        content: 'Debe Verificar que este Marcado el Genero Correspondiente al Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'telefono_r',
-        title: 'Tel&eacute;fono',
-        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'correo_r',
-        title: 'Correo',
-        content: 'Debe Ingresar el Correo Electr&oacute;nico de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'btnguardar',
-        title: 'Guardar',
+        target: 'btneditar',
+        title: 'Actualizar',
         content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
         placement: 'left'
       }

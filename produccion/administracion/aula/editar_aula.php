@@ -102,8 +102,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12" tabindex="1" value="<?php echo $nombre; ?>" placeholder="Digite Nombre del Aula" >
+                          <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12" tabindex="1" value="<?php echo $nombre; ?>" placeholder="Digite Nombre" >
                         </div>
                         <span class="help-block" id="resultnomerror"></span>
                       </div>
@@ -143,7 +143,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ubicacion">Ubicaci&oacute;n: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="ubicacion" name="ubicacion" required="required" class="form-control col-md-7 col-xs-12" tabindex="2" value="<?php echo $ubicacion; ?>" placeholder="Digite Ubicaci&oacute;n del Aula">
+                          <input type="text" id="ubicacion" name="ubicacion" required="required" class="form-control col-md-7 col-xs-12" tabindex="2" value="<?php echo $ubicacion; ?>" placeholder="Digite Ubicaci&oacute;n">
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
@@ -152,7 +152,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="capacidad">Capacidad: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="capacidad" name="capacidad" required="required" class="form-control col-md-7 col-xs-12" tabindex="3" value="<?php echo $capacidad; ?>" placeholder="Digite Capacidad del Aula">
+                          <input type="text" id="capacidad" name="capacidad" required="required" class="form-control col-md-7 col-xs-12" tabindex="3" value="<?php echo $capacidad; ?>" placeholder="Digite Capacidad">
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
@@ -189,7 +189,7 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/aula/validar_add.js"></script>
-    
+    <script src="../../../build/configuraciones/validaciones/aula/ayuda_edit.js"></script>
 	
   </body>
 </html>

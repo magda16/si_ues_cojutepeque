@@ -67,8 +67,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -122,8 +122,8 @@
                               echo "<td>" . $fila->nombre_ca . "</td>";
                               echo "<td>" . $fila->duracion_ca . " A&ntilde;os</td>";
                               echo "<td>" . $fila->nombre_fa . "</td>";
-                              echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
-                                         <a class='btn btn-primary' onclick='confirmaralta(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Dar Alta Carrera'><i class='fa fa-long-arrow-up'></i></a>
+                              echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
+                                         <a id='paso2' class='btn btn-primary' onclick='confirmaralta(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Dar Alta Carrera'><i class='fa fa-long-arrow-up'></i></a>
                                     </td>";
                               echo "</tr>";
                               $contador++;
@@ -205,7 +205,7 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/carrera/validar_list.js"></script>
-    
+    <script src="../../../build/configuraciones/validaciones/carrera/ayuda_list_alta.js"></script>
 	
   </body>
 </html>

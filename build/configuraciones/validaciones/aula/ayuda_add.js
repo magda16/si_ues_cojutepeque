@@ -7,33 +7,21 @@ var tour = {
     id: 'hello-hopscotch',
     steps: [
       {
-        target: 'nombres_r',
-        title: 'Nombres',
-        content: 'Debe Ingresar los Nombres de el Representante de Facultad.',
+        target: 'nombre',
+        title: 'Nombre',
+        content: 'Debe Ingresar el Nombre de el Aula.',
         placement: 'bottom'
       },
       {
-        target: 'apellidos_r',
-        title: 'Apellidos',
-        content: 'Debe Ingresar los Apellidos de el Representante de Facultad.',
+        target: 'ubicacion',
+        title: 'Ubicaci&oacute;n',
+        content: 'Debe Ingresar la Ubicaci&oacute;n de el Aula.',
         placement: 'bottom'
       },
       {
-        target: 'genero',
-        title: 'Genero',
-        content: 'Debe Verificar que este Marcado el Genero Correspondiente al Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'telefono_r',
-        title: 'Tel&eacute;fono',
-        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de el Representante de Facultad.',
-        placement: 'bottom'
-      },
-      {
-        target: 'correo_r',
-        title: 'Correo',
-        content: 'Debe Ingresar el Correo Electr&oacute;nico de el Representante de Facultad.',
+        target: 'capacidad',
+        title: 'Capacidad',
+        content: 'Debe Ingresar la Capacidad de Alumnos que Soporta el Aula.',
         placement: 'bottom'
       },
       {

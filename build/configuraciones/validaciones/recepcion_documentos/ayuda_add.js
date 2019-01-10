@@ -9,44 +9,44 @@ var tour = {
       {
         target: 'facultad',
         title: 'Facultad',
-        content: 'Aca debes seleccionar el nombre de la Facultad.',
+        content: 'Debe Seleccionar el Nombre de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'carrera',
         title: 'Carrera',
-        content: 'Aca debes seleccionar el nombre de la Carrera.',
+        content: 'Debe Seleccionar el Nombre de la Carrera.',
         placement: 'bottom'
       },
       {
         target: 'estudiante',
         title: 'Estudiante',
-        content: 'Aca debes seleccionar el nombre del Estudiante.',
+        content: 'Debe Seleccionar el Nombre del Estudiante.',
         placement: 'bottom'
       },
       {
         target: 'pagocertificado',
         title: 'Pago de Certifcado M&eacute;dico',
-        content: 'Aca debes dar clic en la forma de pago.',
+        content: 'Debe Dar Clic en la Forma de Pago.',
         placement: 'bottom'
       },
       {
         target: 'dui',
-        title: 'Seleccionador de Archivos',
-        content: 'Aca debes dar clic para seleccionar el Archivo.',
+        title: 'Seleccionar Archivo',
+        content: 'Debe Dar Clic para Seleccionar el Archivo.',
         placement: 'bottom'
       },
       {
         target: 'mostrar_dui',
-        title: 'Mostrar',
-        content: 'Aca debes dar clic para vizualizar el Archivo.',
+        title: 'Mostrar Archivo',
+        content: 'Debe Dar Clic para Vizualizar el Archivo.',
         placement: 'right'
       },
       {
         target: 'btnguardar',
         title: 'Guardar',
-        content: 'Aca debes dar clic para guardar los datos ingresados.',
-        placement: 'bottom'
+        content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
+        placement: 'left'
       }
     ],
     showPrevButton: true,

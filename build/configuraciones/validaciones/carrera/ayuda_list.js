@@ -8,20 +8,20 @@ var tour = {
   steps: [
     {
       target: 'paso1',
-      title: 'Mostrar Representante de Facultad',
-      content: 'Debe Dar Clic para Mostrar Todos los Datos de el Representante de Facultad.',
+      title: 'Mostrar Carrera',
+      content: 'Debe Dar Clic para Mostrar Todos los Datos de la Carrera.',
       placement: 'left'
     },
     {
       target: 'paso2',
-      title: 'Editar Representante de Facultad',
-      content: 'Debe Dar Clic para Editar los Datos de el Representante de Facultad.',
+      title: 'Editar Carrera',
+      content: 'Debe Dar Clic para Editar los Datos de la Carrera.',
       placement: 'left'
     },
     {
       target: 'paso3',
-      title: 'Dar Baja Representante de Facultad',
-      content: 'Debe Dar clic para Dar Baja a los Datos de el Representante de Facultad.',
+      title: 'Dar Baja Carrera',
+      content: 'Debe Dar clic para Dar Baja a los Datos de la Carrera.',
       placement: 'left'
     }
   ],

@@ -9,32 +9,32 @@ var tour = {
       {
         target: 'paso1',
         title: 'Nombre',
-        content: 'Aca debes digitar el nombre de la Facultad.',
+        content: 'Debe Ingresar el Nombre de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'paso2',
         title: 'Tel&eacute;fono',
-        content: 'Aca debes digitar el n&uacute;mero tel&eacute;fono de la Facultad.',
+        content: 'Debe Ingresar el N&uacute;mero Tel&eacute;fono de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'paso3',
         title: 'Correo Electr&oacute;nico',
-        content: 'Aca debes digitar el correo electr&oacute;nico de la Facultad.',
+        content: 'Debe Ingresar el Correo Electr&oacute;nico de la Facultad.',
         placement: 'bottom'
       },
       {
         target: 'paso4',
         title: 'Representante',
-        content: 'Aca debes seleccionar el representante de la Facultad.',
+        content: 'Debe Seleccionar el Representante de Facultad.',
         placement: 'bottom'
       },
       {
         target: 'btnguardar',
         title: 'Guardar',
-        content: 'Aca debes dar clic para guardar los datos ingresados.',
-        placement: 'bottom'
+        content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
+        placement: 'left'
       }
     ],
     showPrevButton: true,

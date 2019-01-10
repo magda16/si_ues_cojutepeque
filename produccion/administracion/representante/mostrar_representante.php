@@ -74,7 +74,8 @@
                     </table> 
             </div>         
         </div>
-    </div><br><br><br>
+    </div>
+    <div class="clearfix"></div>
     </div>
                         <div class="modal-footer">
                           <p align="left"" style="color: RGB(0, 0, 128);">( ' ) Campos no Editables.</p>

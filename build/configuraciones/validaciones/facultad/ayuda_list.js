@@ -9,13 +9,13 @@ var tour = {
     {
       target: 'paso1',
       title: 'Mostrar Facultad',
-      content: 'Aca debes dar clic para mostrar todos los datos de la Facultad.',
+      content: 'Debe Dar Clic para Mostrar Todos los Datos de la Facultad.',
       placement: 'left'
     },
     {
       target: 'paso2',
       title: 'Editar Facultad',
-      content: 'Aca debes dar clic para editar los datos de la Facultad.',
+      content: 'Debe Dar Clic para Editar los Datos de la Facultad.',
       placement: 'left'
     }
   ],
