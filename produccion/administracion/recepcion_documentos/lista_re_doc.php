@@ -87,7 +87,7 @@
 
                     <div align="center">
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Facultad: <span class="required" style="color: #CD5C5C;"> *</span></label>
+                        <label style="color: RGB(0, 0, 128);" class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Facultad: <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" id="facultad" name="facultad">
                           </select>
@@ -96,7 +96,7 @@
                       </div>
                       <div class="clearfix"></div>
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Carrera: <span class="required" style="color: #CD5C5C;"> *</span></label>
+                        <label style="color: RGB(0, 0, 128);"class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Carrera: <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" id="carrera" name="carrera">
                           </select>

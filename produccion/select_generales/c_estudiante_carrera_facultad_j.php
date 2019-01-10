@@ -1,5 +1,5 @@
 <?php
-    require '../../../build/configuraciones/conexion.php';
+    require '../../build/configuraciones/conexion.php';
     if(isset($_POST['id'])){
     function obtenerCarrera(){
     $facultad = $_POST['id'];
@@ -17,4 +17,4 @@
   }
 
     echo obtenerCarrera();
-?>  
+?> 

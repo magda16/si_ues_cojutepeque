@@ -115,9 +115,8 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="formcarrera" name="formcarrera" method="POST" class="form-horizontal form-label-left">
-
-                      <input type="hidden" name="bandera" id="bandera">
+                    <form id="formempleado" action="../../../build/configuraciones/sql/empleado/crudEmpleado.php" method="POST" data-parsley-validate class="form-horizontal form-label-left">
+                    <input type="hidden" name="bandera" id="bandera">
 
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Cargo: <span class="required" style="color: #CD5C5C;"> *</span></label>
@@ -141,28 +140,10 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dui">DUI: <span class="required" style="color: #CD5C5C;"> *</span></span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="dui" name="dui" required="required" class="form-control col-md-7 col-xs-12" tabindex="1">
-                        </div>
-                        <span class="help-block" id="error"></span>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nit">NIT: <span class="required" style="color: #CD5C5C;"> *</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="nit" name="nit" required="required" class="form-control col-md-7 col-xs-12" tabindex="2">
-                        </div>
-                        <span class="help-block" id="error"></span>
-                      </div>
-                      
-                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre">Nombre: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12" tabindex="3">
+                          <input type="text" id="nombre" name="nombre" required="required" class="form-control col-md-7 col-xs-12" tabindex="3" placeholder="Digite Nombres">
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
@@ -171,17 +152,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellido">Apellido: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="apellido" name="apellido" required="required" class="form-control col-md-7 col-xs-12" tabindex="4">
-                        </div>
-                        <span class="help-block" id="error"></span>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion">Direcci&oacute;n: <span class="required" style="color: #CD5C5C;"> *</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12" tabindex="4">
-                        </div>
+                          <input type="text" id="apellido" name="apellido" required="required" class="form-control col-md-7 col-xs-12" tabindex="4" placeholder="Digite Apellidos">
+                          </div>
                         <span class="help-block" id="error"></span>
                       </div>
 
@@ -195,8 +167,37 @@
                         </div>
                       </div>
 
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="dui">DUI: <span class="required" style="color: #CD5C5C;"> *</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control has-feedback-left" id="dui" name="dui" data-inputmask="'mask': '99999999-9'" required="required" class="form-control col-md-7 col-xs-12" tabindex="5" placeholder="Digite DUI">
+                          <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
+                        </div>
+                        <span class="help-block" id="error"></span>
+                      </div> 
 
-                    <div class="form-group">
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nit">NIT: <span class="required" style="color: #CD5C5C;"> *</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" class="form-control has-feedback-left" id="nit" name="nit" data-inputmask="'mask': '9999-999999-999-9'" required="required" class="form-control col-md-7 col-xs-12" tabindex="4" placeholder="Digite NIT">
+                        <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+                      <span class="help-block" id="error"></span>
+                      </div>
+
+                      <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono">Teléfono: <span class="required" style="color: #CD5C5C;"> *</span>
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control has-feedback-left" id="telefono" name= "telefono" data-inputmask="'mask': '9999-9999'" required="required" tabindex="6" placeholder="Digite Número de Teléfono">
+                      <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
+                      </div>
+                      <span class="help-block" id="error"></span>
+                      </div>
+
+                      <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Estado Familiar: <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" id="estado" name="estado">
@@ -209,27 +210,25 @@
                         </div>
                     </div>
 
-                     <div class="form-group" id="resultel">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono_r">Tel&eacute;fono: <span class="required" style="color: #CD5C5C;"> *</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="telefono_r"  name="telefono_r" required="required" tabindex="3" placeholder="Digite Número de Teléfono">
-                        <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-                      <span class="help-block" id="resultelerror"></span>
-                      </div>
-
                       <div class="form-group" id="resultcor">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="correo_r">Correo Electr&oacute;nico: <span class="required" style="color: #CD5C5C;"> *</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="correo">Correo Electr&oacute;nico: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="correo_r" name="correo_r" required="required" tabindex="4" placeholder="Digite Correo Electrónico">
+                        <input type="text" class="form-control has-feedback-left" id="correo" name="correo" required="required" tabindex="4" placeholder="Digite Correo Electrónico">
                         <span class="fa fa-envelope-o form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="resultcorerror"></span>
                       </div>
-                
-                     
+                      
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion">Direcci&oacute;n: <span class="required" style="color: #CD5C5C;"> *</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" id="direccion" name="direccion" required="required" class="form-control col-md-7 col-xs-12" tabindex="4" placeholder="Digite Direccion de Domicilio">
+                          </div>
+                        <span class="help-block" id="error"></span>
+                      </div>
+
                       <div class="ln_solid"></div>
                         <p style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios.</p>
                         <div class="form-group" align="right">
@@ -258,7 +257,7 @@
       </div>
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
-    <script src="../../../build/configuraciones/validaciones/empleado/validar_add.js"></script>
+    <script src="../../../build/configuraciones/validaciones/empleado/validar_empleado.js"></script>
     
 	
   </body>

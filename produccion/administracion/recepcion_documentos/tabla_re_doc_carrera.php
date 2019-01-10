@@ -10,11 +10,11 @@
     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>No.</th>
-                <th>Carnet</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Acciones</th>
+                <th style="color: RGB(0, 0, 128);">No.</th>
+                <th style="color: RGB(0, 0, 128);">Carnet</th>
+                <th style="color: RGB(0, 0, 128);">Nombres</th>
+                <th style="color: RGB(0, 0, 128);">Apellidos</th>
+                <th style="color: RGB(0, 0, 128);">Acciones</th>
             </tr>
         </thead>
         <tbody>

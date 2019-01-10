@@ -98,12 +98,12 @@
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-                          <th>No.</th>
-                          <th>C&oacute;digo</th>
-                          <th>Carrera</th>
-                          <th>Duraci&oacute;n</th>
-                          <th>Facultad</th>
-                          <th>Acciones</th>
+                          <th style="color: RGB(0, 0, 128);">No.</th>
+                          <th style="color: RGB(0, 0, 128);">C&oacute;digo</th>
+                          <th style="color: RGB(0, 0, 128);">Carrera</th>
+                          <th style="color: RGB(0, 0, 128);">Duraci&oacute;n</th>
+                          <th style="color: RGB(0, 0, 128);">Facultad</th>
+                          <th style="color: RGB(0, 0, 128);">Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
