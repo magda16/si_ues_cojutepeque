@@ -40,7 +40,8 @@
                   <li><a><i class="fa fa-edit"></i> Carrera<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="../../administracion/carrera/registrar_carrera.php">Agregar</a></li>
-                      <li><a href="../../administracion/carrera/lista_carrera.php">Modificar</a></li>
+                      <li><a href="../../administracion/carrera/lista_carrera.php">Modificar1</a></li>
+                      <li><a href="../../administracion/carrera/lista_carrera1.php">Modificar2</a></li>
                       <li><a href="../../administracion/carrera/lista_carrera_alta.php">Dar Alta</a></li>
                     </ul>
                   </li>
