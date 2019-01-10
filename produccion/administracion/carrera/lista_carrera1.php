@@ -116,16 +116,17 @@
                 
                     echo "<thead>";
                     echo "<tr>";
-                    echo "<th colspan='4'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_fa.".</h4></th>";                    
+                    echo "<th colspan='5'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_fa.".</h4></th>";                    
                     echo "<th ><div align='center'><a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera por Facultad'><i class='fa fa-print'></i></a></div></th>";
                     echo "</tr>";
                     
                    
                     echo "<tr>";
-                    echo "<th>No.</th>";
-                    echo "<th>C&oacute;digo</th>";
-                    echo "<th>Carrera</th>";
-                    echo "<th>Duraci&oacute;n</th>";
+                    echo "<th color: RGB(0, 0, 128);'>No.</th>";
+                    echo "<th color: RGB(0, 0, 128);'>C&oacute;digo</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Carrera</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Plan</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Duraci&oacute;n</th>";
 
                     echo "<th>Acciones</th>";
                     echo "</tr>";
@@ -143,11 +144,13 @@
                                     echo "<td>" .$contador. "</td>";
                                     echo "<td>" . $fila2->codigo_ca . "</td>";
                                     echo "<td>" . $fila2->nombre_ca . "</td>";
+                                    echo "<td>" . $fila2->duracion_ca . "</td>";
                                     echo "<td>" . $fila2->duracion_ca . " A&ntilde;os</td>";
                                    
                                     echo "<td align='center'> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
                                               <a id='paso2' class='btn btn-info' onclick='editarcarrera(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Editar Carrera'><i class='fa fa-edit'></i></a>
                                               <a id='paso3' class='btn btn-danger' onclick='confirmar(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Carrera'><i class='fa fa-long-arrow-down'></i></a>
+                                              <a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera'><i class='fa fa-print'></i></a>
                                                 </td>";
                                     echo "</tr>";
                                     
