@@ -35,10 +35,10 @@
                         echo "<td>" . $fila->apellido_es. "</td>";
                         echo "<td>" . $fila->telefono_es. "</td>";
                         echo "<td>" . $fila->correo_es. "</td>";
-                        echo "<td> <a class='btn btn-success openBtn' type='button' onclick=ver(".$fila->idestudiante.")data-toggle='tooltip' data-placement='top' title='Expediente Estudiantil'><i class='fa fa-eye'></i></a>
-                                     <a class='btn btn-info' onclick='editar(".$fila->idestudiante.")data-toggle='tooltip' data-placement='top' title='Editar Expediente '><i class='fa fa-edit'></i></a>
-                                     <a class='btn btn-dark' onclick='tramites(".$fila->idestudiante.")data-toggle='tooltip' data-placement='top' title='Ver Procesos' ><i class='fa fa-folder-o'></i></a>
-                                     <a class='btn btn-danger' onclick='confirmar(".$fila->idestudiante.")data-toggle='tooltip' data-placement='top' title='Desactivar Estudiante' ><i class='fa fa-long-arrow-down'></i></a>
+                        echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Expediente Estudiantil'><i class='fa fa-eye'></i></a>
+                                     <a id='paso2' class='btn btn-info' type='button' onclick='editarestudiante(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Editar Expediente'><i class='fa fa-edit'></i></a>
+                                     <a id='paso3' class='btn btn-dark' type='button' onclick='tramites(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Ver Procesos' ><i class='fa fa-folder-o'></i></a>
+                                     <a id='paso4' class='btn btn-danger' type='button' onclick='confirmar(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Desactivar Estudiante' ><i class='fa fa-long-arrow-down'></i></a>
                              </td>";
                         $contador++;
                     }

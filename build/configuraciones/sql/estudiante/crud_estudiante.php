@@ -8,21 +8,21 @@
     if($bandera=="add"){
         $msj="Error";
       
-        function obtenerResultado(){
-            $carnet=$_POST["carnet"];
-            $nombre=$_POST["nombre_e"];
-            $apellido=$_POST["apellido_e"];
-            $genero=$_POST["genero_e"];
-            $nit=$_POST["nit_e"];
-            $dui=$_POST["dui_e"];
-            $direccion=$_POST["direccion_e"];
-            $telefono=$_POST["telefono_e"];
-            $correo=$_POST["correo_e"];
-            $institucion=$_POST["institucion_e"];  
-            $facultad=$_POST["facultad"];
-            $carrera=$_POST["carrera"]; 
-            $planestudio=$_POST["planestudio"]; 
-            $observacion = "Registro"; 
+      function obtenerResultado(){
+        $carnet=$_POST["carnet"];
+        $nombre=$_POST["nombre_e"];
+        $apellido=$_POST["apellido_e"];
+        $genero=$_POST["genero_e"];
+        $nit=$_POST["nit_e"];
+        $dui=$_POST["dui_e"];
+        $direccion=$_POST["direccion_e"];
+        $telefono=$_POST["telefono_e"];
+        $correo=$_POST["correo_e"];
+        $institucion=$_POST["institucion_e"];  
+        $facultad=$_POST["facultad"];
+        $carrera=$_POST["carrera"]; 
+        $planestudio=$_POST["planestudio"]; 
+        $observacion = "Registro"; 
         $result = 0;
         $con=conectarMysql();
   
@@ -42,12 +42,20 @@
       function obtenerResultado(){
      
       $baccion=$_POST["baccion"];
-      $nombre=$_POST["nombre"];
+      $carnet=$_POST["carnet"];
+      $nombre=$_POST["nombre_e"];
+      $apellido=$_POST["apellido_e"];
+      $genero=$_POST["genero_e"];
+      $nit=$_POST["nit_e"];
+      $dui=$_POST["dui_e"];
+      $direccion=$_POST["direccion_e"];
+      $telefono=$_POST["telefono_e"];
+      $correo=$_POST["correo_e"];
       
       $result = 0;
       $con=conectarMysql();
 
-      $consulta  = "UPDATE carrera set nombre_ca='$nombre' where idcarrera=".$baccion;
+      $consulta  = "UPDATE estudiante set carnet_es='$carnet', nombre_es='$nombre', apellido_es='$apellido', genero_es='$genero', NIT_es='$nit', DUI_es='$dui', telefono_es='$telefono', correo_es='$correo', direccion_es='$direccion' where idestudiante=".$baccion;
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";
@@ -66,7 +74,7 @@
       $result = 0;
       $con = conectarMysql();
 
-      $consulta  = "UPDATE carrera set estado_ca='0', observacion_ca='$observacion' where idcarrera=".$baccion;
+      $consulta  = "UPDATE estudiante set estado_es='0', observacion_es='$observacion' where idestudiante=".$baccion;
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";
@@ -85,7 +93,7 @@
       $result = 0;
       $con = conectarMysql();
 
-      $consulta  = "UPDATE carrera set estado_ca='1', observacion_ca='$observacion' where idcarrera=".$baccion;
+      $consulta  = "UPDATE estudiante set estado_es='1', observacion_es='$observacion' where idestudiante=".$baccion;
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";

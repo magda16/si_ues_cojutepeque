@@ -90,46 +90,88 @@
                     <p class="text-muted font-13 m-b-30">
                       Lista de todas las Carreras Activas.
                     </p>
-					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th style="color: RGB(0, 0, 128);">No.</th>
-                          <th style="color: RGB(0, 0, 128);">C&oacute;digo</th>
-                          <th style="color: RGB(0, 0, 128);">Carrera</th>
-                          <th style="color: RGB(0, 0, 128);">Duraci&oacute;n</th>
-                          <th style="color: RGB(0, 0, 128);">Facultad</th>
-                          <th style="color: RGB(0, 0, 128);">Acciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                          require '../../../build/configuraciones/conexion.php';
-                          $con=conectarMysql();
-                          $result = $con->query("SELECT ca.idcarrera, ca.codigo_ca, ca.nombre_ca, ca.duracion_ca, fa.nombre_fa FROM carrera as ca, facultad as fa WHERE ca.estado_ca=1 AND ca.idfacultadfk=fa.idfacultad  
-                          ORDER BY fa.nombre_fa  ASC");
-                          $contador=1;
-                          if ($result) {
-                            while ($fila = $result->fetch_object()) {
-                            
-                              echo "<tr>";
-                              echo "<td>" .$contador. "</td>";
-                              echo "<td>" . $fila->codigo_ca . "</td>";
-                              echo "<td>" . $fila->nombre_ca . "</td>";
-                              echo "<td>" . $fila->duracion_ca . " A&ntilde;os</td>";
-                              echo "<td>" . $fila->nombre_fa . "</td>";
-                              echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
-                                        <a class='btn btn-info' onclick='editarcarrera(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Editar Carrera'><i class='fa fa-edit'></i></a>
-                                        <a class='btn btn-danger' onclick='confirmar(".$fila->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Carrera'><i class='fa fa-long-arrow-down'></i></a>
-                                          </td>";
-                              echo "</tr>";
-                              $contador++;
+                    <!-- inicio del div panel -->
+                    <div>
+                    <?php
 
-                            }
-                          }
-                        ?>
-                      </tbody>
-                    </table>
+                    echo "<table id='datatable-responsive1' class='table table-striped table-bordered dt-responsive nowrap' cellspacing='0' width='100%'>";
+                    
+                    
+                    require '../../../build/configuraciones/conexion.php';
+                    $con=conectarMysql();
+                    $result = $con->query("SELECT DISTINCT fa.idfacultad, fa.nombre_fa FROM carrera AS ca, facultad AS fa WHERE ca.idfacultadfk=fa.idfacultad AND ca.estado_ca=1 ORDER BY fa.nombre_fa ASC");
+                    $cont=1;
+                    if ($result) {
+                      while ($fila = $result->fetch_object()) {
+                        $facultad=$fila->idfacultad;
+
+                   
+                   
+                        
+
+                    echo "<input type='hidden' name='bandera' id='bandera'>";
+                    echo "<input type='hidden' name='baccion' id='baccion'>";
+
+                         
+                
+                    echo "<thead>";
+                    echo "<tr>";
+                    echo "<th colspan='5'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_fa.".</h4></th>";                    
+                    echo "<th ><div align='center'><a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera por Facultad'><i class='fa fa-print'></i></a></div></th>";
+                    echo "</tr>";
+                    
+                   
+                    echo "<tr>";
+                    echo "<th color: RGB(0, 0, 128);'>No.</th>";
+                    echo "<th color: RGB(0, 0, 128);'>C&oacute;digo</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Carrera</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Plan</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Duraci&oacute;n</th>";
+
+                    echo "<th>Acciones</th>";
+                    echo "</tr>";
+                    echo "</thead>";
+                    echo "<tbody>";
+
+                             
+                                
+                                $result2 = $con->query("SELECT ca.idcarrera, ca.codigo_ca, ca.nombre_ca, ca.duracion_ca FROM carrera AS ca, facultad AS fa WHERE ca.idfacultadfk=fa.idfacultad AND ca.estado_ca=1 AND ca.idfacultadfk=".$facultad." ORDER BY ca.nombre_ca ASC");
+                                $contador=1;
+                                if ($result2) {
+                                  while ($fila2 = $result2->fetch_object()) {
+                                  
+                                    echo "<tr>";
+                                    echo "<td>" .$contador. "</td>";
+                                    echo "<td>" . $fila2->codigo_ca . "</td>";
+                                    echo "<td>" . $fila2->nombre_ca . "</td>";
+                                    echo "<td>" . $fila2->duracion_ca . "</td>";
+                                    echo "<td>" . $fila2->duracion_ca . " A&ntilde;os</td>";
+                                   
+                                    echo "<td align='center'> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
+                                              <a id='paso2' class='btn btn-info' onclick='editarcarrera(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Editar Carrera'><i class='fa fa-edit'></i></a>
+                                              <a id='paso3' class='btn btn-danger' onclick='confirmar(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Carrera'><i class='fa fa-long-arrow-down'></i></a>
+                                              <a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera'><i class='fa fa-print'></i></a>
+                                                </td>";
+                                    echo "</tr>";
+                                    
+                                    $contador++;
+
+                                  }
+                                }
+                             
+                            
+                            
+              }
+            }
+            echo "</tbody>";
+            echo "</table>";
+          ?>
+                    </div>
+                    <!-- fin div panel -->
+
+                    
+
+
                     <form id="fromeditarcarrera" name="fromeditarcarrera" action="../../../produccion/administracion/carrera/editar_carrera.php" method="POST">
                       <input type="hidden" id="id" name="id">
                     </form>
