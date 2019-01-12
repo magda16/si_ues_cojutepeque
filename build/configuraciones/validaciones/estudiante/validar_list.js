@@ -247,11 +247,13 @@ $.ajax({
   $("#carrera").on('change', function(){
   
     var carrera = $("#carrera").val();
+    var estado =  $("#estado").val();
+    
     var table = $('#datatable-responsive').DataTable();
     $.ajax({
       type: 'POST',
       url: '../../../produccion/administracion/estudiante/tabla_lista_estudiante.php',
-      data: {'carrera': carrera}
+      data: {'carrera': carrera, 'estado': estado}
     })
     .done(function(obtenerDatos){
       table.destroy();

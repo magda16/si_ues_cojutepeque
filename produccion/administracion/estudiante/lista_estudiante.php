@@ -84,6 +84,7 @@
 
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
+                    <input type="hidden" name="estado" id="estado" value="1">
 
                     <div align="center">
                       <div class="form-group">
@@ -208,6 +209,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/estudiante/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/recepcion_documentos/ayuda_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/estudiante/ayuda_list.js"></script>
   </body>
 </html>

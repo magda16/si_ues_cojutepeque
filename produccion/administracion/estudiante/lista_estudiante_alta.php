@@ -70,11 +70,9 @@
               <div class="col-sm-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2 style="color:RGB(205, 92, 92);">Lista de Estudiantes Activos por Carrera.</h2>
+                    <h2 style="color:RGB(205, 92, 92);">Lista de Estudiantes Inactivos por Carrera.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Estudiante" href="../../../produccion/administracion/estudiante/registrar_estudiante.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -84,6 +82,8 @@
 
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
+                    <input type="hidden" name="estado" id="estado" value="0">
+
 
                     <div align="center">
                       <div class="form-group">
@@ -208,6 +208,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/estudiante/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/recepcion_documentos/ayuda_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/estudiante/ayuda_list.js"></script>
   </body>
 </html>
