@@ -17,6 +17,7 @@
         $categoria=$_REQUEST["categoria"];
         $tipo_bien=$_REQUEST["tipo_bien"];
         $codigo_af=$_REQUEST["codigo_af"];
+        $numcorrelativo=$_REQUEST["numcorrelativo"];
         $descripcion=$_REQUEST["descripcion"];
         $observacion_act=$_REQUEST["observacion_act"];
         $calidad=$_REQUEST["calidad"];
@@ -127,8 +128,12 @@
     $fecha=$year."-".$mes."-".$dia;
 
     $consulta  = "INSERT INTO inventario_af(categoria_inv,tipo_bien_inv,codigo,descripcion,observacion,calidad,marca,modelo,nserie,lote,fecha_adquisicion,financiamiento,valor_adq,valor_estimado,doc_adquisicion,proveedor,estado_af,observacion_af) VALUES('$categoria','$tipo_bien','$codigo_af','$descripcion','$observacion_act','$calidad','$marca','$modelo','$nserie','$lote','$fecha','$financiamiento','$valor','$valor_est','$dato[0]','$proveedor','1','$observacion_af')";
+    $nc=$numcorrelativo+1;
     $result = $con->query($consulta);
         if ($result) {
+            $consulta  = "UPDATE af_subcategoria SET cantidad_s='$nc' WHERE idafsubc='$tipo_bien'";
+            $result = $con->query($consulta);
+
             $msj = "Exito";
         } else {
             $msj = "Error";

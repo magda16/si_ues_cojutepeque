@@ -80,7 +80,8 @@ $('#tipo_bien').on('change', function(){
    // alert(obtenerDatos);
     var datos = eval(obtenerDatos);
     $('#codigo_inv').val(datos[0]);
-    
+    $('#numcorrelativo').val(datos[1]);
+    alert($('#numcorrelativo').val());
     var num = numero(datos[1]);
 
     function numero(num){

@@ -111,6 +111,7 @@
                     <form id="formaf" name="formaf" action="../../../build/configuraciones/sql/activo_fijo/crud_activo_fijo.php" method="POST" class="form-horizontal form-label-left" enctype="multipart/form-data" >
                       <input type="hidden" name="bandera" id="bandera">
                       <input type="hidden" name="codigo_af" id="codigo_af">
+                      <input type="hidden" name="numcorrelativo" id="numcorrelativo">
                         <h5> <strong><p style="color:RGB(0, 0, 128);"> Datos Generales:</strong></p></h5>
 
                         <div class="form-group">
@@ -184,7 +185,7 @@
                       <h5> <strong><p style="color:RGB(0, 0, 128);"> Datos de el Activo Fijo:</strong></p></h5>
     
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="marca">Marca: 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="marca">Marca: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="marca" name="marca" required="required" placeholder="Ingrese la Marca de el Activo Fijo" class="form-control col-md-7 col-xs-12" tabindex="3">
@@ -200,6 +201,15 @@
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Lote: <span class="required" style="color: #CD5C5C;"> *</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="checkbox" class="js-switch" id="switch1" name="switch1"/>
+                        </div>
+                      </div>
+
                       <div id="gruposerie">
                       <div class="form-group" id="divserie">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nserie">N&uacute;mero de Serie: 
@@ -208,14 +218,6 @@
                           <input type="text" id="nserie" name="nserie" required="required" placeholder="Ingrese el N&uacute;mero de Serie de el Activo Fijo" class="form-control col-md-7 col-xs-12" tabindex="3">
                         </div>
                         <span class="help-block" id="error"></span>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Lote: <span class="required" style="color: #CD5C5C;"> *</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="checkbox" class="js-switch" id="switch1" name="switch1"/>
-                        </div>
                       </div>
 
                       <div class="form-group" id="divcantidad_lote">
@@ -230,14 +232,15 @@
                       <h5> <strong><p style="color:RGB(0, 0, 128);"> Forma de Financiamiento:</strong></p></h5>
                       
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fecha">Fecha de Adquisici&oacute;n: 
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="fecha" name="fecha" required="required" class="form-control col-md-7 col-xs-12" data-date-end-date = "0d">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="fecha">Fecha de &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adquisici&oacute;n: <span class="required" style="color: #CD5C5C;"> *</span>
+                        </label><br>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                          <input type="text" class="form-control has-feedback-left" id="fecha" name="fecha" required="required" class="form-control col-md-7 col-xs-12" data-date-end-date = "0d">
+                          <span class="fa fa-table form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
-
+                          <br>
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Financiamiento: <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -253,7 +256,7 @@
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="valor">Valor de  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adquisici&oacute;n ($): 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="valor">Valor de  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adquisici&oacute;n ($): <span class="required" style="color: #CD5C5C;"> *</span>
                         </label><br>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="valor" name="valor" required="required" placeholder="Ingrese Valor de Adquisici&oacute;n de el Activo Fijo" class="form-control col-md-7 col-xs-12" tabindex="3">
@@ -279,9 +282,9 @@
                           </div>
                           <a id="mostrar" name="mostrar" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Mostrar Documento"><i class="fa fa-eye"></i></a>
                         </div>
-
+                          <br>
                         <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="proveedor">Proveedor: 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="proveedor">Proveedor: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" id="proveedor" name="proveedor" required="required" placeholder="Ingrese Proveedor de el Activo Fijo" class="form-control col-md-7 col-xs-12" tabindex="3">
@@ -289,11 +292,7 @@
                         <span class="help-block" id="error"></span>
                       </div>
 
-                      <!-- <div class="form-group form-animate-text" style="margin-top:40px !important;">
-                              <input type="text" class="form-text mask-fallback" id="fechanacimiento" name="fechanacimiento" tabindex="3" required>
-                              <span class="bar"></span>
-                              <label>Fecha de Nacimiento:</label>
-                            </div> -->
+                      
 
 
                       <div class="ln_solid"></div>
