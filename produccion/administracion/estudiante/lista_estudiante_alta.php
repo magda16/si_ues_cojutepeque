@@ -208,6 +208,6 @@
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
     <script src="../../../build/configuraciones/validaciones/estudiante/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/estudiante/ayuda_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/estudiante/ayuda_list_alta.js"></script>
   </body>
 </html>

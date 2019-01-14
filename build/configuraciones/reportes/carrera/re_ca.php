@@ -35,10 +35,10 @@
   <body>
   <form id="formulario" name="formulario" method="POST" action="">
   <?php date_default_timezone_set("America/El_Salvador"); ?>
-  <table width="100%" border="1">
+  <table width="100%" border="0">
   <?php 
   
-    $numeroFilas=36;
+    $numeroFilas=34;
 
     function encabezado(){  
       
@@ -94,18 +94,13 @@
 
         
         <?php 
-        /*echo "<tr style='font-size: 11px;'>";
-        echo "<td align='center'><strong>N&deg;</strong></td>";
-        echo "<td ><strong>C&oacute;digo</strong></td>";
-        echo "<td ><strong>Carrera</strong></td>";
-        echo "<td ><strong>Duraci&oacute;n</strong></td>";
-        echo "</tr>";*/
-      
+       
       }
 
     $contador=0;
     $numpagina=0;
     $datos=0;
+    $filasagregadas=0;
 
    
         require "../../conexion.php"; 
@@ -113,17 +108,15 @@
         $consulta  = "SELECT * FROM carrera";
         $result = $con->query($consulta);
         
-        $cuantaspag=mysqli_num_rows($result);
-       // $flor=explode(".", $cuantaspag*20);
-        $flor=explode(".", $cuantaspag);
-        $cuantaspag=$flor[0]+1;
+        $filasconsulta=mysqli_num_rows($result);
+  
+        $contadorpag=ceil(number_format($filasconsulta/$numeroFilas,4));
+
+        $filasagregadas=(($numeroFilas*$contadorpag)+3)-$filasconsulta;
+        
         if ($result) {
+        encabezado();
         while ($fila = $result->fetch_object()) {
-          //for($i=0; $i <=20; $i++){
-          if($contador%$numeroFilas==0){
-            encabezado();
-           // echo "<table width='100%' border='1' rules='all'>";
-          }
           $contador++;
           echo "<tr style='font-size: 14px;'>";
           echo "<td align='center'>&nbsp;".$contador."&nbsp;</td>";
@@ -131,15 +124,48 @@
           echo "<td>&nbsp;".$fila->nombre_ca."&nbsp;</td>";
           echo "<td>&nbsp;".$fila->duracion_ca." A&ntilde;os &nbsp;</td>";
           echo "</tr>";
-          if($contador%$numeroFilas==0){
-            $numpagina++;
-           // echo "</table><br>";
-          //  echo "<div align='right' style='font-size: 18px;'><strong>P&aacute;gina ".$numpagina." de ".ceil(number_format($cuantaspag/$numeroFilas,4))."</strong></div>";
-          //  echo "<div class='saltopagina'></div>";
+          if($contadorpag>1){
+            if($contador%$numeroFilas==0){
+             
+              echo "</table>";
+
+              echo "</td>";
+              echo "<td>&nbsp;</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>&nbsp;</td>";
+              echo "<td colspan='3'>&nbsp;</td>";
+              echo "<td>&nbsp;</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>&nbsp;</td>";
+              echo "<td width='320'>&nbsp;</td>";
+              echo "<td width='173'>&nbsp;</td>";
+              echo "<td width='321'>";
+          
+              echo "<strong><div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filasconsulta/$numeroFilas,4))."</div></strong>";
+          
+              echo "</td>";
+              echo "<td>&nbsp;</td>";
+              echo "</tr>";
+              echo "<tr>";
+              echo "<td>&nbsp;</td>";
+              echo "<td>&nbsp;</td>";
+              echo "<td>&nbsp;</td>";
+              echo "<td>&nbsp;</td>";
+              echo "<td>&nbsp;</td>";
+              echo "</tr>";
+              $numpagina++;
+              encabezado();
+              
+              
+              echo "<div class='saltopagina'></div>";
+            }
+            
           }
         }
+        
       }
-
         ?>
         
     </table>
@@ -147,6 +173,20 @@
     </td>
     <td>&nbsp;</td>
   </tr>
+
+  <?php
+      for($i=0; $i<=$filasagregadas; $i++){
+        echo "<tr>";
+        echo "<td>&nbsp;</td>";
+        echo "<td colspan='3'>&nbsp;</td>";
+        echo "<td>&nbsp;</td>";
+        echo "</tr>";
+      }
+
+
+
+
+  ?>
   <tr>
     <td>&nbsp;</td>
     <td colspan="3">&nbsp;</td>
@@ -158,7 +198,7 @@
     <td width="173">&nbsp;</td>
     <td width="321">
     
-    <strong><?php echo "<div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($cuantaspag/$numeroFilas,4))."</div>"; ?><strong>
+    <strong><?php echo "<div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filasconsulta/$numeroFilas,4))."</div>"; ?><strong>
     
     </td>
     <td>&nbsp;</td>
@@ -181,6 +221,8 @@
 </table>
 </form>
     
+    <!-- jQuery -->
+    <script src="../../../../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="../../../../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 	

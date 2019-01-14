@@ -5,10 +5,14 @@
         $carrera = $_REQUEST['carrera'];
         $estado = $_REQUEST['estado'];
     }
-?>
-    <p class="text-muted font-13 m-b-30" >
-        Lista de Estudiantes Activos por Carrera.
-    </p>
+
+    if($estado==1){
+        echo "<p class='text-muted font-13 m-b-30' >Lista de Estudiantes Activos por Carrera.</p>";
+    }else if($estado==0){
+        echo "<p class='text-muted font-13 m-b-30' >Lista de Estudiantes Inactivos por Carrera.</p>";
+    }
+    
+    ?>
     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
         <thead>
             <tr>

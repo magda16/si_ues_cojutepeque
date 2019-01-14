@@ -1,7 +1,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="../../images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="../../images/user.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
@@ -77,10 +77,11 @@
                       <li><a href="../../administracion/empleado/lista_empleado_alta.php">Dar Alta</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-table"></i> Activo Fijo<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="tables.html">Tables</a></li>
-                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                      <li><a href="../../administracion/activo_fijo/registrar_activo_fijo.php">Agregar</a></li>
+                      <li><a href="../../administracion/empleado/lista_empleado.php">Modificar</a></li>
+                      <li><a href="../../administracion/empleado/lista_empleado_alta.php">Dar Alta</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>

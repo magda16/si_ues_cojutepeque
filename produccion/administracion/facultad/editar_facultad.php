@@ -176,7 +176,7 @@
                       if ($obtenerfilas>0) { ?>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono_f">¿Desea Cambiar Representante?
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >¿Desea Cambiar Representante?
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           </br>

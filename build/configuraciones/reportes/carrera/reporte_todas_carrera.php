@@ -35,10 +35,10 @@
   <body>
   <form id="formulario" name="formulario" method="POST" action="">
   <?php date_default_timezone_set("America/El_Salvador"); ?>
-  <table width="100%" border="1">
+  <table width="100%" border="0">
   <?php 
   
-    $numeroFilas=24;
+    $numeroFilas=34;
 
     function encabezado(){  
       
@@ -71,7 +71,7 @@
   </tr>
   <tr>
     <td>&nbsp;</td>
-    <td colspan="3" align="center"><strong>REPORTE DE FACULTADES ACTIVAS</strong></td>
+    <td colspan="3" align="center"><strong>REPORTE LISTA DE CARRERAS ACTIVAS</strong></td>
     <td>&nbsp;</td>
   </tr>
   <tr>
@@ -83,7 +83,10 @@
     <td>&nbsp;</td>
     <td colspan="3">
 
-         
+    
+
+
+        
         <?php 
        
       }
@@ -96,52 +99,57 @@
    
         require "../../conexion.php"; 
         $con=conectarMysql();
-        $consulta  = "SELECT fa.nombre_fa, fa.telefono_fa, fa.correo_fa, rf.nombre_rf, rf.apellido_rf, rf.telefono_rf, rf.correo_rf FROM facultad AS fa, representante_facultad AS rf WHERE fa.id_re_fafk=rf.id_re_fa";
+        $consulta  = "SELECT * FROM carrera";
         $result = $con->query($consulta);
         
         $filasconsulta=mysqli_num_rows($result);
-        $filconsulta=($filasconsulta*4);
-        $contadorpag=ceil(number_format($filconsulta/$numeroFilas,4));
-        $filasagregadas=((($numeroFilas*$contadorpag))-$filconsulta);
-        if($contadorpag==2){
-          $filasagregadas=((($numeroFilas*$contadorpag)+4)-$filconsulta);
-        }
-        if ($result) {
-        encabezado();
-        while ($fila = $result->fetch_object()) {
-          $contador++;
-          echo "<table width='100%' border='0' rules='all' align='center'>";
+  
+        $contadorpag=ceil(number_format($filasconsulta/$numeroFilas,4));
+
+        $filasagregadas=(($numeroFilas*$contadorpag)+3)-$filasconsulta;
+        
+        $result1 = $con->query("SELECT DISTINCT fa.idfacultad, fa.nombre_fa FROM carrera AS ca, facultad AS fa WHERE ca.idfacultadfk=fa.idfacultad AND ca.estado_ca=1 ORDER BY fa.nombre_fa ASC");
+        
+        if ($result1) {
+        while ($fila =$result1->fetch_object()) {
+          $facultad=$fila->idfacultad;
+          
+
+          echo "<table width='900' border='0' rules='all' align='center'>";
           echo "<tr>";
-          echo "<td><table width='100%' border='1' rules='all'>";
-          echo "<tr style='font-size: 14px;'>";
-          echo "<th width='396' >&nbsp;</th>";
-          echo "<th width='360'>&nbsp; &nbsp;Correo&nbsp; &nbsp;</th>";
-          echo "<th width='122'>&nbsp; &nbsp;Telefono&nbsp; &nbsp;</th>";
+          echo "<th><table width='100%' border='1'>";
+          echo "<tr>";
+          echo "<th colspan='4'><strong>&nbsp;".$fila->nombre_fa."&nbsp;</strong></th>";
           echo "</tr>";
-          echo "<tr style='font-size: 14px;'>";
-          echo "<td>&nbsp; &nbsp;".$fila->nombre_fa."&nbsp; &nbsp;</td>";
-          echo "<td>&nbsp; &nbsp;".$fila->correo_fa."&nbsp; &nbsp;</td>";
-          echo "<td>&nbsp; &nbsp;".$fila->telefono_fa."&nbsp; &nbsp;</td>";
+          echo "<tr>";
+          echo "<td width='5%' align='center'><strong>&nbsp;&nbsp;N&deg;&nbsp;</strong></td>";
+          echo "<td width='15%'><strong>&nbsp;C&oacute;digo&nbsp;</strong></td>";
+          echo "<td width='70%'><strong>&nbsp;Carrera&nbsp;</strong></td>";
+          echo "<td width='10%'><strong>&nbsp;Duraci&oacute;n&nbsp;</strong></td>";
           echo "</tr>";
-          echo "<tr style='font-size: 14px;'>";
-          echo "<td>&nbsp; &nbsp;Representante ".$fila->nombre_rf." ".$fila->apellido_rf."&nbsp; &nbsp;</td>";
-          echo "<td>&nbsp; &nbsp;".$fila->correo_rf."&nbsp; &nbsp;</td>";
-          echo "<td> &nbsp; &nbsp;".$fila->telefono_rf." &nbsp; &nbsp;</td>";
+          echo "<tr>";
+          echo "<td>&nbsp;</td>";
+          echo "<td>&nbsp;</td>";
+          echo "<td>&nbsp;</td>";
+          echo "<td>&nbsp;</td>";
           echo "</tr>";
-              
-          echo "</table></td>";
+          
+          echo "</table></th>";
           echo "</tr>";
           echo "<tr>";
           echo "<td>&nbsp;</td>";
           echo "</tr>";
           echo "</table>";
-
+          echo "<tr style='font-size: 14px;'>";
+          echo "<td align='center'>&nbsp;".$contador."&nbsp;</td>";
+          echo "<td>&nbsp;".$fila->codigo_ca."&nbsp;</td>";
+          echo "<td>&nbsp;".$fila->nombre_ca."&nbsp;</td>";
+          echo "<td>&nbsp;".$fila->duracion_ca." A&ntilde;os &nbsp;</td>";
+          echo "</tr>";
           if($contadorpag>1){
+            if($contador%$numeroFilas==0){
 
-            if($contador==6 || $contador==12){
-              echo "<tr>";
-              echo "<td>&nbsp;</td>";
-              echo "<td colspan='3'>&nbsp;</td>";
+              echo "</td>";
               echo "<td>&nbsp;</td>";
               echo "</tr>";
               echo "<tr>";
@@ -149,14 +157,13 @@
               echo "<td colspan='3'>&nbsp;</td>";
               echo "<td>&nbsp;</td>";
               echo "</tr>";
-
               echo "<tr>";
               echo "<td>&nbsp;</td>";
               echo "<td width='320'>&nbsp;</td>";
               echo "<td width='173'>&nbsp;</td>";
               echo "<td width='321'>";
           
-              echo "<strong><div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filconsulta/$numeroFilas,4))."</div></strong>";
+              echo "<strong><div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filasconsulta/$numeroFilas,4))."</div></strong>";
           
               echo "</td>";
               echo "<td>&nbsp;</td>";
@@ -170,7 +177,8 @@
               echo "</tr>";
               $numpagina++;
               encabezado();
-                    
+              
+              
               echo "<div class='saltopagina'></div>";
             }
             
@@ -180,6 +188,7 @@
       }
         ?>
         
+    
 
     </td>
     <td>&nbsp;</td>
@@ -195,12 +204,9 @@
       }
 
 
+
+
   ?>
-  <tr>
-    <td>&nbsp;</td>
-    <td colspan="3">&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
   <tr>
     <td>&nbsp;</td>
     <td colspan="3">&nbsp;</td>
@@ -212,7 +218,7 @@
     <td width="173">&nbsp;</td>
     <td width="321">
     
-    <strong><?php echo "<div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filconsulta/$numeroFilas,4))."</div>"; ?><strong>
+    <strong><?php echo "<div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filasconsulta/$numeroFilas,4))."</div>"; ?><strong>
     
     </td>
     <td>&nbsp;</td>
