@@ -1,7 +1,8 @@
  $(document).ready(function(){
 
+  $("#divcermed").hide();
   $('#privada').hide();
-  
+  $("#pagocertificado").val("no");
 
   $('input[type=file]').change(function() {
     var file = (this.files[0].name).toString();
@@ -125,6 +126,17 @@ $("#estudiante").on('change', function(){
   })
 });
 
+$('input[type=checkbox]').on('change', function() {
+  if ($(this).is(':checked') ) {
+      $("#divcermed").show();
+      $("#pagocertificado").val("si");
+  } else {
+      $("#divcermed").hide();
+      $("#pagocertificado").val("no");
+      $("#certificado_medico").val("");
+  }
+});
+
 $('#mostrar_dui').on('click', function(){
   alert($('#dui').val());
   $("#nombre_modal").text("Mostrar DUI");
@@ -146,6 +158,7 @@ $("#btnguardar").click(function(){
       processData: false,
     })
     .done(function(resultado_ajax){
+      alert(resultado_ajax);
       if(resultado_ajax === "Exito"){
         swal({ 
           title:'Éxito',

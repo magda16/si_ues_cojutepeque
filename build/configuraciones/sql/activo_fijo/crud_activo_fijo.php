@@ -1,6 +1,6 @@
 <?php
-/*if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') 
-{*/
+if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') 
+{
   require "../../conexion.php"; 
   if(isset($_POST["bandera"])){
 
@@ -8,7 +8,7 @@
    
     if($bandera=="add"){
     $msj="Error";
-    //function obtenerResultado(){
+    function obtenerResultado(){
         
         $result = 0;
         $con=conectarMysql();
@@ -35,7 +35,7 @@
         $ruta = "../../../../Activo_Fijo";
         $ruta2 = "../../../../Activo_Fijo/".$codigo_af;
 
-        echo "ca ". $categoria."/n";
+       /* echo "ca ". $categoria."/n";
         echo "tipo ".$tipo_bien;
         echo "cod ".$codigo_af;
         
@@ -50,7 +50,7 @@
         echo "finan ".$financiamiento;
         echo "valor ".$valor;
         echo "valor es ".$valor_est;
-        echo "prove ".$proveedor;
+        echo "prove ".$proveedor;*/
         
      
      function llenarArchivos($ruta3){
@@ -116,39 +116,44 @@
      }
 
     
-    echo $dato[0];
-    /*echo $dato[1];
-    echo $dato[2];
-    echo $dato[3];
-    echo $dato[4];
-    echo $dato[5];
-    echo $dato[6];*/
+  
     $fecha=$fechaadq;
     list($dia, $mes, $year)=explode("/", $fecha);
     $fecha=$year."-".$mes."-".$dia;
-
-    $consulta  = "INSERT INTO inventario_af(categoria_inv,tipo_bien_inv,codigo,descripcion,observacion,calidad,marca,modelo,nserie,lote,fecha_adquisicion,financiamiento,valor_adq,valor_estimado,doc_adquisicion,proveedor,estado_af,observacion_af) VALUES('$categoria','$tipo_bien','$codigo_af','$descripcion','$observacion_act','$calidad','$marca','$modelo','$nserie','$lote','$fecha','$financiamiento','$valor','$valor_est','$dato[0]','$proveedor','1','$observacion_af')";
-    $nc=$numcorrelativo+1;
-    $result = $con->query($consulta);
-        if ($result) {
-            $consulta  = "UPDATE af_subcategoria SET cantidad_s='$nc' WHERE idafsubc='$tipo_bien'";
+    if($nserie!=""){
+        $numeroConCeros = str_pad($numcorrelativo, 5, "0", STR_PAD_LEFT);
+        $codigo=$codigo_af."-".$numeroConCeros;
+        $consulta  = "INSERT INTO inventario_af(categoria_inv,tipo_bien_inv,codigo,descripcion,observacion,calidad,marca,modelo,nserie,lote,fecha_adquisicion,financiamiento,valor_adq,valor_estimado,doc_adquisicion,estado_af,observacion_af,idproveedorfk) VALUES('$categoria','$tipo_bien','$codigo','$descripcion','$observacion_act','$calidad','$marca','$modelo','$nserie','$lote','$fecha','$financiamiento','$valor','$valor_est','$dato[0]','1','$observacion_af','$proveedor')";
+        $nc=$numcorrelativo;
+        $result = $con->query($consulta);
+    }else{
+        $lote="lote-".$categoria."-".$tipo_bien;
+        for($i=0; $i<$cantidad_lote; $i++){
+            $numeroConCeros = str_pad($numcorrelativo, 5, "0", STR_PAD_LEFT);
+            $codigo=$codigo_af."-".$numeroConCeros;
+            $consulta  = "INSERT INTO inventario_af(categoria_inv,tipo_bien_inv,codigo,descripcion,observacion,calidad,marca,modelo,nserie,lote,fecha_adquisicion,financiamiento,valor_adq,valor_estimado,doc_adquisicion,estado_af,observacion_af,idproveedorfk) VALUES('$categoria','$tipo_bien','$codigo','$descripcion','$observacion_act','$calidad','$marca','$modelo','$nserie','$lote','$fecha','$financiamiento','$valor','$valor_est','$dato[0]','1','$observacion_af','$proveedor')";
             $result = $con->query($consulta);
-
+            $numcorrelativo++;
+        }
+        $nc=$numcorrelativo-1;
+    }
+    
+        if ($result) {
+            $consulta1  = "UPDATE af_subcategoria SET cantidad_s='$nc' WHERE idafsubc='$tipo_bien'";
+            $result1 = $con->query($consulta1);
             $msj = "Exito";
         } else {
             $msj = "Error";
         }
-        echo "msj".$msj;
-       // return $msj;
-        //}
+        return $msj;
+        }
     }
-    echo "consulta ".$consulta;
   }
 
-/*}else{
+}else{
     throw new Exception("Error Processing Request", 1);   
-}*/
+}
 
- // echo obtenerResultado();
+ echo obtenerResultado();
 
 ?>

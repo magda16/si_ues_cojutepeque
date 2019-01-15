@@ -51,6 +51,17 @@
     alert('Hubo un error al cargar las Categorias')
   })
 
+  $.ajax({
+    type: 'POST',
+    url: '../../select_generales/p_proveedores.php'
+    })
+    .done(function(lista_proveedores){
+      $('#proveedor').html(lista_proveedores)
+    })
+    .fail(function(){
+      alert('Hubo un error al cargar los Proveedores')
+    })
+
 });
 
 $('#categoria').on('change', function(){
@@ -81,7 +92,6 @@ $('#tipo_bien').on('change', function(){
     var datos = eval(obtenerDatos);
     $('#codigo_inv').val(datos[0]);
     $('#numcorrelativo').val(datos[1]);
-    alert($('#numcorrelativo').val());
     var num = numero(datos[1]);
 
     function numero(num){
@@ -96,8 +106,7 @@ $('#tipo_bien').on('change', function(){
     
     }
     $('#correlativo_inv').val(num);
-    $('#codigo_af').val(datos[0]+"-"+num);
-    alert($('#codigo_af').val());
+    $('#codigo_af').val(datos[0]);
   })
   .fail(function(){
     alert('Hubo un error al cargar el Tipo de Bien')
@@ -121,9 +130,9 @@ $('input[type=checkbox]').on('change', function() {
 $("#btnguardar").click(function(){
   if($("#formaf").valid()){
     
-    document.getElementById('bandera').value="add";
-    $("#formaf").submit();
-    /*
+    /*document.getElementById('bandera').value="add";
+    $("#formaf").submit();*/
+    
     $('#bandera').val("add");
     var formData = new FormData($("#formaf")[0]);
     $.ajax({
@@ -162,7 +171,7 @@ $("#btnguardar").click(function(){
     })
     .fail(function(){
       alert('Hubo un error al cargar la Pagina')
-    })*/
+    })
   }
   
 });

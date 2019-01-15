@@ -126,6 +126,7 @@
                       <input type="hidden" name="bandera" id="bandera">
                       <input type="hidden" name="carpeta" id="carpeta">
                       <input type="hidden" name="idestudiante" id="idestudiante">
+                      <input type="hidden" name="pagocertificado" id="pagocertificado">
 
                       <h5> <strong><p style="color:RGB(0, 0, 128);"> Datos Academicos:</strong></p></h5>
 
@@ -157,20 +158,16 @@
                       </div>
                       <br>
                       <h5> <strong><p style="color:RGB(0, 0, 128);"> Datos Certificado M&eacute;dico:</strong></p></h5>
-                      <input type="radio" name="pagocertificado" value="Pendiente"> Pendiente<br>
-                      <input type="radio" name="pagocertificado" value="Cancelado"> Cancelado<br>
-                     <!-- <div class='form-group'>
-                        <label class='col-md-3 col-sm-3 col-xs-12 control-label'>Pago de Certificado M&eacute;dico ($) : <span class="required" style="color: #CD5C5C;"> *</span></label>
-                        <br>
-                        <div class="radio col-md-6 col-sm-6 col-xs-12">
-                          <label>
-                          <input type="radio" class="flat" id="pagocertificado" value="Pendiente" name="pagocertificado" checked> Pendiente </label>
-                          <label>
-                          <input type="radio" class="flat" id="pagocertificado" value="Cancelado" name="pagocertificado"> Cancelado </label>
+              
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" >Pago de Certificado M&eacute;dico ($): <span class="required" style="color: #CD5C5C;"> *</span>
+                        </label><br>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="checkbox" class="js-switch" id="switch1" name="switch1"/>
                         </div>
-                      </div> -->
+                      </div>
 
-                        <div class="form-group" id="cm">
+                      <div class="form-group" id="divcermed">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="certificado_medico">Certificado M&eacute;dico: <span class="required" style="color: #CD5C5C;"> </span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
@@ -233,6 +230,15 @@
                           <input type="file" id="partida" name="partida"  accept=".pdf,.jpg,.png">
                         </div>
                         <a class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Mostrar Partida de Nacimiento"><i class="fa fa-eye"></i></a>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="titulo_bachiller">T&iacute;tulo de Bachiller: <span class="required" style="color: #CD5C5C;"> </span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="file" id="titulo_bachiller" name="titulo_bachiller"  accept=".pdf,.jpg,.png">
+                        </div>
+                        <a class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Mostrar T&iacute;tulo de Bachiller"><i class="fa fa-eye"></i></a>
                       </div>
 
                       <div class="ln_solid"></div>

@@ -8,20 +8,20 @@ var tour = {
   steps: [
     {
       target: 'paso1',
-      title: 'Mostrar Aula',
-      content: 'Debe Dar Clic para Mostrar Todos los Datos de el Aula.',
+      title: 'Mostrar Proveedor',
+      content: 'Debe Dar Clic para Mostrar Todos los Datos de el Proveedor.',
       placement: 'left'
     },
     {
       target: 'paso2',
-      title: 'Editar Aula',
-      content: 'Debe Dar Clic para Editar los Datos de el Aula.',
+      title: 'Editar Proveedor',
+      content: 'Debe Dar Clic para Editar los Datos de el Proveedor.',
       placement: 'left'
     },
     {
       target: 'paso3',
-      title: 'Dar Baja Aula',
-      content: 'Debe Dar Clic para Dar Baja a los Datos de el Aula.',
+      title: 'Dar Baja Proveedor',
+      content: 'Debe Dar Clic para Dar Baja a los Datos de el Proveedor.',
       placement: 'left'
     }
   ],

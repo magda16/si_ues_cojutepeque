@@ -11,9 +11,7 @@
         $result = mysqli_fetch_array($consulta);
 
         $correlativo=$result["cantidad_s"];
-        if($correlativo==0){
-          $correlativo=1;
-        }
+        $correlativo=$correlativo+1;
         $datos = array(
           0 => $result["codigo"]."-".$result["codigo_c"]."-".$result["codigo_s"],
           1 => $correlativo,

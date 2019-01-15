@@ -108,7 +108,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="formaf" name="formaf" action="../../../build/configuraciones/sql/activo_fijo/crud_activo_fijo.php" method="POST" class="form-horizontal form-label-left" enctype="multipart/form-data" >
+                    <form id="formaf" name="formaf" method="POST" class="form-horizontal form-label-left" enctype="multipart/form-data" >
                       <input type="hidden" name="bandera" id="bandera">
                       <input type="hidden" name="codigo_af" id="codigo_af">
                       <input type="hidden" name="numcorrelativo" id="numcorrelativo">
@@ -236,7 +236,7 @@
                         </label><br>
                         <div class="col-md-4 col-sm-4 col-xs-12">
                           <input type="text" class="form-control has-feedback-left" id="fecha" name="fecha" required="required" class="form-control col-md-7 col-xs-12" data-date-end-date = "0d">
-                          <span class="fa fa-table form-control-feedback left" aria-hidden="true"></span>
+                          <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
@@ -283,16 +283,17 @@
                           <a id="mostrar" name="mostrar" class="btn btn-success" type="button" data-toggle="tooltip" data-placement="top" title="Mostrar Documento"><i class="fa fa-eye"></i></a>
                         </div>
                           <br>
-                        <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="proveedor">Proveedor: <span class="required" style="color: #CD5C5C;"> *</span>
-                        </label>
+                        
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Proveedor: <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="proveedor" name="proveedor" required="required" placeholder="Ingrese Proveedor de el Activo Fijo" class="form-control col-md-7 col-xs-12" tabindex="3">
+                            <select class="form-control" id="proveedor" name="proveedor">
+                            </select>
                         </div>
                         <span class="help-block" id="error"></span>
-                      </div>
+                        </div>
 
-                      
 
 
                       <div class="ln_solid"></div>

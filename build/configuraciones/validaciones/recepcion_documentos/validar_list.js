@@ -26,21 +26,6 @@ $.ajax({
     })
   });
 
- /* $('#carrera').on('change', function(){
-    var id = $('#carrera').val()
-    $.ajax({
-      type: 'POST',
-      url: '../../tablas_generales/tabla_re_doces.php',
-      data: {'id': id}
-    })
-    .done(function(lista_carreras){
-      alert(lista_carreras);
-      $('#resultado').child(lista_carreras)
-    })
-    .fail(function(){
-      alert('Hubo un error al cargar las Carreras')
-    })
-  });*/
 
   function editarrecepciondocumentos(id){
     $('#id').val(id);
@@ -49,11 +34,9 @@ $.ajax({
 
   function imprecepciondocumentos(id){
     $('#idimp').val(id);
-    alert($('#idimp').val());
     $("#fromimprecepciondocumentos").submit();
   }
   
-
 
 
   $("#carrera").on('change', function(){

@@ -29,6 +29,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
         $dbnit = null;
         $dbpaes = null;
         $dbpartida = null;
+        $dbtituloba = null;
     
         function validarTipoDoc($doc){
             $tipo=null;
@@ -100,6 +101,15 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
             $dbpartida = $ruta3."/partida_nacimiento".$partipo;
         }
 
+        $tbtype = $_FILES['titulo_bachiller']['type'];
+        $titulo_bachiller_guardada = $_FILES['titulo_bachiller']['tmp_name'];
+        $tbtipo=validarTipoDoc($tbtype);
+        
+        if(move_uploaded_file($titulo_bachiller_guardada, $ruta3."/titulo_bachiller".$tbtipo)){
+            $dbtituloba = $ruta3."/titulo_bachiller".$tbtipo;
+        }
+
+
         $datos = array(
             0 => $dbcertificado_medico,
             1 => $dbmatricula,
@@ -108,6 +118,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
             4 => $dbnit,
             5 => $dbpaes,
             6 => $dbpartida,
+            7 => $dbtituloba,
         );
   
         return $datos;    
@@ -151,7 +162,7 @@ if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQU
     echo $dato[5];
     echo $dato[6];*/
 
-    $consulta  = "INSERT INTO documentos_es(pago_certificado_doces,certificado_medico_doces,matricula_doces,primera_cuota_doces,DUI_doces,NIT_doces,paes_doces,partida_nacimiento_doces,estado_doces,idestudiantefk)  VALUES('$pagocertificado','$dato[0]','$dato[1]','$dato[2]','$dato[3]','$dato[4]','$dato[5]','$dato[6]','1','$idestudiante')";
+    $consulta  = "INSERT INTO documentos_es(pago_certificado_doces,certificado_medico_doces,matricula_doces,primera_cuota_doces,DUI_doces,NIT_doces,paes_doces,partida_nacimiento_doces,tituloba_doces,estado_doces,idestudiantefk)  VALUES('$pagocertificado','$dato[0]','$dato[1]','$dato[2]','$dato[3]','$dato[4]','$dato[5]','$dato[6]','$dato[7]','1','$idestudiante')";
     $result = $con->query($consulta);
         if ($result) {
             $msj = "Exito";

@@ -79,9 +79,34 @@
                   </li>
                   <li><a><i class="fa fa-table"></i> Activo Fijo<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="../../administracion/activo_fijo/registrar_activo_fijo.php">Agregar</a></li>
-                      <li><a href="../../administracion/empleado/lista_empleado.php">Modificar</a></li>
-                      <li><a href="../../administracion/empleado/lista_empleado_alta.php">Dar Alta</a></li>
+                        <li><a>Catalogo<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                          <li><a href="../../administracion/catalogo/registrar_catalogo.php">Agregar</a></li>
+                            <li><a href="#level2_1">Level Two</a>
+                            </li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a>Proveedor<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                          <li><a href="../../administracion/proveedor/registrar_proveedor.php">Agregar</a></li>
+                          <li><a href="../../administracion/proveedor/lista_proveedor.php">Modificar</a></li>
+                            <li><a href="#level2_2">Level Two</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li><a>Inventario<span class="fa fa-chevron-down"></span></a>
+                          <ul class="nav child_menu">
+                          <li><a href="../../administracion/activo_fijo/registrar_activo_fijo.php">Agregar</a></li>
+                          <li><a href="../../administracion/empleado/lista_empleado.php">Modificar</a></li>
+                          <li><a href="../../administracion/empleado/lista_empleado_alta.php">Dar Alta</a></li>
+                          </ul>
+                        </li>
+
+
+                      
+                      
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>

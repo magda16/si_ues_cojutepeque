@@ -71,7 +71,7 @@
     if(isset($_POST['idimp'])){
         $estudiante = $_POST['idimp'];
         $con=conectarMysql();
-        $consulta  = "SELECT es.carnet_es, es.nombre_es, es.apellido_es, es.genero_es, es.procedencia_es, fa.nombre_fa, ca.codigo_ca, ca.nombre_ca, pe.anio_pe, doces.certificado_medico_doces, doces.matricula_doces, doces.primera_cuota_doces, doces.DUI_doces, doces.NIT_doces, doces.paes_doces, doces.partida_nacimiento_doces FROM estudiante AS es, facultad AS fa, carrera AS ca, plan_estudio AS pe, documentos_es AS doces WHERE es.idestudiante=".$estudiante." AND es.idfacultad=fa.idfacultad AND es.idcarrera=ca.idcarrera AND es.idplan_estudio=pe.idplanestudio AND es.idestudiante=doces.idestudiantefk";
+        $consulta  = "SELECT es.carnet_es, es.nombre_es, es.apellido_es, es.genero_es, es.procedencia_es, fa.nombre_fa, ca.codigo_ca, ca.nombre_ca, pe.anio_pe, doces.certificado_medico_doces, doces.matricula_doces, doces.primera_cuota_doces, doces.DUI_doces, doces.NIT_doces, doces.paes_doces, doces.partida_nacimiento_doces, doces.tituloba_doces FROM estudiante AS es, facultad AS fa, carrera AS ca, plan_estudio AS pe, documentos_es AS doces WHERE es.idestudiante=".$estudiante." AND es.idfacultad=fa.idfacultad AND es.idcarrera=ca.idcarrera AND es.idplan_estudio=pe.idplanestudio AND es.idestudiante=doces.idestudiantefk";
         $result = $con->query($consulta);
         
         if ($result) {
@@ -110,7 +110,7 @@
                 if($fila->certificado_medico_doces!=""){
                 echo "<td colspan='4'>&nbsp;&nbsp;<i class='fa fa-check-square-o'>&nbsp;&nbsp;</i>Certificado M&eacute;dico ($) </td>";
                 }
-                echo "<td colspan='4' rowspan='7'>
+                echo "<td colspan='4' rowspan='8'>
                 <br><br>
                 <div align='center'> F:_______________________________<br>
                     Silvia Dinora Menjivar Alvarenga. <br>Administradora de Sede.</div><br>
@@ -129,6 +129,11 @@
                 echo "<tr>";
                 if($fila->partida_nacimiento_doces!=""){
                 echo "<td colspan='4'>&nbsp;&nbsp;<i class='fa fa-check-square-o'>&nbsp;&nbsp;</i>Partida de Nacimiento</td>";
+                }
+                echo "</tr>";
+                echo "<tr>";
+                if($fila->tituloba_doces!=""){
+                echo "<td colspan='4'>&nbsp;&nbsp;<i class='fa fa-check-square-o'>&nbsp;&nbsp;</i>T&iacute;tulo de Bachiller</td>";
                 }
                 echo "</tr>";
                 echo "<tr>";
@@ -168,7 +173,7 @@
     <td width="173">&nbsp;</td>
     <td width="321">
     
-    <strong><div align="right" style="font-size: 16px;">P&aacute;gina 1 de 1 </div><strong>
+    <strong><div align="right" style="font-size: 14px;">P&aacute;gina 1 de 1 </div><strong>
     
     </td>
     <td>&nbsp;</td>
