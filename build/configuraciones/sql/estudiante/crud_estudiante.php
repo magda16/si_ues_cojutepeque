@@ -22,12 +22,15 @@
         $facultad=$_POST["facultad"];
         $carrera=$_POST["carrera"]; 
         $planestudio=$_POST["planestudio"]; 
-        $observacion = "Registro"; 
+        $nivel=$_POST["nivel"];
+        $observacion = "Registro";      
+
+
         $result = 0;
         $con=conectarMysql();
   
-        $consulta  = "INSERT INTO estudiante(carnet_es, nombre_es, apellido_es, genero_es, NIT_es, DUI_es, direccion_es, telefono_es, correo_es, procedencia_es, estado_es, idfacultad, idcarrera, idplan_estudio, observacion_es)  
-        VALUES('$carnet','$nombre','$apellido','$genero','$nit','$dui','$direccion','$telefono','$correo','$institucion','1','$facultad','$carrera','$planestudio','$observacion')";
+        $consulta  = "INSERT INTO estudiante(carnet_es, nombre_es, apellido_es, genero_es, NIT_es, DUI_es, direccion_es, telefono_es, correo_es, procedencia_es, estado_es, idfacultad, idcarrera, idplan_estudio, nivel, observacion_es)  
+        VALUES('$carnet','$nombre','$apellido','$genero','$nit','$dui','$direccion','$telefono','$correo','$institucion','1','$facultad','$carrera','$planestudio','$nivel', '$observacion')";
         $result = $con->query($consulta);
           if ($result) {
             $msj = "Exito";
@@ -51,6 +54,7 @@
       $direccion=$_POST["direccion_e"];
       $telefono=$_POST["telefono_e"];
       $correo=$_POST["correo_e"];
+      
       
       $result = 0;
       $con=conectarMysql();

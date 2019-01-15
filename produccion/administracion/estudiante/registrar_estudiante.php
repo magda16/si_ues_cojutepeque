@@ -249,6 +249,22 @@
                         <span class="help-block" id="error"></span>
                       </div>
 
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nivel: <span class="required" style="color: #CD5C5C;"> *</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" id="nivel" name="nivel">
+                            <option selected="selected" value="">Seleccione Nivel Actual...</option>
+                            <option value="1">1 </option>
+                            <option value="2">2 </option>
+                            <option value="3">3 </option>
+                            <option value="4">4 </option>
+                            <option value="5">5 </option>
+                            <option value="6">TG (Trabajo de Graduación)</option>
+                          </select>
+                        </div>
+                        <span class="help-block" id="error"></span>
+                      </div>
+
                       <div class="ln_solid"></div>
                         <p style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios.</p>
                         <div class="form-group" align="right">

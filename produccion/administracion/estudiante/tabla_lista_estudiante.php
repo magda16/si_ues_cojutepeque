@@ -20,6 +20,7 @@
                 <th style="color: RGB(0, 0, 128);" width="10%">Carnet</th>
                 <th style="color: RGB(0, 0, 128);" width="20%">Nombres</th>
                 <th style="color: RGB(0, 0, 128);" width="20%">Apellidos</th>
+                <th style="color: RGB(0, 0, 128);" width="5%">Nivel</th>
                 <th style="color: RGB(0, 0, 128);" width="15%">Teléfono</th>
                 <th style="color: RGB(0, 0, 128);" width="15%">Correo Electrónico</th>
                 <th style="color: RGB(0, 0, 128);" width="20%">Acciones</th>
@@ -29,7 +30,7 @@
             <?php
                 require '../../../build/configuraciones/conexion.php';
                 $con=conectarMysql();
-                $result = $con->query("SELECT es.idestudiante, es.carnet_es, es.nombre_es, es.apellido_es, es.correo_es, es.telefono_es FROM estudiante AS es WHERE es.idcarrera=".$carrera." AND es.estado_es=".$estado." ORDER BY es.nombre_es ASC");
+                $result = $con->query("SELECT es.idestudiante, es.carnet_es, es.nombre_es, es.apellido_es, es.correo_es, es.telefono_es, es.nivel FROM estudiante AS es WHERE es.idcarrera=".$carrera." AND es.estado_es=".$estado." ORDER BY es.nivel ASC");
                 $contador=1;
                 if ($result) {
                     while ($fila = $result->fetch_object()) {
@@ -39,6 +40,7 @@
                         echo "<td>" . $fila->carnet_es. "</td>";
                         echo "<td>" . $fila->nombre_es . "</td>";
                         echo "<td>" . $fila->apellido_es. "</td>";
+                        echo "<td>" . $fila->nivel. "</td>";
                         echo "<td>" . $fila->telefono_es. "</td>";
                         echo "<td>" . $fila->correo_es. "</td>";
                         echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Expediente Estudiantil'><i class='fa fa-eye'></i></a>";

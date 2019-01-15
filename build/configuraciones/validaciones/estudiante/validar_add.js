@@ -105,7 +105,11 @@ $(document).ready(function(){
           planestudio:{
             required: true,
             number: true
-          }
+          },
+          nivel: {
+            required: true,
+            
+          },
         },
 
         messages: {
@@ -157,7 +161,11 @@ $(document).ready(function(){
           },
           planestudio: {
             required: "Por favor, seleccione plan de estudio."
-         }
+         },
+         
+         nivel: {
+          required: "Por favor, seleccione un nivel."
+       }
           
         }
       });

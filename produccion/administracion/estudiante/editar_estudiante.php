@@ -3,7 +3,7 @@
     if(isset($_POST['id'])){
     $estudiante = $_POST['id'];
     $con=conectarMysql();
-    $consulta  = "SELECT es.idestudiante, es.carnet_es, es.nombre_es, es.apellido_es, es.genero_es, es.NIT_es, es.DUI_es, es.direccion_es, es.telefono_es, es.correo_es, es.procedencia_es, es.estado_es, fa.nombre_fa,  ca.nombre_ca, pe.anio_pe, es.observacion_es FROM estudiante AS es, facultad AS fa, carrera AS ca, plan_estudio AS pe WHERE es.idfacultad=fa.idfacultad AND es.idcarrera=ca.idcarrera AND es.idplan_estudio=pe.idplanestudio AND es.idestudiante=".$estudiante;
+    $consulta  = "SELECT es.idestudiante, es.carnet_es, es.nombre_es, es.apellido_es, es.genero_es, es.NIT_es, es.DUI_es, es.direccion_es, es.telefono_es, es.correo_es, es.procedencia_es, es.estado_es, fa.nombre_fa,  ca.nombre_ca, pe.anio_pe,es.nivel, es.observacion_es FROM estudiante AS es, facultad AS fa, carrera AS ca, plan_estudio AS pe WHERE es.idfacultad=fa.idfacultad AND es.idcarrera=ca.idcarrera AND es.idplan_estudio=pe.idplanestudio AND es.idestudiante=".$estudiante;
     $result = $con->query($consulta);
      if ($result) {
        while ($fila = $result->fetch_object()) {
@@ -21,6 +21,7 @@
          $facultad=$fila->nombre_fa;
          $carrera=$fila->nombre_ca;
          $planestudio=$fila->anio_pe;
+         $nivel=$fila->nivel;
        }
      }
     }
@@ -231,6 +232,13 @@
                           <span class="fa fa-truck form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
+                      </div>
+
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Nivel en la Carrera: <span style="color:	#000080;"> '</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                        <label class="control-label  "><?php echo $nivel; ?> </label>
+                        </div>
                       </div>
                       
                       <h5> <strong><p style="color:RGB(0, 0, 128);">Educación Media:</strong></p></h5> 

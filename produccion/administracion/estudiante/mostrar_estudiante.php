@@ -3,7 +3,7 @@
     if(isset($_POST['id'])){
     $estudiante = $_POST['id'];
     $con=conectarMysql();
-    $consulta  = "SELECT es.idestudiante, es.carnet_es, es.nombre_es, es.apellido_es, es.genero_es, es.NIT_es, es.DUI_es, es.direccion_es, es.telefono_es, es.correo_es, es.procedencia_es, es.estado_es, fa.nombre_fa, ca.nombre_ca, pe.anio_pe, es.observacion_es FROM estudiante AS es, facultad AS fa, carrera AS ca, plan_estudio AS pe WHERE es.idfacultad=fa.idfacultad AND es.idcarrera=ca.idcarrera AND es.idplan_estudio=pe.idplanestudio AND es.idestudiante=".$estudiante;
+    $consulta  = "SELECT es.idestudiante, es.carnet_es, es.nombre_es, es.apellido_es, es.genero_es, es.NIT_es, es.DUI_es, es.direccion_es, es.telefono_es, es.correo_es, es.procedencia_es, es.estado_es, fa.nombre_fa, ca.nombre_ca, pe.anio_pe, es.nivel, es.observacion_es FROM estudiante AS es, facultad AS fa, carrera AS ca, plan_estudio AS pe WHERE es.idfacultad=fa.idfacultad AND es.idcarrera=ca.idcarrera AND es.idplan_estudio=pe.idplanestudio AND es.idestudiante=".$estudiante;
     $result = $con->query($consulta);
       if ($result) {
         while ($fila = $result->fetch_object()) {
@@ -21,6 +21,7 @@
           $facultad=$fila->nombre_fa;
           $carrera=$fila->nombre_ca;
           $planestudio=$fila->anio_pe;
+          $nivel=$fila->nivel;
           $estado=$fila->estado_es;
           if($estado==1){
             $estado_es="Activo";
@@ -70,6 +71,10 @@
                                 <th><label class="text-center"><?php echo $planestudio; ?></label></th>
                             </tr>
                             <tr>
+                                <th style="padding-left:40px;" class="text-left"><b><i class=""></i>   Nivel:<span style="color:	#000080;"> '</span></b></th>
+                                <th><label class="text-center"><?php echo $nivel; ?></label></th>
+                            </tr>
+                            <tr>
                                 <th><h5 style="color:RGB(205, 92, 92);">Educación Media:</h5></th>
                             </tr>
                             <tr>
@@ -115,6 +120,7 @@
                                 <th style="padding-left:40px;" class="text-left"><b><i class=""></i>   Dirección:<span style="color:	#000080;"> '</span></b></th>
                                 <th><label class="text-center"><?php echo $direccion; ?></label></th>
                             </tr>
+                            
                         </thead>
                         
                     </table> 
