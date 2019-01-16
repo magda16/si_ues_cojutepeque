@@ -134,7 +134,6 @@
                             <option selected="selected" value="">Seleccione Duraci&oacute;n...</option>
                             <option value="3">3 AÑOS</option>
                             <option value="5">5 AÑOS</option>
-                            <option value="8">8 AÑOS</option>
                           </select>
                         </div>
                         <span class="help-block" id="error"></span>

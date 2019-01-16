@@ -35,10 +35,10 @@
   <body>
   <form id="formulario" name="formulario" method="POST" action="">
   <?php date_default_timezone_set("America/El_Salvador"); ?>
-  <table width="100%" border="1">
+  <table width="100%" border="0">
   <?php 
   
-    $numeroFilas=24;
+    $numeroFilas=30;
 
     function encabezado(){  
       
@@ -103,9 +103,7 @@
         $filconsulta=($filasconsulta*4);
         $contadorpag=ceil(number_format($filconsulta/$numeroFilas,4));
         $filasagregadas=((($numeroFilas*$contadorpag))-$filconsulta);
-        if($contadorpag==2){
-          $filasagregadas=((($numeroFilas*$contadorpag)+4)-$filconsulta);
-        }
+
         if ($result) {
         encabezado();
         while ($fila = $result->fetch_object()) {
@@ -114,41 +112,37 @@
           echo "<tr>";
           echo "<td><table width='100%' border='1' rules='all'>";
           echo "<tr style='font-size: 14px;'>";
-          echo "<th width='396' >&nbsp;</th>";
-          echo "<th width='360'>&nbsp; &nbsp;Correo&nbsp; &nbsp;</th>";
-          echo "<th width='122'>&nbsp; &nbsp;Telefono&nbsp; &nbsp;</th>";
+          echo "<th width='52%' >&nbsp;</th>";
+          echo "<th width='28%'>&nbsp; &nbsp;Correo&nbsp; &nbsp;</th>";
+          echo "<th width='20%'>&nbsp; &nbsp;Tel&eacute;fono&nbsp; &nbsp;</th>";
           echo "</tr>";
           echo "<tr style='font-size: 14px;'>";
-          echo "<td>&nbsp; &nbsp;".$fila->nombre_fa."&nbsp; &nbsp;</td>";
+          echo "<td><strong>&nbsp; &nbsp;".$fila->nombre_fa."&nbsp; &nbsp;</strong></td>";
           echo "<td>&nbsp; &nbsp;".$fila->correo_fa."&nbsp; &nbsp;</td>";
           echo "<td>&nbsp; &nbsp;".$fila->telefono_fa."&nbsp; &nbsp;</td>";
           echo "</tr>";
           echo "<tr style='font-size: 14px;'>";
-          echo "<td>&nbsp; &nbsp;Representante ".$fila->nombre_rf." ".$fila->apellido_rf."&nbsp; &nbsp;</td>";
+          echo "<td><strong>&nbsp; &nbsp;Representante</strong> ".$fila->nombre_rf." ".$fila->apellido_rf."&nbsp; &nbsp;</td>";
           echo "<td>&nbsp; &nbsp;".$fila->correo_rf."&nbsp; &nbsp;</td>";
           echo "<td> &nbsp; &nbsp;".$fila->telefono_rf." &nbsp; &nbsp;</td>";
           echo "</tr>";
-              
+             
           echo "</table></td>";
+
           echo "</tr>";
           echo "<tr>";
           echo "<td>&nbsp;</td>";
+          $re=($numeroFilas-($contador*4));
+       //   echo "re".$re;
+
           echo "</tr>";
           echo "</table>";
 
+         
+
           if($contadorpag>1){
 
-            if($contador==6 || $contador==12){
-              echo "<tr>";
-              echo "<td>&nbsp;</td>";
-              echo "<td colspan='3'>&nbsp;</td>";
-              echo "<td>&nbsp;</td>";
-              echo "</tr>";
-              echo "<tr>";
-              echo "<td>&nbsp;</td>";
-              echo "<td colspan='3'>&nbsp;</td>";
-              echo "<td>&nbsp;</td>";
-              echo "</tr>";
+            if($contador==7 || $contador==14){
 
               echo "<tr>";
               echo "<td>&nbsp;</td>";
@@ -156,7 +150,7 @@
               echo "<td width='173'>&nbsp;</td>";
               echo "<td width='321'>";
           
-              echo "<strong><div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filconsulta/$numeroFilas,4))."</div></strong>";
+              echo "<strong><div align='right' style='font-size: 14px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filconsulta/$numeroFilas,4))."</div></strong>";
           
               echo "</td>";
               echo "<td>&nbsp;</td>";
@@ -186,7 +180,7 @@
   </tr>
 
   <?php
-      for($i=0; $i<=$filasagregadas; $i++){
+      for($i=0; $i<=$re; $i++){
         echo "<tr>";
         echo "<td>&nbsp;</td>";
         echo "<td colspan='3'>&nbsp;</td>";
@@ -196,23 +190,14 @@
 
 
   ?>
-  <tr>
-    <td>&nbsp;</td>
-    <td colspan="3">&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td colspan="3">&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
+  
   <tr>
     <td>&nbsp;</td>
     <td width="320">&nbsp;</td>
     <td width="173">&nbsp;</td>
     <td width="321">
     
-    <strong><?php echo "<div align='right' style='font-size: 18px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filconsulta/$numeroFilas,4))."</div>"; ?><strong>
+    <strong><?php echo "<div align='right' style='font-size: 14px;'>P&aacute;gina ".($numpagina+1)." de ".ceil(number_format($filconsulta/$numeroFilas,4))."</div>"; ?><strong>
     
     </td>
     <td>&nbsp;</td>

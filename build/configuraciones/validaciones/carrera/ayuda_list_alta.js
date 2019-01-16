@@ -15,7 +15,7 @@ var tour = {
       {
         target: 'paso2',
         title: 'Dar Alta Carrera',
-        content: 'Debe Dar clic para Dar Alta a los Datos de la Carrera.',
+        content: 'Debe Dar Clic para Dar Alta a los Datos de la Carrera.',
         placement: 'left'
       }
     ],
