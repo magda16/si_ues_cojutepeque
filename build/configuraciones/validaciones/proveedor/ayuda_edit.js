@@ -61,8 +61,8 @@ var tour = {
         placement: 'bottom'
       },
       {
-        target: 'btnguardar',
-        title: 'Guardar',
+        target: 'btneditar',
+        title: 'Actualizar',
         content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
         placement: 'left'
       }

@@ -5,19 +5,29 @@
   
     $bandera=$_POST["bandera"];
 
-    if($bandera=="add"){
+    if($bandera=="addcat"){
         $msj="Error";
       
         function obtenerResultado(){
-        $codigo=$_POST["codigo"];
-        $nombre=$_POST["nombre"];
-        $duracion=$_POST["duracion"];
-        $facultad=$_POST["facultad"];
-        $observacion = "Registro";
+        $categoria=$_POST["categoria"];
+        $abre_cate=$_POST["abre_cate"];
         $result = 0;
+        $result1 = 0;
         $con=conectarMysql();
+
+        $result1 = $con->query("SELECT MAX(codigo_c)+1000 AS 'codigo' FROM af_categoria");
+        if ($result1) {
+            while ($fila1 = $result1->fetch_object()) {
+            $codigo=$fila1->codigo;
+            }
+        }
+        if($codigo==null){
+            $codigo=1000;
+        }
+
+        $numeroConCeros = str_pad($codigo, 5, "0", STR_PAD_LEFT);
   
-        $consulta  = "INSERT INTO carrera(codigo_ca,nombre_ca,duracion_ca,estado_ca, observacion_ca, idfacultadfk)  VALUES('$codigo','$nombre','$duracion','1','$observacion','$facultad')";
+        $consulta  = "INSERT INTO af_categoria(codigo_c, id_nombre_c, nombre_c, idafinsfk) VALUES('$numeroConCeros','$abre_cate','$categoria','1')";
         $result = $con->query($consulta);
           if ($result) {
             $msj = "Exito";
@@ -26,7 +36,40 @@
           }
           return $msj;
         }
-    }else if($bandera=="edit"){
+    }else if($bandera=="addtipobien"){
+      $msj="Error";
+    
+      function obtenerResultado(){
+      $categoria=$_POST["categoria"];
+      $subcategoria=$_POST["subcategoria"];
+      $abre_subcate=$_POST["abre_subcate"];
+      $result = 0;
+      $result1 = 0;
+      $con=conectarMysql();
+
+      $result1 = $con->query("SELECT MAX(codigo_s)+1 AS 'codigo' FROM af_subcategoria");
+      if ($result1) {
+          while ($fila1 = $result1->fetch_object()) {
+          $codigo=$fila1->codigo;
+          }
+      }
+      if($codigo==null){
+          $codigo=1;
+      }
+
+      $numeroConCeros = str_pad($codigo, 5, "0", STR_PAD_LEFT);
+
+      $consulta  = "INSERT INTO af_subcategoria(codigo_s,id_nombre_s,nombre_s,cantidad_s,idafcategoriafk) VALUES('$numeroConCeros','$abre_subcate','$subcategoria','0','$categoria')";
+      $result = $con->query($consulta);
+        if ($result) {
+          $msj = "Exito";
+        } else {
+          $msj = "Error";
+        }
+        return $msj;
+      }
+  }
+    else if($bandera=="edit"){
       $msj="Error";
     
       function obtenerResultado(){

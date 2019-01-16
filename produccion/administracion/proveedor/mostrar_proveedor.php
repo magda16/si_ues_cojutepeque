@@ -92,7 +92,8 @@
                                 <th><label class="text-center"><?php echo $descripcion_p; ?></label></th>
                                 </tr>
                             <?php
-                            }else if($observacion_p!=""){ ?>
+                            }
+                            if($observacion_p!=""){ ?>
                                 <tr>
                                 <th style="padding-left:40px;" class="text-left"><b><i class=""></i>   Observaci&oacute;n:<span style="color:	#000080;"> '</span></b></th>
                                 <th><label class="text-center"><?php echo $observacion_p; ?></label></th>
@@ -101,7 +102,6 @@
                             
                             ?>
                            
-                            
                         </thead>
                         
                     </table> 

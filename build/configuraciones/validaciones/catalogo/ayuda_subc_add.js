@@ -7,57 +7,21 @@ var tour = {
     id: 'hello-hopscotch',
     steps: [
       {
-        target: 'nombre_c',
-        title: 'Nombres',
-        content: 'Debe Ingresar los Nombres de el Contacto.',
+        target: 'categoria',
+        title: 'Categor&iacute;a',
+        content: 'Debe Seleccionar la Categor&iacute;a de el Activo Fijo.',
         placement: 'bottom'
       },
       {
-        target: 'apellido_c',
-        title: 'Apellidos',
-        content: 'Debe Ingresar los Apellidos de el Contacto.',
+        target: 'subcategoria',
+        title: 'Tipo de Bien',
+        content: 'Debe Ingresar el Tipo de Bien.',
         placement: 'bottom'
       },
-      {
-        target: 'proveedor',
-        title: 'Nombre',
-        content: 'Debe Ingresar el Nombres de el Proveedor.',
-        placement: 'bottom'
-      },
-      {
-        target: 'nit_p',
-        title: 'NIT',
-        content: 'Debe Ingresar el N&uacute;mero de NIT de el Proveedor.',
-        placement: 'bottom'
-      },
-      {
-        target: 'telefono_p',
-        title: 'Tel&eacute;fono',
-        content: 'Debe Ingresar el N&uacute;mero de Tel&eacute;fono de el Proveedor.',
-        placement: 'bottom'
-      },
-      {
-        target: 'correo_p',
-        title: 'Correo Electr&oacute;nico',
-        content: 'Debe Ingresar el Correo Electr&oacute;nico de el Proveedor.',
-        placement: 'bottom'
-      },
-      {
-        target: 'direccion_p',
-        title: 'Direcci&oacute;n',
-        content: 'Debe Ingresar la Direcci&oacute; de el Proveedor.',
-        placement: 'bottom'
-      },
-      {
-        target: 'descripcion_p',
-        title: 'Descripci&oacute;n',
-        content: 'Debe Ingresar la Descripci&oacute;n de el Proveedor.',
-        placement: 'bottom'
-      },
-      {
-        target: 'observacion_p',
-        title: 'Observaci&oacute;n',
-        content: 'Debe Ingresar la Observaci&oacute;n de el Proveedor.',
+      { 
+        target: 'abre_subcate',
+        title: 'Abreviaci&oacute;n Tipo de Bien',
+        content: 'Debe Ingresar la Abreviaci&oacute;n de el Tipo de Bien.',
         placement: 'bottom'
       },
       {

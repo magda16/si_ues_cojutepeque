@@ -37,12 +37,20 @@
       function obtenerResultado(){
      
       $baccion=$_POST["baccion"];
-      $nombre=$_POST["nombre"];
+      $nombre_c=$_POST["nombre_c"];
+      $apellido_c=$_POST["apellido_c"];
+      $proveedor=$_POST["proveedor"];
+      $nit_p=$_POST["nit_p"];
+      $telefono_p=$_POST["telefono_p"];
+      $correo_p=$_POST["correo_p"];
+      $direccion_p=$_POST["direccion_p"];
+      $descripcion_p=$_POST["descripcion_p"];
+      $observacion_p=$_POST["observacion_p"];
       
       $result = 0;
       $con=conectarMysql();
 
-      $consulta  = "UPDATE carrera set nombre_ca='$nombre' where idproveedor=".$baccion;
+      $consulta  = "UPDATE proveedor set nombre_c='$nombre_c', apellido_c='$apellido_c', proveedor='$proveedor', NIT_p='$nit_p', telefono_p='$telefono_p', correo_p='$correo_p', direccion_p='$direccion_p', descripcion_p='$descripcion_p', observacion_p='$observacion_p' where idproveedor=".$baccion;
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";

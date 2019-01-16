@@ -32,7 +32,7 @@
     },
     messages: {
       categoria: {
-        required: "Por favor, seleccione categoria."
+        required: "Por favor, seleccione categoría."
       },
       tipo_bien: {
         required: "Por favor, seleccione tipo de bien."

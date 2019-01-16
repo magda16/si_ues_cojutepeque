@@ -55,7 +55,7 @@
           <div class="col-sm-12">
             <div class="page-title ">
               <div class="title_left">
-                <h4 style="color: RGB(0, 0, 128);"><strong>ADMINISTRACI&Oacute;N DE PROVEEDORES</strong></h4>
+                <h4 style="color: RGB(0, 0, 128);"><strong>ADMINISTRACI&Oacute;N DE CATALOGO</strong></h4>
               </div>
 
               <div class="title_right">
@@ -70,65 +70,107 @@
               <div class="col-sm-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2 style="color:RGB(205, 92, 92);">Lista de Proveedores Activos.</h2>
+                    <h2 style="color:RGB(205, 92, 92);">Lista Catalogo de Activo Fijo.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Proveedor" href="../../../produccion/administracion/proveedor/registrar_proveedor.php" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Carrera" href="../../../produccion/administracion/carrera/registrar_carrera.php"><i class="fa fa-plus-circle"></i></a>
+                      </li>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Reporte Carrera" href="../../../build/configuraciones/reportes/carrera/reporte_lista_carrera.php"><i class="fa fa-print"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
-                    
+                  
+
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
 
                     <p class="text-muted font-13 m-b-30">
-                      Lista de todos los Proveedores Activos.
+                      Lista de todas las Cuentas de Activo Fijo.
                     </p>
-					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>No.</th>
-                          <th>Nombre</th>
-                          <th>Proveedor</th>
-                          <th>Tel&eacute;fono</th>
-                          <th>Acciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                          require '../../../build/configuraciones/conexion.php';
-                          $con=conectarMysql();
-                          $result = $con->query("SELECT p.idproveedor, p.nombre_c, p.apellido_c, p.proveedor, p.telefono_p, p.correo_p, IF(EXISTS (SELECT * FROM inventario_af AS inv WHERE inv.idproveedorfk = p.idproveedor), 'no', 'si') AS editar FROM proveedor AS p WHERE estado_p=1 ORDER BY p.proveedor ASC");
-                          $contador=1;
-                          if ($result) {
-                            while ($fila = $result->fetch_object()) {
-                             
-                              echo "<tr>";
-                              echo "<td>" .$contador. "</td>";
-                              echo "<td>" . $fila->nombre_c ." ".$fila->apellido_c."</td>";
-                              echo "<td>" . $fila->proveedor . "</td>";
-                              echo "<td>" . $fila->telefono_p . "</td>";
-                              echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Mostrar Proveedor'><i class='fa fa-eye'></i></a>
-                                        <a id='paso2' class='btn btn-info' onclick='editarproveedor(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Editar Proveedor'><i class='fa fa-edit'></i></a>";
-                                        if($fila->editar=='si'){
-                                        echo "<a id='paso3' class='btn btn-danger' onclick='confirmar(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Proveedor'><i class='fa fa-long-arrow-down'></i></a>";
-                                      }else{
-                                        echo "<a id='paso3' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='No Editable' disabled><i class='fa fa-long-arrow-down'></i></a>";
-                                      }
-                                        echo "</td>";
-                              echo "</tr>";
-                              $contador++;
+                    <!-- inicio del div panel -->
+                    <div>
+                    <?php
 
-                            }
-                          }
-                        ?>
-                      </tbody>
-                    </table>
-                    <form id="fromeditarproveedor" name="fromeditarproveedor" action="../../../produccion/administracion/proveedor/editar_proveedor.php" method="POST">
+                    echo "<table id='datatable-responsive1' class='table table-striped table-bordered dt-responsive nowrap' cellspacing='0' width='100%'>";
+                    
+                    
+                    require '../../../build/configuraciones/conexion.php';
+                    $con=conectarMysql();
+                    $result = $con->query("SELECT * FROM af_categoria");
+                    $cont=1;
+                    if ($result) {
+                      while ($fila = $result->fetch_object()) {
+                        $categoria=$fila->idafcategoria;
+
+                   
+                   
+                        
+
+                    echo "<input type='hidden' name='bandera' id='bandera'>";
+                    echo "<input type='hidden' name='baccion' id='baccion'>";
+
+                         
+                
+                    echo "<thead>";
+                    echo "<tr>";
+                    echo "<th colspan='4'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_c.".</h4></th>";                    
+                    echo "<th ><div align='center'><a id='paso4' class='btn btn-danger' type='button' onclick='imprecepciondocumentos(".$fila->idafcategoria.")' data-toggle='tooltip' data-placement='top' title='Agregar Tipo de Bien'><i class='fa fa-plus'></i></a>";
+                    echo "<a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idafcategoria.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera por Facultad'><i class='fa fa-print'></i></a></div></th>";
+                    echo "</tr>";
+                    
+                   
+                    echo "<tr>";
+                    echo "<th color: RGB(0, 0, 128);'>No.</th>";
+                    echo "<th color: RGB(0, 0, 128);'>C&oacute;digo</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Tipo de Bien</th>";
+                    echo "<th color: RGB(0, 0, 128);'>Abreviaci&oacute;n</th>";
+                    
+
+                    echo "<th>Acciones</th>";
+                    echo "</tr>";
+                    echo "</thead>";
+                    echo "<tbody>";
+
+                             
+                                
+                                $result2 = $con->query("SELECT * FROM af_subcategoria WHERE idafcategoriafk='$categoria'");
+                                $contador=1;
+                                if ($result2) {
+                                  while ($fila2 = $result2->fetch_object()) {
+                                  
+                                    echo "<tr>";
+                                    echo "<td>" .$contador. "</td>";
+                                    echo "<td>" . $fila2->codigo_s . "</td>";
+                                    echo "<td>" . $fila2->nombre_s . "</td>";
+                                    echo "<td>" . $fila2->id_nombre_s . "</td>";
+                                   
+                                    echo "<td align='center'> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila2->idafsubc.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
+                                              <a id='paso2' class='btn btn-info' onclick='editarcarrera(".$fila2->idafsubc.")' data-toggle='tooltip' data-placement='top' title='Editar Carrera'><i class='fa fa-edit'></i></a>
+                                              </td>";
+                                    echo "</tr>";
+                                    
+                                    $contador++;
+
+                                  }
+                                }
+                             
+                            
+                            
+              }
+            }
+            echo "</tbody>";
+            echo "</table>";
+          ?>
+                    </div>
+                    <!-- fin div panel -->
+
+                    
+
+
+                    <form id="fromeditarcarrera" name="fromeditarcarrera" action="../../../produccion/administracion/carrera/editar_carrera.php" method="POST">
                       <input type="hidden" id="id" name="id">
                     </form>
                         
@@ -144,9 +186,9 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="datosProveedor" name="datosProveedor" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="datosCarrera" name="datosCarrera" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog ">
-                <div class="modal-content" id="insertarhtmlproveedor">
+                <div class="modal-content" id="insertarhtmlcarrera">
 
                 </div>
               </div>
@@ -161,7 +203,7 @@
                       <div class="modal-content">
 
                         <div class="modal-header">
-                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Proveedor</h4>
+                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Carrera</h4>
                         </div>
                         
 
@@ -202,8 +244,8 @@
       </div>
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
-    <script src="../../../build/configuraciones/validaciones/proveedor/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/proveedor/ayuda_list"></script>
+    <script src="../../../build/configuraciones/validaciones/carrera/validar_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/carrera/ayuda_list.js"></script>
 	
   </body>
 </html>

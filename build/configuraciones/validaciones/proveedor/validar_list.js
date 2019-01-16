@@ -49,7 +49,7 @@ $(document).ready(function(){
         })
   }
 
-  function editaraula(id){
+  function editarproveedor(id){
     $('#id').val(id);
     $("#fromeditarproveedor").submit();
   }
