@@ -65,8 +65,8 @@ $(document).ready(function(){
         dui: {
           numero: true,
           required: true,
-          minlength: 9,
-          maxlength: 9
+          minlength: 10,
+          maxlength: 10
         },
         nit: {
           numero: true,
@@ -79,23 +79,20 @@ $(document).ready(function(){
           required: true,
           minlength: 6
         },
-        especialidad: {
-          required: true,
-          number: true
-        },
-        
         telefono: {
-          alfanumOespacio: true,
+          numero: true,
           required: true,
-          minlength: 9
+          minlength: 9,
+          maxlength: 9
         },
         
         correo: {
-          alfanumOespacio: true,
-          required: true,
-          minlength: 6
-        }
-      },
+            correo: true,
+            required: true,
+            minlength: 10,
+            maxlength: 80
+        },
+        
       
       messages: {
         cargo: {
@@ -113,8 +110,8 @@ $(document).ready(function(){
         },
         dui: {
           required: "Por favor, ingrese DUI.",
-          maxlength: "Debe ingresar 9 dígitos.",
-          minlength: "Debe ingresar 9 dígitos."
+          maxlength: "Debe ingresar 10 dígitos.",
+          minlength: "Debe ingresar 10 dígitos."
         },
         nit: {
           required: "Por favor, ingrese NIT.",
@@ -125,14 +122,9 @@ $(document).ready(function(){
           required: "Por favor, ingrese direcci&oacute;n.",
           minlength: "Debe ingresar m&iacute;nimo 6 dígitos."
         },
-        especialidad: {
-          required: "Por favor, seleccione especialidad."
-        },
-
-        
         telefono: {
           required: "Por favor, ingrese teléfono.",
-          maxlength: "Debe ingresar m&aacute;ximo 50 dígitos.",
+          maxlength: "Debe ingresar m&aacute;ximo 9 dígitos.",
           minlength: "Debe ingresar m&iacute;nimo 9 dígitos."
         },
 
@@ -141,9 +133,8 @@ $(document).ready(function(){
           required: "Por favor, ingrese una direccion de Correo.",
           maxlength: "Debe ingresar m&aacute;ximo 80 dígitos.",
           minlength: "Debe ingresar m&iacute;nimo 10 dígitos."
-        }
-        
-      }
+        },
+        }}
     });
 
 });
