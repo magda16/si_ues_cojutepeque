@@ -114,14 +114,14 @@
         
                       <h5> <strong><p style="color:RGB(0, 0, 128);"> Datos Personales:</strong></p></h5>
 
-                      <div class="form-group">
+                      <div class="form-group" id="resultcod">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="carnet">Carnet: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <input type="text" class="form-control has-feedback-left" id="carnet" name="carnet" required="required" class="form-control col-md-7 col-xs-12" tabindex="1" placeholder="Digite Carnet">
                           <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
                         </div>
-                        <span class="help-block" id="error"></span>
+                        <span class="help-block" id="resultcoderror"></span>
                       </div>
 
                       <div class="form-group">
