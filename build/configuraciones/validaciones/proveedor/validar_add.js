@@ -49,20 +49,20 @@ $(document).ready(function(){
           nombre_c: {
             letrasOespacio: true,
             required: true,
-            minlength: 7,
-            maxlength: 50
+            minlength: 3,
+            maxlength: 70
           },
           apellido_c: {
             letrasOespacio: true,
             required: true,
-            minlength: 7,
-            maxlength: 50
+            minlength: 3,
+            maxlength: 70
           },
           proveedor: {
             alfanumOespacio: true,
             required: true,
-            minlength: 7,
-            maxlength: 50
+            minlength: 6,
+            maxlength: 200
           },
           nit_p: {
             numero: true,
@@ -81,31 +81,43 @@ $(document).ready(function(){
             correo: true,
             required: true,
             minlength: 10,
-            maxlength: 80
+            maxlength: 90
           },
           direccion_p: {
             letrasOespacio: true,
             required: true,
             minlength: 10,
-            maxlength: 80
+            maxlength: 200
+          },
+          descripcion_p: {
+            alfanumOespacio: true,
+            required: false,
+            minlength: 10,
+            maxlength: 200
+          },
+          observacion_p: {
+            alfanumOespacio: true,
+            required: false,
+            minlength: 10,
+            maxlength: 200
           }
         },
 
         messages: {
           nombre_c: {
             required: "Por favor, ingrese nombres.",
-            maxlength: "Debe ingresar m&aacute;ximo 50 carácteres.",
-            minlength: "Debe ingresar m&iacute;nimo 7 carácteres."
+            maxlength: "Debe ingresar m&aacute;ximo 70 carácteres.",
+            minlength: "Debe ingresar m&iacute;nimo 3 carácteres."
           },
           apellido_c: {
             required: "Por favor, ingrese apellidos.",
-            maxlength: "Debe ingresar m&aacute;ximo 50 carácteres.",
-            minlength: "Debe ingresar m&iacute;nimo 7 carácteres."
+            maxlength: "Debe ingresar m&aacute;ximo 70 carácteres.",
+            minlength: "Debe ingresar m&iacute;nimo 3 carácteres."
           },
           proveedor: {
             required: "Por favor, ingrese nombre proveedor.",
-            maxlength: "Debe ingresar m&aacute;ximo 50 carácteres.",
-            minlength: "Debe ingresar m&iacute;nimo 7 carácteres."
+            maxlength: "Debe ingresar m&aacute;ximo 200 carácteres.",
+            minlength: "Debe ingresar m&iacute;nimo 6 carácteres."
           },
           nit_p: {
             required: "Por favor, ingrese NIT.",
@@ -119,15 +131,24 @@ $(document).ready(function(){
           },
          correo_p: {
             required: "Por favor, ingrese correo electrónico.",
-            maxlength: "Debe ingresar m&aacute;ximo 80 carácteres.",
+            maxlength: "Debe ingresar m&aacute;ximo 90 carácteres.",
             minlength: "Debe ingresar m&iacute;nimo 10 carácteres."
           },
           direccion_p: {
             required: "Por favor, ingrese dirección.",
-            maxlength: "Debe ingresar m&aacute;ximo 80 carácteres.",
+            maxlength: "Debe ingresar m&aacute;ximo 200 carácteres.",
+            minlength: "Debe ingresar m&iacute;nimo 10  carácteres."
+          },
+          descripcion_p: {
+            required: "Por favor, ingrese descripción.",
+            maxlength: "Debe ingresar m&aacute;ximo 200 carácteres.",
+            minlength: "Debe ingresar m&iacute;nimo 10  carácteres."
+          },
+          observacion_p: {
+            required: "Por favor, ingrese observación.",
+            maxlength: "Debe ingresar m&aacute;ximo 200 carácteres.",
             minlength: "Debe ingresar m&iacute;nimo 10  carácteres."
           }
-          
         }
       });
 

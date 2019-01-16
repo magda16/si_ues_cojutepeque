@@ -108,14 +108,14 @@
                           </li>
                         </ul>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" href="../../../produccion/administracion/empleado/listaEmpleado.php" ><i class="fa fa-plus-circle"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="formempleado" action="../../../build/configuraciones/sql/empleado/crudEmpleado.php" method="POST" data-parsley-validate class="form-horizontal form-label-left">
+                    <form id="formempleado" name="formempleado" method="POST"  class="form-horizontal form-label-left">
                     <input type="hidden" name="bandera" id="bandera">
 
                       <div class="form-group">
@@ -257,7 +257,7 @@
       </div>
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
-    <script src="../../../build/configuraciones/validaciones/empleado/validar_empleado.js"></script>
+    <script src="../../../build/configuraciones/validaciones/empleado/validar_add.js"></script>
     
 	
   </body>

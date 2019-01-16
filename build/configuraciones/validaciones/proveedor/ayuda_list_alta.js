@@ -8,14 +8,14 @@ var tour = {
     steps: [
       {
         target: 'paso1',
-        title: 'Mostrar Carrera',
-        content: 'Debe Dar Clic para Mostrar Todos los Datos de la Carrera.',
+        title: 'Mostrar Proveedor',
+        content: 'Debe Dar Clic para Mostrar Todos los Datos de el Proveedor.',
         placement: 'left'
       },
       {
         target: 'paso2',
-        title: 'Dar Alta Carrera',
-        content: 'Debe Dar Clic para Dar Alta a los Datos de la Carrera.',
+        title: 'Dar Alta Proveedor',
+        content: 'Debe Dar Clic para Dar Alta a los Datos de el Proveedor.',
         placement: 'left'
       }
     ],

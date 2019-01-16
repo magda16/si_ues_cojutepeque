@@ -7,15 +7,27 @@ var tour = {
     id: 'hello-hopscotch',
     steps: [
       {
-        target: 'paso1',
-        title: 'Mostrar Carrera',
-        content: 'Debe Dar Clic para Mostrar Todos los Datos de la Carrera.',
-        placement: 'left'
+        target: 'categoria',
+        title: 'Categor&iacute;a',
+        content: 'Debe Seleccionar la Categor&iacute;a de el Activo Fijo.',
+        placement: 'bottom'
       },
       {
-        target: 'paso2',
-        title: 'Dar Alta Carrera',
-        content: 'Debe Dar Clic para Dar Alta a los Datos de la Carrera.',
+        target: 'subcategoria',
+        title: 'Tipo de Bien',
+        content: 'Debe Ingresar el Tipo de Bien.',
+        placement: 'bottom'
+      },
+      { 
+        target: 'abre_subcate',
+        title: 'Abreviaci&oacute;n Tipo de Bien',
+        content: 'Debe Ingresar la Abreviaci&oacute;n de el Tipo de Bien.',
+        placement: 'bottom'
+      },
+      {
+        target: 'btnguardar',
+        title: 'Guardar',
+        content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
         placement: 'left'
       }
     ],
@@ -51,7 +63,7 @@ var tour = {
         mgr.createCallout({
           id: calloutId,
           target: startBtnId,
-          placement: 'left',
+          placement: 'right',
           title: 'Ayuda',
           content: 'Clic para iniciar!',
           yOffset: -25,

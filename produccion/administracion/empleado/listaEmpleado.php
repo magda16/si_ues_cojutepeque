@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <?php include ("../../complementos/cabezera.php"); ?>
     <script type="text/javascript">
@@ -55,12 +55,12 @@
           <div class="col-sm-12">
             <div class="page-title ">
               <div class="title_left">
-                <h4 style="color: RGB(0, 0, 128);"><strong>ADMINISTRACI&Oacute;N DE PROVEEDORES</strong></h4>
+                <h4 style="color: RGB(0, 0, 128);"><strong>ADMINISTRACI&Oacute;N DE RECURSOS HUMANOS</strong></h4>
               </div>
 
               <div class="title_right">
-                <div class="col-md-2  form-group pull-right top_search">
-                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
+                <div class="col-md-1  form-group pull-right top_search">
+                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
                 </div>
               </div>
             </div>
@@ -70,98 +70,122 @@
               <div class="col-sm-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2 style="color:RGB(205, 92, 92);">Lista de Proveedores Activos.</h2>
+                    <h2 style="color:RGB(205, 92, 92);">Lista de Recursos Humanos.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Proveedor" href="../../../produccion/administracion/proveedor/registrar_proveedor.php" ><i class="fa fa-plus-circle"></i></a>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                     
+
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
 
-                    <p class="text-muted font-13 m-b-30">
-                      Lista de todos los Proveedores Activos.
-                    </p>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Recurso Humano: <span class="required" style="color: #CD5C5C;"> *</span></label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <select class="form-control" id="cargo" name="cargo">
+                          <option selected="selected" value="">Seleccione Recurso Humano...</option>
+                          <?php
+                              require '../../../build/configuraciones/conexion.php';
+                              $con=conectarMysql();
+                              $consulta  = "SELECT * FROM cargo ORDER BY nombre_ca";
+                              $result = $con->query($consulta);
+                              if ($result) {
+                                while ($fila = $result->fetch_object()) {
+                                  echo "<option value='".$fila->id_ca_em."'>".strtoupper($fila->nombre_ca)."</option>";
+                                }//fin while
+                              }
+                            ?>  
+                          </select>
+                        </div>
+                        <span class="help-block" id="error"></span>
+                      </div>
+                    <br><br>
+
+                    <br><br><br><br>
 					
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th>No.</th>
-                          <th>Nombre</th>
-                          <th>Proveedor</th>
-                          <th>Tel&eacute;fono</th>
+                          <th>Nombre Completo</th>
+                          <th>Telefono</th>
+                          <th>Correo</th>
                           <th>Acciones</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php
-                          require '../../../build/configuraciones/conexion.php';
+                      <?php
+                          
                           $con=conectarMysql();
-                          $result = $con->query("SELECT p.idproveedor, p.nombre_c, p.apellido_c, p.proveedor, p.telefono_p, p.correo_p, IF(EXISTS (SELECT * FROM inventario_af AS inv WHERE inv.idproveedorfk = p.idproveedor), 'no', 'si') AS editar FROM proveedor AS p WHERE estado_p=1 ORDER BY p.proveedor ASC");
+                          $result = $con->query("SELECT * FROM empleado WHERE estado_em=1");
                           $contador=1;
                           if ($result) {
                             while ($fila = $result->fetch_object()) {
                              
                               echo "<tr>";
                               echo "<td>" .$contador. "</td>";
-                              echo "<td>" . $fila->nombre_c ." ".$fila->apellido_c."</td>";
-                              echo "<td>" . $fila->proveedor . "</td>";
-                              echo "<td>" . $fila->telefono_p . "</td>";
-                              echo "<td> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Mostrar Proveedor'><i class='fa fa-eye'></i></a>
-                                        <a id='paso2' class='btn btn-info' onclick='editarproveedor(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Editar Proveedor'><i class='fa fa-edit'></i></a>";
-                                        if($fila->editar=='si'){
-                                        echo "<a id='paso3' class='btn btn-danger' onclick='confirmar(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Proveedor'><i class='fa fa-long-arrow-down'></i></a>";
-                                      }else{
-                                        echo "<a id='paso3' class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='No Editable' disabled><i class='fa fa-long-arrow-down'></i></a>";
-                                      }
-                                        echo "</td>";
+                              echo "<td>" . $fila->nombre_em . "</td>";
+                              echo "<td>" . $fila->telefono_em . "</td>";
+                              echo "<td>" . $fila->correo_em . "</td>";
+                              echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idempleado.")' data-toggle='tooltip' data-placement='top' title='Mostrar Empleado'><i class='fa fa-eye'></i></a>
+                                        <a class='btn btn-info' onclick='editarempleado(".$fila->idempleado.")' data-toggle='tooltip' data-placement='top' title='Editar Empleado'><i class='fa fa-edit'></i></a>
+                                        <a class='btn btn-danger' onclick='confirmar(".$fila->idempleado.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Empleado'><i class='fa fa-long-arrow-down'></i></a>
+                                          </td>";
                               echo "</tr>";
                               $contador++;
 
                             }
                           }
                         ?>
+                    <!-- Contenido a mostrar en tabla -->
+
                       </tbody>
                     </table>
-                    <form id="fromeditarproveedor" name="fromeditarproveedor" action="../../../produccion/administracion/proveedor/editar_proveedor.php" method="POST">
-                      <input type="hidden" id="id" name="id">
+                    <form id="fromeditarempleado" name="fromeditarempleado" action="../../../produccion/administracion/empleado/editarEmpleado.php" method="POST">
+                    <input type="hidden" id="id" name="id">
                     </form>
-                        
-                    
 
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+           </div>
 
-   
-            </div>
-
+            
             <!-- Modal -->
-            <div class="modal fade" id="datosProveedor" name="datosProveedor" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal fade" id="datosEmpleado" name="datosEmpleado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog ">
-                <div class="modal-content" id="insertarhtmlproveedor">
+                <div class="modal-content" id="insertarhtmlempleado">
 
                 </div>
               </div>
             </div>
             <!-- Fin Modal -->
 
-
-                    <!-- Modal -->
-                    <form id="fromdarbaja" name="fromdarbaja">
+               <!-- Modal -->
+               <form id="fromdarbaja" name="fromdarbaja">
                     <div class="modal fade" id="darBaja" name="darBaja" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog ">
                       <div class="modal-content">
 
                         <div class="modal-header">
-                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Proveedor</h4>
+                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Aula</h4>
                         </div>
                         
 
@@ -191,8 +215,11 @@
                   </div>
                   </form>
                   <!-- Fin Modal -->
-          
+
         </div>
+
+       
+
         <!-- /page content -->
 
         <!-- footer content -->
@@ -202,8 +229,8 @@
       </div>
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
-    <script src="../../../build/configuraciones/validaciones/proveedor/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/proveedor/ayuda_list"></script>
+    <script src="../../../build/configuraciones/validaciones/empleado/validar_lis.js"></script>
+    
 	
   </body>
 </html>

@@ -109,21 +109,13 @@ $(document).ready(function(){
   $('input[type=checkbox]').on('change', function() {
     if ($(this).is(':checked') ) {
         $("#divrepresentante").show();
+
     } else {
         $("#divrepresentante").hide();
+        $("#representante").val("");
     }
   });
   
-  $('#representante').on('change', function() {
-    $('#represent').val($('#representante').val())
-    alert($('#representante').val());
-  });
-
-  $("#nombre").keypress(function(e) {
-       if(e.which == 13) {
-          $('#btneditar').click();
-       }
-    });
 
   $("#btneditar").click(function(){
     if($("#formfacultad").valid()){
@@ -134,7 +126,6 @@ $(document).ready(function(){
         data: $("#formfacultad").serialize()
       })
       .done(function(resultado_ajax){
-        alert(resultado_ajax);
         if(resultado_ajax === "Exito"){
           swal({ 
             title:'Éxito',

@@ -7,15 +7,21 @@ var tour = {
     id: 'hello-hopscotch',
     steps: [
       {
-        target: 'paso1',
-        title: 'Mostrar Carrera',
-        content: 'Debe Dar Clic para Mostrar Todos los Datos de la Carrera.',
-        placement: 'left'
+        target: 'categoria',
+        title: 'Categor&iacute;a',
+        content: 'Debe Ingresar la Categor&iacute;a.',
+        placement: 'bottom'
+      },
+      { 
+        target: 'abre_cate',
+        title: 'Abreviac&oacute;n Categor&iacute;a',
+        content: 'Debe Ingresar la Abreviac&oacute;n de la Categor&iacute;a.',
+        placement: 'bottom'
       },
       {
-        target: 'paso2',
-        title: 'Dar Alta Carrera',
-        content: 'Debe Dar Clic para Dar Alta a los Datos de la Carrera.',
+        target: 'btnguardar',
+        title: 'Guardar',
+        content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',
         placement: 'left'
       }
     ],
@@ -51,7 +57,7 @@ var tour = {
         mgr.createCallout({
           id: calloutId,
           target: startBtnId,
-          placement: 'left',
+          placement: 'right',
           title: 'Ayuda',
           content: 'Clic para iniciar!',
           yOffset: -25,

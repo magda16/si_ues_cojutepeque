@@ -55,7 +55,7 @@
           <div class="col-sm-12">
             <div class="page-title ">
               <div class="title_left">
-                <h4 style="color: RGB(0, 0, 128);"><strong>ADMINISTRACI&Oacute;N DE ESTUDIANTES</strong></h4>
+                <h4 style="color: RGB(0, 0, 128);"><strong>ADMINISTRACI&Oacute;N DE PROVEEDORES</strong></h4>
               </div>
 
               <div class="title_right">
@@ -70,7 +70,7 @@
               <div class="col-sm-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2 style="color:RGB(205, 92, 92);">Lista de Estudiantes Inactivos por Carrera.</h2>
+                    <h2 style="color:RGB(205, 92, 92);">Lista de Proveedores Inactivos.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -82,60 +82,47 @@
 
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
-                    <input type="hidden" name="estado" id="estado" value="0">
 
+                    <p class="text-muted font-13 m-b-30">
+                      Lista de todos los Proveedores Inactivos.
+                    </p>
+					
+                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th>No.</th>
+                          <th>Nombre</th>
+                          <th>Proveedor</th>
+                          <th>Tel&eacute;fono</th>
+                          <th>Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                          require '../../../build/configuraciones/conexion.php';
+                          $con=conectarMysql();
+                          $result = $con->query("SELECT * FROM proveedor WHERE estado_p=0");
+                          $contador=1;
+                          if ($result) {
+                            while ($fila = $result->fetch_object()) {
+                             
+                              echo "<tr>";
+                              echo "<td>" .$contador. "</td>";
+                              echo "<td>" . $fila->nombre_c ." ".$fila->apellido_c."</td>";
+                              echo "<td>" . $fila->proveedor . "</td>";
+                              echo "<td>" . $fila->telefono_p . "</td>";
+                              echo "<td><a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Mostrar Proveedor'><i class='fa fa-eye'></i></a>
+                                        <a id='paso2' class='btn btn-primary' onclick='confirmaralta(".$fila->idproveedor.")' data-toggle='tooltip' data-placement='top' title='Dar Alta Proveedor'><i class='fa fa-long-arrow-up'></i></a>
+                                    </td>";
+                              echo "</tr>";
+                              $contador++;
 
-                    <div align="center">
-                      <div class="form-group">
-                        <label style="color: RGB(0, 0, 128);" class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Facultad: <span class="required" style="color: #CD5C5C;"> *</span></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control" id="facultad" name="facultad">
-                          </select>
-                        </div>
-                        <span class="help-block" id="error"></span>
-                      </div>
-
-                      <div class="clearfix"></div>
-                      <div class="form-group">
-                        <label style="color: RGB(0, 0, 128);" class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Carrera: <span class="required" style="color: #CD5C5C;"> *</span></label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <select class="form-control" id="carrera" name="carrera">
-                          </select>
-                        </div>
-                        <span class="help-block" id="error"></span>
-                      </div>
-                      
-                    </div>
-                    <div class="clearfix"></div>
-                   </br></br>
-
-                    
-                    
-
-                    <!-- inicio tabla-->
-                    <div id="div_tabla_estudiante">
-                    </div>
-                    <!-- fin tabla-->
-
-                    
-                    
-                    
-                    <form id="fromeditarestudiante" name="fromeditarestudiante" action="../../../produccion/administracion/estudiante/editar_estudiante.php" method="POST">
-                      <input type="hidden" id="id" name="id">
-                    </form>
-
-                    <form id="fromimprecepciondocumentos" name="fromimprecepciondocumentos" action="../../../build/configuraciones/reportes/recepcion_documentos/reporte_comprobante_estudiante.php" method="POST">
-                      <input type="hidden" id="idimp" name="idimp">
-                    </form>
-
-                    <div>
-                        <div class="ln_solid"></div>
-                        <p style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios Editables.</p> 
-                    </div>
-                        
+                            }
+                          }
+                        ?>
+                      </tbody>
+                    </table>
                    
-                    
-
                     </div>
                   </div>
                 </div>
@@ -145,11 +132,10 @@
    
             </div>
 
-            
-             <!-- Modal -->
-             <div class="modal fade" id="datosEstudiante" name="datosEstudiante" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Modal -->
+            <div class="modal fade" id="datosProveedor" name="datosProveedor" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog ">
-                <div class="modal-content" id="insertarhtmlestudiante">
+                <div class="modal-content" id="insertarhtmlproveedor">
 
                 </div>
               </div>
@@ -164,7 +150,7 @@
                       <div class="modal-content">
 
                         <div class="modal-header">
-                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Estudiante</h4>
+                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Alta Proveedor</h4>
                         </div>
                         
 
@@ -194,8 +180,6 @@
                   </div>
                   </form>
                   <!-- Fin Modal -->
-
-           
           
         </div>
         <!-- /page content -->
@@ -207,7 +191,8 @@
       </div>
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
-    <script src="../../../build/configuraciones/validaciones/estudiante/validar_list.js"></script>
-    <script src="../../../build/configuraciones/validaciones/estudiante/ayuda_list_alta.js"></script>
+    <script src="../../../build/configuraciones/validaciones/proveedor/validar_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/proveedor/ayuda_list_alta"></script>
+	
   </body>
 </html>

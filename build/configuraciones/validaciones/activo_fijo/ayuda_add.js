@@ -99,7 +99,7 @@ var tour = {
       {
         target: 'proveedor',
         title: 'Proveedor',
-        content: 'Debe Ingresar el Proveedor de el Activo Fijo.',
+        content: 'Debe Seleccionar el Proveedor de el Activo Fijo.',
         placement: 'bottom'
       },
       {

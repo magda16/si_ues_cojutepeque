@@ -81,19 +81,15 @@
                     <ul class="nav child_menu">
                         <li><a>Catalogo<span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
-                          <li><a href="../../administracion/catalogo/registrar_catalogo.php">Agregar</a></li>
-                            <li><a href="#level2_1">Level Two</a>
-                            </li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
+                          <li><a href="../../administracion/catalogo/registrar_categoria.php">Agregar</a></li>
+                          <li><a href="../../administracion/catalogo/lista_catalogo.php">Modificar</a></li>
                           </ul>
                         </li>
                         <li><a>Proveedor<span class="fa fa-chevron-down"></span></a>
                           <ul class="nav child_menu">
                           <li><a href="../../administracion/proveedor/registrar_proveedor.php">Agregar</a></li>
                           <li><a href="../../administracion/proveedor/lista_proveedor.php">Modificar</a></li>
-                            <li><a href="#level2_2">Level Two</a>
-                            </li>
+                          <li><a href="../../administracion/proveedor/lista_proveedor_alta.php">Dar Alta</a></li>
                           </ul>
                         </li>
                         <li><a>Inventario<span class="fa fa-chevron-down"></span></a>

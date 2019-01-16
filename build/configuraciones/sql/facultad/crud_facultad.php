@@ -12,12 +12,11 @@
         $nombre=$_POST["nombre_f"];
         $telefono=$_POST["telefono_f"];
         $correo=$_POST["correo_f"];
-        $represent=$_POST["representante"];
+        $representante=$_POST["representante"];
         $result = 0;
-      
         $con=conectarMysql();
   
-        $consulta  = "INSERT INTO facultad(nombre_fa,telefono_fa,correo_fa,estado_fa,id_re_fafk) VALUES('$nombre','$telefono','$correo','1','$represent')";
+        $consulta  = "INSERT INTO facultad(nombre_fa,telefono_fa,correo_fa,estado_fa,id_re_fafk) VALUES('$nombre','$telefono','$correo','1','$representante')";
         $result = $con->query($consulta);
           if ($result) {
             $msj = "Exito";
@@ -35,7 +34,13 @@
       $telefono=$_POST["telefono_f"];
       $correo=$_POST["correo_f"];
       $represent=$_POST["represent"];
-      
+      $representante=$_POST["representante"];
+      $represent=$_POST["represent"];
+
+      if($representante==""){
+        $representante=$represent;
+      }
+
       $result = 0;
       $con=conectarMysql();
 

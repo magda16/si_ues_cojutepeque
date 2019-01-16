@@ -118,7 +118,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre_c">Nombres: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="nombre_c" name="nombre_c" required="required" tabindex="1" placeholder="Digite Nombres">
+                        <input type="text" class="form-control has-feedback-left" id="nombre_c" name="nombre_c" required="required" tabindex="1" placeholder="Ingrese Nombres">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
@@ -128,7 +128,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellido_c">Apellidos: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="apellido_c" name="apellido_c" tabindex="2" required="required" placeholder="Digite Apellidos">
+                        <input type="text" class="form-control has-feedback-left" id="apellido_c" name="apellido_c" tabindex="2" required="required" placeholder="Ingrese Apellidos">
                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
@@ -140,8 +140,8 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="proveedor">Nombre: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="proveedor" name="proveedor" required="required" tabindex="3" placeholder="Digite Nombre">
-                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                        <input type="text" class="form-control has-feedback-left" id="proveedor" name="proveedor" required="required" tabindex="3" placeholder="Ingrese Nombre">
+                        <span class="fa fa-institution form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="resultproerror"></span>
                       </div>
@@ -150,7 +150,7 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nit_p">NIT: <span class="required" style="color: #CD5C5C;"> *</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" class="form-control has-feedback-left" id="nit_p" name="nit_p" data-inputmask="'mask': '9999-999999-999-9'" required="required" class="form-control col-md-7 col-xs-12" tabindex="4" placeholder="Digite NIT">
+                        <input type="text" class="form-control has-feedback-left" id="nit_p" name="nit_p" data-inputmask="'mask': '9999-999999-999-9'" required="required" class="form-control col-md-7 col-xs-12" tabindex="4" placeholder="Ingrese NIT">
                         <span class="fa fa-list-alt form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="resultniterror"></span>
@@ -160,7 +160,7 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono_p">Teléfono: <span class="required" style="color: #CD5C5C;"> *</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control has-feedback-left" id="telefono_p" name= "telefono_p" data-inputmask="'mask': '9999-9999'" required="required" tabindex="5" placeholder="Digite Número de Teléfono">
+                      <input type="text" class="form-control has-feedback-left" id="telefono_p" name= "telefono_p" data-inputmask="'mask': '9999-9999'" required="required" tabindex="5" placeholder="Ingrese Número de Teléfono">
                       <span class="fa fa-phone form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="resultelerror"></span>
@@ -170,7 +170,7 @@
                       <label class="control-label col-md-3 col-sm-3 col-xs-12" for="correo_p">Correo Electrónico: <span class="required" style="color: #CD5C5C;"> *</span>
                       </label>
                       <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control has-feedback-left" id="correo_p" name= "correo_p" required="required" tabindex="6" placeholder="Digite Correo Electrónico">
+                      <input type="text" class="form-control has-feedback-left" id="correo_p" name= "correo_p" required="required" tabindex="6" placeholder="Ingrese Correo Electrónico">
                       <span class="fa fa-envelope-o form-control-feedback left" aria-hidden="true"></span>
                       </div>
                       <span class="help-block" id="resultcorerror"></span>
@@ -180,29 +180,32 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="direccion_p">Direcci&oacute;n: <span class="required" style="color: #CD5C5C;"> *</span>
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" class="form-control has-feedback-left" id="direccion_p" name="direccion_p" required="required" tabindex="7" placeholder="Digite Direcci&oacute;n">
+                          <input type="text" class="form-control has-feedback-left" id="direccion_p" name="direccion_p" required="required" tabindex="7" placeholder="Ingrese Direcci&oacute;n">
                           <span class="fa fa-truck form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
 
                       <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion_p">Descripci&oacute;n: 
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="descripcion_p">Descripci&oacute;n:
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="descripcion_p" name="descripcion_p" required="required" placeholder="Ingrese una Descripci&oacute;n de el Proveedor" class="form-control col-md-7 col-xs-12" tabindex="8">
+                          <input type="text" class="form-control has-feedback-left" id="descripcion_p" name="descripcion_p" required="required" placeholder="Ingrese una Descripci&oacute;n" tabindex="8">
+                          <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
-                     
+
                       <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="observacion_p">Observaci&oacute;n: 
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="observacion_p" name="observacion_p" required="required" placeholder="Ingrese una Observaci&oacute;n de el Proveedor" class="form-control col-md-7 col-xs-12" tabindex="9">
+                          <input type="text" class="form-control has-feedback-left" id="observacion_p" name="observacion_p" required="required" placeholder="Ingrese una Observaci&oacute;n" tabindex="9">
+                          <span class="fa fa-pencil-square-o form-control-feedback left" aria-hidden="true"></span>
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
+
                       
                       <div class="ln_solid"></div>
                         <p style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios.</p>

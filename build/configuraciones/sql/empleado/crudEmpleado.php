@@ -24,9 +24,14 @@ if(isset($_POST["bandera"])){
     //echo $estado;
     echo "especialidad ".$especialidad;*/
  
-    $con = conectarMysql();
+    
 
     if($bandera=="add"){
+      $msj="Error";
+      
+        function obtenerResultado(){
+        $result=0;
+        $result1=0;
         $cargo = $_POST['cargo'];
         $dui = $_POST['dui'];
         $nit = $_POST['nit'];
@@ -36,89 +41,37 @@ if(isset($_POST["bandera"])){
         $genero = $_POST['genero'];
         $estado = '1';
         $estado_ci = $_POST['estado'];
-        $especialidad = $_POST['especialidad'];
-
         $telefono= $_POST['telefono'];
-        
         $correo = $_POST['correo'];
-
        
-        $result = $con->query("select max(idempleado)+1 as 'id' from empleado");
-        if ($result) {
-            while ($fila = $result->fetch_object()) {
-            $id=$fila->id;
-            }
-        }
-        if($id==null){
-            $id=$id+1;
-        }
 
-        echo "id ".$id;
-
-        $consulta1 = "INSERT INTO empleado(idempleado,nombre_em,apellido_em,DUI_em,NIT_em,direccion_em,cargo_em,especialidad_em,genero_em,estado_em,estado_ci) 
-        VALUES('$id','$nombre','$apellido','$dui','$nit','$direccion','$cargo','$especialidad','$genero','1','$estado_ci')";
-
+        $con = conectarMysql();
+        $consulta1 = "INSERT INTO empleado(nombre_em,apellido_em,DUI_em,NIT_em,direccion_em,cargo_em,genero_em,estado_em,estado_ci,telefono_em,correo_em) 
+        VALUES('$nombre','$apellido','$dui','$nit','$direccion','$cargo','$genero','1','$estado_ci','$telefono','$correo')";
        
-        $result1 = mysqli_query($con,$consulta1);
-        
-        if (!$result1) {
-         # code...
-            echo "<script type='text/javascript'>";
-            echo   "alert('Código o nombre ya existen');";
-            echo "</script>"; 
-       }else {
-         
-        echo "exito";
-        for($i=0 ; $i <count($telefono); $i++ ){
-            $consulta2 = "INSERT INTO empleado_telefono(telefono_em, idempleadotefk) VALUES ('$telefono[$i]','$id')";
-            echo $consulta2;
-            echo "</br>";
-            $result2 =mysqli_query($con,$consulta2);
-        }
-
-        for($j=0 ; $j <count($correo); $j++ ){
-            $consulta3 = "INSERT INTO empleado_correo(correo_em, idempleadocofk) VALUES ('$correo[$j]','$id')";
-            echo $consulta3;
-            echo "</br>";
-            $result3 =mysqli_query($con,$consulta3);
-
-        }
-
-        echo "<script type='text/javascript'>";
-        echo "location.href='../../../../produccion/Administracion/Empleado/registroEmpleado.php'";
-        echo "</script>"; 
-
+       $result = $con->query($consulta);
+       if ($result) {
+         $msj = "Exito";
+       } else {
+         $msj = "Error";
        }
-     
-       
-         
- 
-      /*   if(!$result1 || !$result2){
-           mysqli_query("rollback");
-           echo "<script type='text/javascript'>";
-           echo   "alert('Código o nombre ya existen');";
-           echo "</script>"; 
-         }else{
-           mysqli_query("commit");
-           echo "<script language='javascript'>";
-           //echo "location.href='../../../../produccion/Administracion/carrera/registrocarrera.php';";
-           echo "alert('Datos Almacenados');";
-           echo "</script>";
-          
-         }//fin else*/
-        
-
+       return $msj;
+     }
     }else if($bandera=="modificar"){
         $baccion=$_REQUEST["baccion"];
+        $dui = $_POST['dui'];
+        $nit = $_POST['nit'];
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
         $direccion = $_POST['direccion'];
         $genero = $_POST['genero'];
         $estado = '1';
-        $estado_ci = $_POST['estadoff'];
-        $especialidad = $_POST['especialidad'];
+        $estado_ci = $_POST['estado'];
+        $telefono= $_POST['telefono'];
+        $correo = $_POST['correo'];
+       
   
-        $consulta2  = "UPDATE empleado SET nombre_em='$nombre', apellido_em='$apellido', direccion_em='$direccion', especialidad_em='$especialidad',genero_em='$genero', estado_ci='$estado_ci' WHERE idempleado=".$baccion."";
+        $consulta2  = "UPDATE empleado SET nombre_em='$nombre', apellido_em='$apellido', direccion_em='$direccion',genero_em='$genero', estado_ci='$estado_ci' telefono_em='$telefono',correo_em='$correo' WHERE idempleado=".$baccion."";
        // $result2 =mysqli_query($con,$consulta2);
         $result2 = $con->query($consulta2);
           if (result2) {
@@ -188,5 +141,6 @@ if(isset($_POST["bandera"])){
       }
 
 }
+echo obtenerResultado();
 
 ?>
