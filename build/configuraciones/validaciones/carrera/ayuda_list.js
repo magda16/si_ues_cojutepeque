@@ -21,7 +21,7 @@ var tour = {
     {
       target: 'paso3',
       title: 'Dar Baja Carrera',
-      content: 'Debe Dar clic para Dar Baja a los Datos de la Carrera.',
+      content: 'Debe Dar Clic para Dar Baja a los Datos de la Carrera.',
       placement: 'left'
     }
   ],
