@@ -76,6 +76,8 @@
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Agregar Estudiante" href="../../../produccion/administracion/estudiante/registrar_estudiante.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Reporte Estudiante por Carrera" href="../../../build/configuraciones/reportes/estudiante/reporte_lista_estudiante.php"><i class="fa fa-print"></i></a>
+                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>
@@ -166,6 +168,44 @@
 
                         <div class="modal-header">
                           <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Estudiante</h4>
+                        </div>
+                        
+
+                        <div class="modal-body">
+                        <br/>
+                        
+                        <div class="form-group">
+                          <label class="control-label col-md-3 col-sm-3 col-xs-12" for="observacion">Observaci&oacute;n: <span class="required" style="color: #CD5C5C;"> *</span>
+                          </label>
+                          <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" id="observacion" name="observacion" placeholder="Digite una Observaci&oacute;n" class="form-control col-md-7 col-xs-12" tabindex="1">
+                            <br>
+                            <span class="help-block" id="error"></span>
+                          </div>
+                        </div>
+                        <br><br><br><br>
+                          
+                        </div>
+                        <div class="modal-footer">
+                          <p align="left" style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios.</p>
+                          <button class="btn btn-round btn-primary" type="button"  id="modalguardar" name="modalguardar"><i class="fa fa-save">  Guardar</i></button>
+                        </div>
+
+                       
+                      </div>
+                    </div>
+                  </div>
+                  </form>
+                  <!-- Fin Modal -->
+
+ <!-- Modal -->
+                <form id="fromdaralta" name="fromdaralta">
+                    <div class="modal fade" id="darAlta" name="darAlta" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog ">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Alta a Estudiante</h4>
                         </div>
                         
 

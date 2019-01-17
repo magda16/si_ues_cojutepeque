@@ -170,6 +170,29 @@ $(document).ready(function(){
         }
       });
 
+      $("#carnet").blur(function(){
+        var nombre = $("#carnet").val();
+        var tabla = "estudiante";
+        var nombre_campo = "carnet_es";
+        if(nombre.length>5){
+            $.ajax({
+              type: 'POST',
+              url: '../../../build/configuraciones/sql/validar_nombre.php',
+              data: {'nombre': nombre, 'tabla': tabla, 'nombre_campo': nombre_campo}
+            })
+            .done(function(resultado_ajax){
+              if(resultado_ajax!==""){
+                $("#carnet").val("");
+                $('#resultcoderror').text("Carnet Ya Existe");
+                $('#resultcod').removeClass('has-success').addClass('has-error');
+              }
+            })
+            .fail(function(){
+              alert('Hubo un error al cargar la Pagina')
+            })
+          }
+      });
+
       $.ajax({
         type: 'POST',
         url: '../../select_generales/f_facultad_carrera.php'
@@ -212,6 +235,8 @@ $(document).ready(function(){
       alert('Hubo un error al cargar los Planes de Estudio')
     })
   });
+  
+
   
   
     $("#btnguardar").click(function(){

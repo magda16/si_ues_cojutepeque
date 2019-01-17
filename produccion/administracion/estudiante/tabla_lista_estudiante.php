@@ -47,7 +47,8 @@
                         if($estado==1){
                         echo "<a id='paso2' class='btn btn-info' type='button' onclick='editarestudiante(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Editar Expediente'><i class='fa fa-edit'></i></a>";
                         echo "<a id='paso3' class='btn btn-dark' type='button' onclick='tramites(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Ver Procesos' ><i class='fa fa-folder-o'></i></a>";
-                        echo "<a id='paso4' class='btn btn-danger' type='button' onclick='confirmar(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Desactivar Estudiante' ><i class='fa fa-long-arrow-down'></i></a>";
+                        echo "<a id='paso4' class='btn btn-default' type='button' onclick='impre_estudiante(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Imprimir Expedine'><i class='fa fa-print'></i></a>";
+                        echo "<a id='paso5' class='btn btn-danger' type='button' onclick='confirmar(".$fila->idestudiante.")'data-toggle='tooltip' data-placement='top' title='Desactivar Estudiante' ><i class='fa fa-long-arrow-down'></i></a>";
                          }else if($estado==0){
                              echo "<a id='paso2' class='btn btn-primary' onclick='confirmaralta(".$fila->idestudiante.")' data-toggle='tooltip' data-placement='top' title='Activar Estudiante'><i class='fa fa-long-arrow-up'></i></a> ";
                          }
