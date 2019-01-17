@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <?php include ("../../complementos/cabezera.php"); ?>
     <script type="text/javascript">
@@ -59,8 +59,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -70,20 +70,11 @@
               <div class="col-sm-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2 style="color:RGB(205, 92, 92);">Lista de Recursos Humanos.</h2>
+                    <h2 style="color:RGB(205, 92, 92);">Lista de Recursos Humanos Activos.</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                      <li><a data-toggle="tooltip" data-placement="top" title="Agregar Recurso Humano" href="../../../produccion/administracion/empleado/registrar_empleado.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
                     </ul>
                     <div class="clearfix"></div>
@@ -93,12 +84,15 @@
 
                     <input type="hidden" name="bandera" id="bandera">
                     <input type="hidden" name="baccion" id="baccion">
+                    <input type="hidden" name="estado" id="estado" value="1">
 
+                    <div align="center">
+                      
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Recurso Humano: <span class="required" style="color: #CD5C5C;"> *</span></label>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12 text-right">Cargo: <span class="required" style="color: #CD5C5C;"> *</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
                           <select class="form-control" id="cargo" name="cargo">
-                          <option selected="selected" value="">Seleccione Recurso Humano...</option>
+                          <option selected="selected" value="">Seleccione Cargo...</option>
                           <?php
                               require '../../../build/configuraciones/conexion.php';
                               $con=conectarMysql();
@@ -114,62 +108,48 @@
                         </div>
                         <span class="help-block" id="error"></span>
                       </div>
-                    <br><br>
 
-                    <br><br><br><br>
-					
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>No.</th>
-                          <th>Nombre Completo</th>
-                          <th>Telefono</th>
-                          <th>Correo</th>
-                          <th>Acciones</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <?php
-                          
-                          $con=conectarMysql();
-                          $result = $con->query("SELECT * FROM empleado WHERE estado_em=1");
-                          $contador=1;
-                          if ($result) {
-                            while ($fila = $result->fetch_object()) {
-                             
-                              echo "<tr>";
-                              echo "<td>" .$contador. "</td>";
-                              echo "<td>" . $fila->nombre_em . "</td>";
-                              echo "<td>" . $fila->telefono_em . "</td>";
-                              echo "<td>" . $fila->correo_em . "</td>";
-                              echo "<td> <a class='btn btn-success openBtn' type='button' onclick='ver(".$fila->idempleado.")' data-toggle='tooltip' data-placement='top' title='Mostrar Empleado'><i class='fa fa-eye'></i></a>
-                                        <a class='btn btn-info' onclick='editarempleado(".$fila->idempleado.")' data-toggle='tooltip' data-placement='top' title='Editar Empleado'><i class='fa fa-edit'></i></a>
-                                        <a class='btn btn-danger' onclick='confirmar(".$fila->idempleado.")' data-toggle='tooltip' data-placement='top' title='Dar Baja Empleado'><i class='fa fa-long-arrow-down'></i></a>
-                                          </td>";
-                              echo "</tr>";
-                              $contador++;
+              
+                    </div>
+                    <div class="clearfix"></div>
+                   </br></br>
 
-                            }
-                          }
-                        ?>
-                    <!-- Contenido a mostrar en tabla -->
+                    
+                    
 
-                      </tbody>
-                    </table>
-                    <form id="fromeditarempleado" name="fromeditarempleado" action="../../../produccion/administracion/empleado/editarEmpleado.php" method="POST">
-                    <input type="hidden" id="id" name="id">
+                    <!-- inicio tabla-->
+                    <div id="div_tabla_recurso_humano">
+                    </div>
+                    <!-- fin tabla-->
+
+                    
+                    
+                    
+                    <form id="fromeditarempleado" name="fromeditarempleado" action="../../../produccion/administracion/empleado/editar_empleado.php" method="POST">
+                      <input type="hidden" id="id" name="id">
                     </form>
+
+
+                    <div>
+                        <div class="ln_solid"></div>
+                        <p style="color:RGB(205, 92, 92);">( * ) Campos Obligatorios Editables.</p> 
+                    </div>
+                        
+                   
+                    
 
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-           </div>
+
+   
+            </div>
 
             
-            <!-- Modal -->
-            <div class="modal fade" id="datosEmpleado" name="datosEmpleado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+             <!-- Modal -->
+             <div class="modal fade" id="datosEmpleado" name="datosEmpleado" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
               <div class="modal-dialog ">
                 <div class="modal-content" id="insertarhtmlempleado">
 
@@ -178,14 +158,15 @@
             </div>
             <!-- Fin Modal -->
 
-               <!-- Modal -->
-               <form id="fromdarbaja" name="fromdarbaja">
+
+                    <!-- Modal -->
+                    <form id="fromdarbaja" name="fromdarbaja">
                     <div class="modal fade" id="darBaja" name="darBaja" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog ">
                       <div class="modal-content">
 
                         <div class="modal-header">
-                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Aula</h4>
+                          <h4 class="modal-title" id="myModalLabel" style="color: RGB(0, 0, 128);" align="center">Dar Baja Recurso Humano</h4>
                         </div>
                         
 
@@ -216,10 +197,9 @@
                   </form>
                   <!-- Fin Modal -->
 
+           
+          
         </div>
-
-       
-
         <!-- /page content -->
 
         <!-- footer content -->
@@ -229,8 +209,7 @@
       </div>
     </div>
     <?php include ("../../complementos/script_generales.php"); ?>
-    <script src="../../../build/configuraciones/validaciones/empleado/validar_lis.js"></script>
-    
-	
+    <script src="../../../build/configuraciones/validaciones/empleado/validar_list.js"></script>
+    <script src="../../../build/configuraciones/validaciones/empleado/ayuda_list.js"></script>
   </body>
 </html>

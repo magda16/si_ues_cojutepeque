@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 15-01-2019 a las 21:40:05
+-- Tiempo de generación: 17-01-2019 a las 07:10:18
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS `af_categoria` (
 --
 
 INSERT INTO `af_categoria` (`idafcategoria`, `codigo_c`, `id_nombre_c`, `nombre_c`, `idafinsfk`) VALUES
-(1, '00000', 'MB', 'Bienes Muebles', 1),
-(2, '01000', 'EC', 'Equipo de Computo', 1);
+(1, '01000', 'BM', 'Bienes Muebles', 1),
+(2, '02000', 'EC', 'Equipo de Computo', 1);
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `af_subcategoria` (
   `cantidad_s` int(11) NOT NULL,
   `idafcategoriafk` int(11) NOT NULL,
   PRIMARY KEY (`idafsubc`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `af_subcategoria`
@@ -92,7 +92,8 @@ CREATE TABLE IF NOT EXISTS `af_subcategoria` (
 INSERT INTO `af_subcategoria` (`idafsubc`, `codigo_s`, `id_nombre_s`, `nombre_s`, `cantidad_s`, `idafcategoriafk`) VALUES
 (1, '00001', 'EMM', 'Escritorio Mediano Metalico', 0, 1),
 (2, '00002', 'EGM', 'Escritorio Grande Metalico', 0, 1),
-(3, '00003', 'L', 'Laptop', 0, 2);
+(3, '00003', 'L', 'Laptop', 0, 2),
+(4, '00004', 'BI', 'Bienes Inmuebles', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -182,7 +183,7 @@ CREATE TABLE IF NOT EXISTS `carrera` (
   `observacion_ca` text NOT NULL,
   `idfacultadfk` int(11) NOT NULL,
   PRIMARY KEY (`idcarrera`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `carrera`
@@ -190,11 +191,12 @@ CREATE TABLE IF NOT EXISTS `carrera` (
 
 INSERT INTO `carrera` (`idcarrera`, `codigo_ca`, `nombre_ca`, `duracion_ca`, `estado_ca`, `observacion_ca`, `idfacultadfk`) VALUES
 (1, 'L10902', 'Licenciatura en InformÃ¡tica Educativa ', 5, 1, 'Registro', 1),
-(2, 'L10904', 'Licenciatura en EnseÃ±anza de la MatemÃ¡tica', 5, 1, 'Registro', 1),
+(2, 'L10904', 'Licenciatura en EnseÃ±anza de la MatemÃ¡tica', 5, 0, 'pocos alumnos', 1),
 (3, 'L10415', 'Licenciatura en EnseÃ±anza del Ingles', 5, 1, 'Registro', 2),
 (4, 'L10515', 'IngenierÃ­a de Sistemas InformÃ¡ticos', 5, 1, 'Registro', 3),
 (5, 'L10502', 'IngenierÃ­a Industrial', 5, 1, 'Registro', 3),
-(6, 'L10805', 'Licenciatura en Mercadeo internacional', 5, 1, 'Registro', 4);
+(6, 'L10805', 'Licenciatura en Mercadeo internacional', 5, 1, 'esta bastante demandada', 4),
+(7, 'L23589', 'lic en trabajo social', 5, 1, 'Registro', 2);
 
 -- --------------------------------------------------------
 
@@ -323,10 +325,12 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `NIT_em` varchar(18) NOT NULL,
   `direccion_em` text NOT NULL,
   `cargo_em` int(11) NOT NULL,
-  `especialidad_em` varchar(75) NOT NULL,
   `genero_em` varchar(10) NOT NULL,
+  `telefono_em` varchar(10) NOT NULL,
+  `correo_em` varchar(100) NOT NULL,
   `estado_em` int(11) NOT NULL,
   `estado_ci` varchar(30) NOT NULL,
+  `observacion_em` text NOT NULL,
   PRIMARY KEY (`idempleado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -386,7 +390,7 @@ INSERT INTO `estudiante` (`idestudiante`, `carnet_es`, `nombre_es`, `apellido_es
 (21, 'SV16030', 'Elvin SaÃºl', 'Sibrian VÃ¡squez', 'Masculino', '0124-070491-197-1', '08326999-5', 'Ilobasco CabaÃ±as', '7294-5853', 'sv16030@ues.edu.sv', 'Publica', 1, 1, 2, 2, 3, 'Registro'),
 (22, 'MM16198', 'VÃ­ctor Manuel', 'MartÃ­nez MartÃ­nez', 'Masculino', '0124-040497-182-2', '06671667-4', 'Cojutepeque CuscatlÃ¡n', '7132-1283', 'mm16198@ues.edu.sv', 'Publica', 1, 1, 2, 2, 3, 'Registro'),
 (23, 'HS17024', 'KAREN YANETH', 'HERNANDEZ SURIA', 'Femenino', '0181-060495-187-3', '05477406-0', 'San Rafael Cedros', '7929-2619', 'hs17024@ues.edu.sv', 'Privada', 1, 1, 2, 2, 2, 'Registro'),
-(24, 'CM18088', 'Douglas Bladimir', 'Cruz MarroquÃ­n', 'Masculino', '0187-180890-187-4', '06104148-1', 'San Rafael Cedros', '7896-2770', 'CM18088@ues.edu.sv', 'Publica', 1, 1, 2, 2, 1, 'Registro'),
+(24, 'CM18088', 'Douglas Bladimir', 'Cruz MarroquÃ­n', 'Masculino', '0187-180890-187-4', '06104148-1', 'San Rafael Cedros', '7896-2770', 'CM18088@ues.edu.sv', 'Publica', 1, 1, 2, 2, 1, 'reingreso'),
 (25, 'DM18029', 'Dora Alicia', 'DÃ­az MejÃ­a', 'Femenino', '0178-080891-134-4', '04029014-3', 'Cojutepeque CuscatlÃ¡n', '7277-8051', 'DM18029@ues.edu.sv', 'Publica', 1, 1, 2, 2, 1, 'Registro'),
 (26, 'MM18148', 'Gloria Yesenia', 'Marmol de MuÃ±oz', 'Femenino', '0176-010493-163-6', '00239980-2', 'Santo Domingo San Vicente', '7740-9941', 'MM18148@ues.edu.sv', 'Publica', 1, 1, 2, 2, 1, 'Registro'),
 (27, 'RL18030', 'Karina Lisbeth', 'Rivera Leiva', 'Femenino', '0168-070498-191-6', '04399122-0', 'Ilobasco CabaÃ±as', '7571-2998', 'RL18030@ues.edu.sv', 'Privada', 1, 1, 2, 2, 1, 'Registro'),
@@ -426,7 +430,7 @@ INSERT INTO `estudiante` (`idestudiante`, `carnet_es`, `nombre_es`, `apellido_es
 (61, 'LL17029', 'Sandra Beatriz', 'Lozano ', 'Femenino', '0156-140599-159-0', '02843819-3', 'San Rafael Cedros', '7426-9633', 'll17029@ues.edu.sv', 'Privada', 1, 4, 6, 6, 2, 'Registro'),
 (62, 'RD17039', 'Esteysi Guadalupe', 'Rivas Duran ', 'Femenino', '0119-081191-127-3', '01344645-3', 'San Rafael Cedros', '7017-5663', 'rd17039@ues.edu.sv', 'Publica', 1, 4, 6, 6, 2, 'Registro'),
 (63, 'MC15095', 'Corina Yamileth', 'MartÃ­nez ChacÃ³n', 'Femenino', '0150-071195-148-2', '04349553-5', 'Ilobasco CabaÃ±as', '7725-2981', 'mc15095@ues.edu.sv', 'Publica', 1, 4, 6, 6, 2, 'Registro'),
-(64, 'CC18105', 'Elsy Noemy', ' CaÃ±as ', 'Masculino', '0183-091197-109-6', '00404509-5', 'Santa Cruz Michapa', '7665-3854', 'CC18105@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
+(64, 'CC18105', 'Elsy Noemy', ' CaÃ±as ', 'Masculino', '0183-091197-109-6', '00404509-5', 'Santa Cruz Michapa', '7665-3854', 'CC18105@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'se reintegro'),
 (65, 'CV18049', 'Aracely de FÃ¡tima', 'Cruz Valle', 'Femenino', '0185-091199-141-1', '00280322-7', 'Cojutepeque CuscatlÃ¡n', '7920-2050', 'CV18049@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
 (66, 'DA18021', 'Gerson Otoniel', 'Delgado ArdÃ³n', 'Masculino', '0137-230790-102-7', '08649626-8', 'San SebastiÃ¡n San Vicente', '7386-7101', 'DA18021@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
 (67, 'DV18012', 'Jennifer Lisseth', 'DÃ­az VÃ¡squez', 'Femenino', '0185-070795-150-7', '02215844-7', 'Cojutepeque CuscatlÃ¡n', '7353-1919', 'DV18012@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
@@ -505,7 +509,7 @@ INSERT INTO `facultad` (`idfacultad`, `nombre_fa`, `telefono_fa`, `correo_fa`, `
 (1, 'Facultad de Ciencias Naturales', '2255-2310', 'ci_mat@ues.edu.sv', 1, 1),
 (2, 'Facultad de Humanidades', '2530-8974', 'humanidades@ues.edu.sv', 1, 2),
 (3, 'Facultad de IngenierÃ­a y Arquitectura', '2140-9021', 'ing_arq@ues.edu.sv', 1, 3),
-(4, 'Facultad de Ciencias EconÃ³micas ', '2455-2145', 'ci_eco@ues.edu.sv', 1, 4);
+(4, 'Facultad de Ciencias EconÃ³micas ', '2455-2146', 'ci_eco@ues.edu.sv', 1, 5);
 
 -- --------------------------------------------------------
 
@@ -586,7 +590,15 @@ CREATE TABLE IF NOT EXISTS `proveedor` (
   `estado_p` int(11) NOT NULL,
   `observacion` text NOT NULL,
   PRIMARY KEY (`idproveedor`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`idproveedor`, `nombre_c`, `apellido_c`, `proveedor`, `NIT_p`, `telefono_p`, `correo_p`, `direccion_p`, `descripcion_p`, `observacion_p`, `estado_p`, `observacion`) VALUES
+(1, 'Ana Maria', 'Martinez Duran', 'Sillas S.A de C.V', '1003-529863-524-8', '2285-9698', 'sillass@gmail.com', 'Cojutepequee', 'venta de sillase', 'Primera Compraa', 0, 'pero mejor no'),
+(2, 'Luis Antonio', 'Beltran', 'Mesas S.A de C.V', '1003-205685-101-5', '2258-9663', 'mesas@gmail.com', 'Cojutepeque', 'es para el aula 23', 'primera compra', 1, 'Registro');
 
 -- --------------------------------------------------------
 
@@ -605,7 +617,7 @@ CREATE TABLE IF NOT EXISTS `representante_facultad` (
   `estado_rf` int(11) NOT NULL,
   `observacion_rf` text NOT NULL,
   PRIMARY KEY (`id_re_fa`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `representante_facultad`
@@ -615,9 +627,10 @@ INSERT INTO `representante_facultad` (`id_re_fa`, `nombre_rf`, `apellido_rf`, `g
 (1, 'Luis Antonio', 'RodrÃ­guez Lara', 'Masculino', '6785-4125', 'lara_ues@gmail.com', 1, 'Registro'),
 (2, 'JosÃ© Roberto ', 'Carranza DÃ­az', 'Masculino', '6528-9900', 'carranza_ues@gmail.com', 1, 'Registro'),
 (3, 'Anabel MarÃ­a', 'Arias Estrada', 'Femenino', '6021-1541', 'arias_ues@gamil.com', 1, 'Registro'),
-(4, 'Carlos Francisco', 'MartÃ­nez MartÃ­nez ', 'Masculino', '6850-0000', 'martinez_ues@gmail.com', 1, 'Registro'),
-(5, 'Ana Luisa', 'Duran SÃ¡nchez', 'Femenino', '6030-6674', 'duran_ues@gmail.com', 1, 'Registro'),
-(6, 'VerÃ³nica Elizabeth', 'Escobar Mendoza', 'Femenino', '6155-9118', 'escobar_ues@gmail.com', 1, 'Registro');
+(4, 'Carlos Francisco', 'MartÃ­nez MartÃ­nez ', 'Masculino', '6850-0000', 'martinez_ues@gmail.com', 1, 'se reintegro'),
+(5, 'Ana Luisa', 'Duran SÃ¡nchez', 'Femenino', '6030-6676', 'duran_ue@gmail.com', 1, 'Registro'),
+(6, 'VerÃ³nica Elizabeth', 'Escobar Mendoza', 'Femenino', '6155-9118', 'escobar_ues@gmail.com', 1, 'Registro'),
+(7, 'Roberto', 'Vega', 'Masculino', '2256-9846', 'roberto6@gmail.com', 1, 'Registro');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

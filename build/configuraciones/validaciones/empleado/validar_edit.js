@@ -147,45 +147,43 @@ $(document).ready(function(){
 });
 
 
+  $("#btneditar").click(function(){
+    if($("#formempleado").valid()){
 
-
-$("#btnguardar").click(function(){
-  if($("#formempleado").valid()){
-
-    $('#bandera').val("add");
-    $.ajax({
-      type: 'POST',
-      url: '../../../build/configuraciones/sql/empleado/crud_empleado.php',
-      data: $("#formempleado").serialize()
-    })
-    .done(function(resultado_ajax){
-      if(resultado_ajax === "Exito"){
-        swal({ 
-          title:'Éxito',
-          text: 'Datos Almacenados',
-          type: 'success'
-        },
-          function(){
-            //event to perform on click of ok button of sweetalert
-            location.href='../../../produccion/administracion/empleado/registrar_empleado.php';
-        })
-      }
-      if(resultado_ajax === "Error"){
-        swal({ 
-          title:'Advertencia',
-          text: 'Sin Conexión Dase Datos',
-          type: 'warning'
-        },
-          function(){
+      $('#bandera').val("edit");
+      $.ajax({
+        type: 'POST',
+        url: '../../../build/configuraciones/sql/empleado/crud_empleado.php',
+        data: $("#formempleado").serialize()
+      })
+      .done(function(resultado_ajax){
+        if(resultado_ajax === "Exito"){
+          swal({ 
+            title:'Éxito',
+            text: 'Datos Almacenados',
+            type: 'success'
+          },
+            function(){
               //event to perform on click of ok button of sweetalert
-              location.href='../../../produccion/administracion/empleado/registrar_empleado.php';
+              location.href='../../../produccion/administracion/empleado/lista_empleado.php';
           })
-              
-      }                
-    })
-    .fail(function(){
-      alert('Hubo un error al cargar la Pagina')
-    })
-  }
-  
-});
+        }
+        if(resultado_ajax === "Error"){
+          swal({ 
+            title:'Advertencia',
+            text: 'Sin Conexión Dase Datos',
+            type: 'warning'
+          },
+            function(){
+                //event to perform on click of ok button of sweetalert
+                location.href='../../../produccion/administracion/empleado/lista_empleado.php';
+            })
+                
+        }                
+      })
+      .fail(function(){
+        alert('Hubo un error al cargar la Pagina')
+      })
+    }
+    
+  });

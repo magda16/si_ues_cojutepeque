@@ -109,7 +109,7 @@ $(document).ready(function(){
           nivel: {
             required: true,
             
-          },
+          }
         },
 
         messages: {
