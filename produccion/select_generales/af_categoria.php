@@ -3,7 +3,7 @@
     
     function obtenerCategoria(){
     $con=conectarMysql();
-    $consulta  = "SELECT idafcategoria, codigo_c, id_nombre_c, nombre_c, idafinsfk FROM af_categoria";
+    $consulta  = "SELECT idafcategoria, codigo_c, nombre_c, idafinsfk FROM af_categoria";
     $result = $con->query($consulta);
     $listas = "<option value=''>Seleccione Categoria...</option>";
       if ($result) {

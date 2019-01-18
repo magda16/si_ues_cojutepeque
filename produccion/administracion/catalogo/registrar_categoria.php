@@ -61,7 +61,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_Cojutepeque</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -120,14 +120,7 @@
                         <span class="help-block" id="resultcaterror"></span>
                       </div>
                       
-                      <div class="form-group" id="resultac">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="abre_cate">Abreviaci&oacute;n &nbsp;&nbsp;&nbsp;&nbsp;Categor&iacute;a: <span class="required" style="color: #CD5C5C;"> *</span> 
-                        </label><br>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="text" id="abre_cate" name="abre_cate" required="required" class="form-control col-md-7 col-xs-12" tabindex="1" placeholder="Ingrese Abreviaci&oacute;n Categor&iacute;a">
-                        </div>
-                        <span class="help-block" id="resultacerror"></span>
-                      </div>
+                      
                      
                 
                      

@@ -18,12 +18,6 @@ var tour = {
         content: 'Debe Ingresar el Tipo de Bien.',
         placement: 'bottom'
       },
-      { 
-        target: 'abre_subcate',
-        title: 'Abreviaci&oacute;n Tipo de Bien',
-        content: 'Debe Ingresar la Abreviaci&oacute;n de el Tipo de Bien.',
-        placement: 'bottom'
-      },
       {
         target: 'btnguardar',
         title: 'Guardar',

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 17-01-2019 a las 07:10:18
+-- Tiempo de generación: 18-01-2019 a las 06:46:09
 -- Versión del servidor: 5.7.21
 -- Versión de PHP: 5.6.35
 
@@ -32,7 +32,6 @@ DROP TABLE IF EXISTS `af_categoria`;
 CREATE TABLE IF NOT EXISTS `af_categoria` (
   `idafcategoria` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_c` varchar(6) NOT NULL,
-  `id_nombre_c` varchar(10) NOT NULL,
   `nombre_c` varchar(200) NOT NULL,
   `idafinsfk` int(11) NOT NULL,
   PRIMARY KEY (`idafcategoria`)
@@ -42,9 +41,9 @@ CREATE TABLE IF NOT EXISTS `af_categoria` (
 -- Volcado de datos para la tabla `af_categoria`
 --
 
-INSERT INTO `af_categoria` (`idafcategoria`, `codigo_c`, `id_nombre_c`, `nombre_c`, `idafinsfk`) VALUES
-(1, '01000', 'BM', 'Bienes Muebles', 1),
-(2, '02000', 'EC', 'Equipo de Computo', 1);
+INSERT INTO `af_categoria` (`idafcategoria`, `codigo_c`, `nombre_c`, `idafinsfk`) VALUES
+(1, '01000', 'Bienes Muebles', 1),
+(2, '02000', 'Equipo de Computo', 1);
 
 -- --------------------------------------------------------
 
@@ -78,22 +77,26 @@ DROP TABLE IF EXISTS `af_subcategoria`;
 CREATE TABLE IF NOT EXISTS `af_subcategoria` (
   `idafsubc` int(11) NOT NULL AUTO_INCREMENT,
   `codigo_s` varchar(6) NOT NULL,
-  `id_nombre_s` varchar(10) NOT NULL,
   `nombre_s` varchar(200) NOT NULL,
   `cantidad_s` int(11) NOT NULL,
   `idafcategoriafk` int(11) NOT NULL,
   PRIMARY KEY (`idafsubc`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `af_subcategoria`
 --
 
-INSERT INTO `af_subcategoria` (`idafsubc`, `codigo_s`, `id_nombre_s`, `nombre_s`, `cantidad_s`, `idafcategoriafk`) VALUES
-(1, '00001', 'EMM', 'Escritorio Mediano Metalico', 0, 1),
-(2, '00002', 'EGM', 'Escritorio Grande Metalico', 0, 1),
-(3, '00003', 'L', 'Laptop', 0, 2),
-(4, '00004', 'BI', 'Bienes Inmuebles', 0, 1);
+INSERT INTO `af_subcategoria` (`idafsubc`, `codigo_s`, `nombre_s`, `cantidad_s`, `idafcategoriafk`) VALUES
+(1, '00001', 'Escritorio Mediano MetÃ¡lico', 10, 1),
+(2, '00002', 'Escritorio Grande MetÃ¡lico', 0, 1),
+(3, '00003', 'Escritorio Grande de Madera', 0, 1),
+(4, '00004', 'Escritorio Mediano de Madera', 0, 1),
+(5, '00005', 'Gavetero Mediano MetÃ¡lico', 0, 1),
+(6, '00006', 'Gavetero Mediano de MetÃ¡lico', 0, 1),
+(7, '00007', 'Pupitre Unipersonal Mediano', 0, 1),
+(8, '00008', 'Archivero Grande MetÃ¡lico', 0, 1),
+(9, '00009', 'Laptop', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -131,20 +134,21 @@ CREATE TABLE IF NOT EXISTS `aula` (
   `estado_au` int(11) NOT NULL,
   `observacion_au` text NOT NULL,
   PRIMARY KEY (`idaula`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `aula`
 --
 
 INSERT INTO `aula` (`idaula`, `nombre_au`, `ubicacion_au`, `cantidad_au`, `estado_au`, `observacion_au`) VALUES
-(1, 'Aula 19', 'Zona 10 Edifico A Segundo nivel', 35, 1, 'Registro'),
+(1, 'Aula 19', 'Zona 10 Edifico A Segundo nivel', 30, 0, 'Aula daÃ±ada por terremoto'),
 (2, 'Aula20', 'Zona 10 Edifico A Segundo nivel', 35, 1, 'Registro'),
 (3, 'Aula21', 'Zona 10 Edifico A Segundo nivel', 35, 1, 'Registro'),
 (4, 'Aula22', 'Zona 10 Edifico A Segundo nivel', 35, 1, 'Registro'),
 (5, 'Aula23', 'Zona 10 Edifico A Segundo nivel', 35, 1, 'Registro'),
 (6, 'Aula24', 'Zona 10 Edifico A Segundo nivel', 35, 1, 'Registro'),
-(7, 'Laboratorio de Ciencias Naturales', 'Zona 26 pasillo uno aula 2', 30, 1, 'Registro');
+(7, 'Laboratorio de Ciencias Naturales', 'Zona 26 pasillo uno aula 2', 30, 1, 'Registro'),
+(8, 'Aula 25', 'Zona 10 Edificio A Segundo Nivel', 35, 1, 'Registro');
 
 -- --------------------------------------------------------
 
@@ -183,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `carrera` (
   `observacion_ca` text NOT NULL,
   `idfacultadfk` int(11) NOT NULL,
   PRIMARY KEY (`idcarrera`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `carrera`
@@ -191,12 +195,12 @@ CREATE TABLE IF NOT EXISTS `carrera` (
 
 INSERT INTO `carrera` (`idcarrera`, `codigo_ca`, `nombre_ca`, `duracion_ca`, `estado_ca`, `observacion_ca`, `idfacultadfk`) VALUES
 (1, 'L10902', 'Licenciatura en InformÃ¡tica Educativa ', 5, 1, 'Registro', 1),
-(2, 'L10904', 'Licenciatura en EnseÃ±anza de la MatemÃ¡tica', 5, 0, 'pocos alumnos', 1),
+(2, 'L10904', 'Licenciatura en EnseÃ±anza de la MatemÃ¡tica', 5, 1, 'Activacion de ciclo', 1),
 (3, 'L10415', 'Licenciatura en EnseÃ±anza del Ingles', 5, 1, 'Registro', 2),
 (4, 'L10515', 'IngenierÃ­a de Sistemas InformÃ¡ticos', 5, 1, 'Registro', 3),
 (5, 'L10502', 'IngenierÃ­a Industrial', 5, 1, 'Registro', 3),
-(6, 'L10805', 'Licenciatura en Mercadeo internacional', 5, 1, 'esta bastante demandada', 4),
-(7, 'L23589', 'lic en trabajo social', 5, 1, 'Registro', 2);
+(6, 'L10805', 'Licenciatura en Mercadeo internacional', 5, 1, 'Registro', 4),
+(8, 'L10906', 'Licenciatura en EnseÃ±anza de las Ciencias', 5, 1, 'Hay demanda', 1);
 
 -- --------------------------------------------------------
 
@@ -219,7 +223,57 @@ CREATE TABLE IF NOT EXISTS `documentos_es` (
   `estado_doces` int(11) NOT NULL,
   `idestudiantefk` int(11) NOT NULL,
   PRIMARY KEY (`iddoces`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `documentos_es`
+--
+
+INSERT INTO `documentos_es` (`iddoces`, `pago_certificado_doces`, `certificado_medico_doces`, `matricula_doces`, `primera_cuota_doces`, `DUI_doces`, `NIT_doces`, `paes_doces`, `partida_nacimiento_doces`, `tituloba_doces`, `estado_doces`, `idestudiantefk`) VALUES
+(1, '', '../../../../Archivos/AM16123/certificado_medico.jpeg', '', '', '../../../../Archivos/AM16123/dui.jpeg', '../../../../Archivos/AM16123/nit.jpeg', '', '../../../../Archivos/AM16123/partida_nacimiento.jpeg', '../../../../Archivos/AM16123/titulo_bachiller.jpeg', 1, 1),
+(2, '', '../../../../Archivos/CH16038/certificado_medico.jpeg', '', '', '../../../../Archivos/CH16038/dui.jpeg', '../../../../Archivos/CH16038/nit.jpeg', '', '../../../../Archivos/CH16038/partida_nacimiento.jpeg', '../../../../Archivos/CH16038/titulo_bachiller.jpeg', 1, 2),
+(3, '', '../../../../Archivos/MD16044/certificado_medico.jpeg', '', '', '../../../../Archivos/MD16044/dui.jpeg', '../../../../Archivos/MD16044/nit.jpeg', '', '../../../../Archivos/MD16044/partida_nacimiento.jpeg', '../../../../Archivos/MD16044/titulo_bachiller.jpeg', 1, 3),
+(4, '', '../../../../Archivos/HS16020/certificado_medico.jpeg', '../../../../Archivos/HS16020/matricula.png', '../../../../Archivos/HS16020/primera_cuota.png', '../../../../Archivos/HS16020/dui.jpeg', '../../../../Archivos/HS16020/nit.jpeg', '', '../../../../Archivos/HS16020/partida_nacimiento.jpeg', '../../../../Archivos/HS16020/titulo_bachiller.jpeg', 1, 4),
+(5, '', '../../../../Archivos/LZ16005/certificado_medico.jpeg', '', '', '../../../../Archivos/LZ16005/dui.jpeg', '../../../../Archivos/LZ16005/nit.jpeg', '', '../../../../Archivos/LZ16005/partida_nacimiento.jpeg', '../../../../Archivos/LZ16005/titulo_bachiller.jpeg', 1, 5),
+(6, '', '../../../../Archivos/AC16097/certificado_medico.jpeg', '', '', '../../../../Archivos/AC16097/dui.jpeg', '../../../../Archivos/AC16097/nit.jpeg', '', '../../../../Archivos/AC16097/partida_nacimiento.jpeg', '../../../../Archivos/AC16097/titulo_bachiller.jpeg', 1, 6),
+(7, '', '../../../../Archivos/IM17005/certificado_medico.jpeg', '', '', '../../../../Archivos/IM17005/dui.jpeg', '../../../../Archivos/IM17005/nit.jpeg', '', '../../../../Archivos/IM17005/partida_nacimiento.jpeg', '../../../../Archivos/IM17005/titulo_bachiller.jpeg', 1, 7),
+(8, '', '../../../../Archivos/MQ17007/certificado_medico.jpeg', '', '', '../../../../Archivos/MQ17007/dui.jpeg', '../../../../Archivos/MQ17007/nit.jpeg', '', '../../../../Archivos/MQ17007/partida_nacimiento.jpeg', '../../../../Archivos/MQ17007/titulo_bachiller.jpeg', 1, 8),
+(9, '', '../../../../Archivos/HC17041/certificado_medico.jpeg', '', '', '../../../../Archivos/HC17041/dui.jpeg', '../../../../Archivos/HC17041/nit.jpeg', '', '../../../../Archivos/HC17041/partida_nacimiento.jpeg', '../../../../Archivos/HC17041/titulo_bachiller.jpeg', 1, 9),
+(10, '', '../../../../Archivos/RD17028/certificado_medico.jpeg', '', '', '../../../../Archivos/RD17028/dui.jpeg', '../../../../Archivos/RD17028/nit.jpeg', '', '../../../../Archivos/RD17028/partida_nacimiento.jpeg', '../../../../Archivos/RD17028/titulo_bachiller.jpeg', 1, 10),
+(11, '', '../../../../Archivos/VC17036/certificado_medico.jpeg', '', '', '../../../../Archivos/VC17036/dui.jpeg', '../../../../Archivos/VC17036/nit.jpeg', '', '../../../../Archivos/VC17036/partida_nacimiento.jpeg', '../../../../Archivos/VC17036/titulo_bachiller.jpeg', 1, 11),
+(12, '', '../../../../Archivos/SV16030/certificado_medico.jpeg', '', '', '../../../../Archivos/SV16030/dui.jpeg', '../../../../Archivos/SV16030/nit.jpeg', '', '../../../../Archivos/SV16030/partida_nacimiento.jpeg', '../../../../Archivos/SV16030/titulo_bachiller.jpeg', 1, 21),
+(13, '', '../../../../Archivos/MM16198/certificado_medico.jpeg', '', '', '../../../../Archivos/MM16198/dui.jpeg', '../../../../Archivos/MM16198/nit.jpeg', '', '../../../../Archivos/MM16198/partida_nacimiento.jpeg', '../../../../Archivos/MM16198/titulo_bachiller.jpeg', 1, 22),
+(14, '', '../../../../Archivos/HS17024/certificado_medico.jpeg', '../../../../Archivos/HS17024/matricula.png', '../../../../Archivos/HS17024/primera_cuota.png', '../../../../Archivos/HS17024/dui.jpeg', '../../../../Archivos/HS17024/nit.jpeg', '', '../../../../Archivos/HS17024/partida_nacimiento.jpeg', '../../../../Archivos/HS17024/titulo_bachiller.jpeg', 1, 23),
+(15, '', '../../../../Archivos/CM18088/certificado_medico.jpeg', '', '', '../../../../Archivos/CM18088/dui.jpeg', '../../../../Archivos/CM18088/nit.jpeg', '', '../../../../Archivos/CM18088/partida_nacimiento.jpeg', '../../../../Archivos/CM18088/titulo_bachiller.jpeg', 1, 24),
+(16, '', '../../../../Archivos/DM18029/certificado_medico.jpeg', '', '', '../../../../Archivos/DM18029/dui.jpeg', '../../../../Archivos/DM18029/nit.jpeg', '', '../../../../Archivos/DM18029/partida_nacimiento.jpeg', '../../../../Archivos/DM18029/titulo_bachiller.jpeg', 1, 25),
+(17, '', '../../../../Archivos/MM18148/certificado_medico.jpeg', '', '', '../../../../Archivos/MM18148/dui.jpeg', '../../../../Archivos/MM18148/nit.jpeg', '', '../../../../Archivos/MM18148/partida_nacimiento.jpeg', '../../../../Archivos/MM18148/titulo_bachiller.jpeg', 1, 26),
+(18, '', '../../../../Archivos/RL18030/certificado_medico.jpeg', '../../../../Archivos/RL18030/matricula.png', '../../../../Archivos/RL18030/primera_cuota.png', '../../../../Archivos/RL18030/dui.jpeg', '../../../../Archivos/RL18030/nit.jpeg', '', '../../../../Archivos/RL18030/partida_nacimiento.jpeg', '../../../../Archivos/RL18030/titulo_bachiller.jpeg', 1, 27),
+(19, '', '../../../../Archivos/CH16041/certificado_medico.jpeg', '', '', '../../../../Archivos/CH16041/dui.jpeg', '../../../../Archivos/CH16041/nit.jpeg', '', '../../../../Archivos/CH16041/partida_nacimiento.jpeg', '../../../../Archivos/CH16041/titulo_bachiller.jpeg', 1, 30),
+(20, '', '../../../../Archivos/MG18070/certificado_medico.jpeg', '', '', '../../../../Archivos/MG18070/dui.jpeg', '../../../../Archivos/MG18070/nit.jpeg', '', '../../../../Archivos/MG18070/partida_nacimiento.jpeg', '../../../../Archivos/MG18070/titulo_bachiller.jpeg', 1, 31),
+(21, '', '../../../../Archivos/LB18006/certificado_medico.jpeg', '', '', '../../../../Archivos/LB18006/dui.jpeg', '../../../../Archivos/LB18006/nit.jpeg', '', '../../../../Archivos/LB18006/partida_nacimiento.jpeg', '../../../../Archivos/LB18006/titulo_bachiller.jpeg', 1, 32),
+(22, '', '../../../../Archivos/MR18065/certificado_medico.jpeg', '', '', '../../../../Archivos/MR18065/dui.jpeg', '../../../../Archivos/MR18065/nit.jpeg', '', '../../../../Archivos/MR18065/partida_nacimiento.jpeg', '../../../../Archivos/MR18065/titulo_bachiller.jpeg', 1, 33),
+(23, '', '../../../../Archivos/RR18090/certificado_medico.jpeg', '', '', '../../../../Archivos/RR18090/dui.jpeg', '../../../../Archivos/RR18090/nit.jpeg', '', '../../../../Archivos/RR18090/partida_nacimiento.jpeg', '../../../../Archivos/RR18090/titulo_bachiller.jpeg', 1, 34),
+(24, '', '../../../../Archivos/RR18092/certificado_medico.jpeg', '../../../../Archivos/RR18092/matricula.png', '../../../../Archivos/RR18092/primera_cuota.png', '../../../../Archivos/RR18092/dui.jpeg', '../../../../Archivos/RR18092/nit.jpeg', '', '../../../../Archivos/RR18092/partida_nacimiento.jpeg', '', 1, 35),
+(25, '', '../../../../Archivos/AM17058/certificado_medico.jpeg', '', '', '../../../../Archivos/AM17058/dui.jpeg', '../../../../Archivos/AM17058/nit.jpeg', '', '../../../../Archivos/AM17058/partida_nacimiento.jpeg', '../../../../Archivos/AM17058/titulo_bachiller.jpeg', 1, 39),
+(26, '', '../../../../Archivos/SL17015/certificado_medico.jpeg', '', '', '../../../../Archivos/SL17015/dui.jpeg', '../../../../Archivos/SL17015/nit.jpeg', '', '../../../../Archivos/SL17015/partida_nacimiento.jpeg', '../../../../Archivos/SL17015/titulo_bachiller.jpeg', 1, 40),
+(27, '', '../../../../Archivos/CE17017/certificado_medico.jpeg', '', '', '../../../../Archivos/CE17017/dui.jpeg', '../../../../Archivos/CE17017/nit.jpeg', '', '../../../../Archivos/CE17017/partida_nacimiento.jpeg', '../../../../Archivos/CE17017/titulo_bachiller.jpeg', 1, 41),
+(28, '', '../../../../Archivos/VF17013/certificado_medico.jpeg', '', '', '../../../../Archivos/VF17013/dui.jpeg', '../../../../Archivos/VF17013/nit.jpeg', '', '../../../../Archivos/VF17013/partida_nacimiento.jpeg', '../../../../Archivos/VF17013/titulo_bachiller.jpeg', 1, 42),
+(29, '', '../../../../Archivos/AA17085/certificado_medico.jpeg', '', '', '../../../../Archivos/AA17085/dui.jpeg', '../../../../Archivos/AA17085/nit.jpeg', '', '../../../../Archivos/AA17085/partida_nacimiento.jpeg', '../../../../Archivos/AA17085/titulo_bachiller.jpeg', 1, 43),
+(30, '', '../../../../Archivos/CH17038/certificado_medico.jpeg', '', '', '../../../../Archivos/CH17038/dui.jpeg', '../../../../Archivos/CH17038/nit.jpeg', '', '../../../../Archivos/CH17038/partida_nacimiento.jpeg', '../../../../Archivos/CH17038/titulo_bachiller.jpeg', 1, 50),
+(31, '', '../../../../Archivos/VA17033/certificado_medico.jpeg', '', '', '../../../../Archivos/VA17033/dui.jpeg', '../../../../Archivos/VA17033/nit.jpeg', '', '../../../../Archivos/VA17033/partida_nacimiento.jpeg', '../../../../Archivos/VA17033/titulo_bachiller.jpeg', 1, 51),
+(32, '', '../../../../Archivos/FG17022/certificado_medico.jpeg', '', '', '../../../../Archivos/FG17022/dui.jpeg', '../../../../Archivos/FG17022/nit.jpeg', '', '../../../../Archivos/FG17022/partida_nacimiento.jpeg', '../../../../Archivos/FG17022/titulo_bachiller.jpeg', 1, 52),
+(33, '', '../../../../Archivos/AA18021/certificado_medico.jpeg', '', '', '../../../../Archivos/AA18021/dui.jpeg', '../../../../Archivos/AA18021/nit.jpeg', '', '../../../../Archivos/AA18021/partida_nacimiento.jpeg', '../../../../Archivos/AA18021/titulo_bachiller.jpeg', 1, 53),
+(34, '', '../../../../Archivos/MM09314/certificado_medico.jpeg', '', '', '../../../../Archivos/MM09314/dui.jpeg', '../../../../Archivos/MM09314/nit.jpeg', '', '../../../../Archivos/MM09314/partida_nacimiento.jpeg', '../../../../Archivos/MM09314/titulo_bachiller.jpeg', 1, 58),
+(35, '', '../../../../Archivos/HD17011/certificado_medico.jpeg', '', '', '../../../../Archivos/HD17011/dui.jpeg', '../../../../Archivos/HD17011/nit.jpeg', '', '../../../../Archivos/HD17011/partida_nacimiento.jpeg', '../../../../Archivos/HD17011/titulo_bachiller.jpeg', 1, 59),
+(36, '', '../../../../Archivos/MA17055/certificado_medico.jpeg', '../../../../Archivos/MA17055/matricula.png', '../../../../Archivos/MA17055/primera_cuota.png', '../../../../Archivos/MA17055/dui.jpeg', '../../../../Archivos/MA17055/nit.jpeg', '', '../../../../Archivos/MA17055/partida_nacimiento.jpeg', '../../../../Archivos/MA17055/titulo_bachiller.jpeg', 1, 60),
+(37, '', '../../../../Archivos/LL17029/certificado_medico.jpeg', '../../../../Archivos/LL17029/matricula.png', '../../../../Archivos/LL17029/primera_cuota.png', '../../../../Archivos/LL17029/dui.jpeg', '../../../../Archivos/LL17029/nit.jpeg', '', '../../../../Archivos/LL17029/partida_nacimiento.jpeg', '../../../../Archivos/LL17029/titulo_bachiller.jpeg', 1, 61),
+(38, '', '../../../../Archivos/RD17039/certificado_medico.jpeg', '', '', '../../../../Archivos/RD17039/dui.jpeg', '../../../../Archivos/RD17039/nit.jpeg', '', '../../../../Archivos/RD17039/partida_nacimiento.jpeg', '../../../../Archivos/RD17039/titulo_bachiller.jpeg', 1, 62),
+(39, '', '../../../../Archivos/MC15095/certificado_medico.jpeg', '', '', '../../../../Archivos/MC15095/dui.jpeg', '../../../../Archivos/MC15095/nit.jpeg', '', '../../../../Archivos/MC15095/partida_nacimiento.jpeg', '../../../../Archivos/MC15095/titulo_bachiller.jpeg', 1, 63),
+(40, '', '../../../../Archivos/CC18105/certificado_medico.jpeg', '', '', '../../../../Archivos/CC18105/dui.jpeg', '../../../../Archivos/CC18105/nit.jpeg', '', '../../../../Archivos/CC18105/partida_nacimiento.jpeg', '../../../../Archivos/CC18105/titulo_bachiller.jpeg', 1, 64),
+(41, '', '../../../../Archivos/CV18049/certificado_medico.jpeg', '', '', '../../../../Archivos/CV18049/dui.jpeg', '../../../../Archivos/CV18049/nit.jpeg', '', '../../../../Archivos/CV18049/partida_nacimiento.jpeg', '../../../../Archivos/CV18049/titulo_bachiller.jpeg', 1, 65),
+(42, '', '../../../../Archivos/DA18021/certificado_medico.jpeg', '', '', '../../../../Archivos/DA18021/dui.jpeg', '../../../../Archivos/DA18021/nit.jpeg', '', '../../../../Archivos/DA18021/partida_nacimiento.jpeg', '../../../../Archivos/DA18021/titulo_bachiller.jpeg', 1, 66),
+(43, '', '../../../../Archivos/DV18012/certificado_medico.jpeg', '', '', '../../../../Archivos/DV18012/dui.jpeg', '../../../../Archivos/DV18012/nit.jpeg', '', '../../../../Archivos/DV18012/partida_nacimiento.jpeg', '../../../../Archivos/DV18012/titulo_bachiller.jpeg', 1, 67),
+(44, 'si', '../../../../Archivos/HC18044/certificado_medico.jpeg', '../../../../Archivos/HC18044/matricula.png', '../../../../Archivos/HC18044/primera_cuota.png', '../../../../Archivos/HC18044/dui.jpeg', '../../../../Archivos/HC18044/nit.jpeg', '', '../../../../Archivos/HC18044/partida_nacimiento.jpeg', '../../../../Archivos/HC18044/titulo_bachiller.jpeg', 1, 57);
 
 -- --------------------------------------------------------
 
@@ -332,7 +386,21 @@ CREATE TABLE IF NOT EXISTS `empleado` (
   `estado_ci` varchar(30) NOT NULL,
   `observacion_em` text NOT NULL,
   PRIMARY KEY (`idempleado`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`idempleado`, `nombre_em`, `apellido_em`, `DUI_em`, `NIT_em`, `direccion_em`, `cargo_em`, `genero_em`, `telefono_em`, `correo_em`, `estado_em`, `estado_ci`, `observacion_em`) VALUES
+(1, 'Jose David ', 'Rivas PeÃ±ate', '34567893-2', '4365-935023-098-4', 'Palacios Sur', 2, 'Masculino', '2341-2313', 'david@gmail.com', 1, 'Soltero (a)', 'Registro'),
+(2, 'Willian Ernesto', 'Barrera Abarca', '04576262-6', '4826-797493-629-3', 'colonia las mercedez', 1, 'Masculino', '2325-3179', 'netio@gmail.com', 1, 'Soltero (a)', 'Registro'),
+(3, 'Emilio Marcelino', 'Ãlvarez RodrÃ­guez', '02323434-5', '5464-098765-766-0', 'avenida los andes     ', 2, 'Masculino', '2323-2323', 'emar@gmail.com', 1, 'Casado (a)', 'Registro'),
+(4, 'Alejandra  MarÃ­a ', 'GarcÃ­a FernÃ¡ndez       ', '02245665-9', '4567-000985-655-1', 'colonia estÃ¡n suelas    ', 1, 'Femenino', '2345-4567', 'maria98@gmail.com', 1, 'Casado (a)', 'Registro'),
+(5, 'Guillermo Otero  ', 'GarcÃ­a GonzÃ¡lez         ', '06784576-7', '1243-986587-033-3', 'brisas de sur ', 2, 'Masculino', '2390-8955', 'otero@gmail.com', 1, 'Soltero (a)', 'Registro'),
+(6, 'MarÃ­a Adelaida  ', 'GonzÃ¡lez TomÃ¡s           ', '09875678-1', '2567-543120-020-0', 'juan pablo segundo', 1, 'Femenino', '2378-6789', 'gonsalez@gmail.com', 1, 'Soltero (a)', 'Registro'),
+(7, 'Juan Manuel  ', 'MartÃ­nez Ãlvarez              ', '03445589-2', '3456-098790-009-4', 'avenida san JosÃ©', 1, 'Masculino', '2434-6790', 'juan80@gmail.com', 1, 'Casado (a)', 'Registro'),
+(8, 'Victor Turcios', 'Gomez Fernandez', '03420598-2', '1784-543267-002-1', 'Barrio el Centro', 2, 'Masculino', '2322-5588', 'turcios@gmail.com', 1, 'Soltero (a)', 'Registro');
 
 -- --------------------------------------------------------
 
@@ -360,7 +428,7 @@ CREATE TABLE IF NOT EXISTS `estudiante` (
   `nivel` int(11) NOT NULL,
   `observacion_es` text NOT NULL,
   PRIMARY KEY (`idestudiante`)
-) ENGINE=MyISAM AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=91 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `estudiante`
@@ -455,7 +523,8 @@ INSERT INTO `estudiante` (`idestudiante`, `carnet_es`, `nombre_es`, `apellido_es
 (86, 'UJ18003', 'Alison Carolina', 'Urbina Jovel', 'Masculino', '0117-070390-651-0', '06510742-7', 'San SebastiÃ¡n San Vicente', '7374-3023', 'UJ18003@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
 (87, 'VA18038', 'Luis Alfonso', 'VÃ¡squez Alvarez', 'Masculino', '0117-210394-169-2', '04818044-6', 'Cojutepeque CuscatlÃ¡n', '7572-2509', 'VA18038@ues.edu.sv', 'Privada', 1, 4, 6, 6, 1, 'Registro'),
 (88, 'AP97021', 'Oscar Armando', 'ArÃ©valo Portales', 'Masculino', '0129-281297-151-5', '04026238-8', 'San Rafael Cedros', '7419-4414', 'AP97021@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
-(89, 'TD18001', 'Sandra Carolina', 'Tejada De la Cruz', 'Femenino', '0176-201291-140-5', '01119164-0', 'Cojutepeque CuscatlÃ¡n', '7548-4673', 'TD18001@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro');
+(89, 'TD18001', 'Sandra Carolina', 'Tejada De la Cruz', 'Femenino', '0176-201291-140-5', '01119164-0', 'Cojutepeque CuscatlÃ¡n', '7548-4673', 'TD18001@ues.edu.sv', 'Publica', 1, 4, 6, 6, 1, 'Registro'),
+(90, 'PS18014', 'Gustavo Adolfo', 'Palacios Sandoval', 'Masculino', '0108-290898-176-4', '02171159-4', 'Ilobasco CabaÃ±as', '7662-6314', 'ps18014@ues.edu.sv', 'Publica', 1, 1, 2, 2, 1, 'Registro');
 
 -- --------------------------------------------------------
 
@@ -499,7 +568,7 @@ CREATE TABLE IF NOT EXISTS `facultad` (
   `estado_fa` int(11) NOT NULL,
   `id_re_fafk` int(11) NOT NULL,
   PRIMARY KEY (`idfacultad`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `facultad`
@@ -509,7 +578,10 @@ INSERT INTO `facultad` (`idfacultad`, `nombre_fa`, `telefono_fa`, `correo_fa`, `
 (1, 'Facultad de Ciencias Naturales', '2255-2310', 'ci_mat@ues.edu.sv', 1, 1),
 (2, 'Facultad de Humanidades', '2530-8974', 'humanidades@ues.edu.sv', 1, 2),
 (3, 'Facultad de IngenierÃ­a y Arquitectura', '2140-9021', 'ing_arq@ues.edu.sv', 1, 3),
-(4, 'Facultad de Ciencias EconÃ³micas ', '2455-2146', 'ci_eco@ues.edu.sv', 1, 5);
+(4, 'Facultad de Ciencias EconÃ³micas ', '2455-2146', 'ci_eco@ues.edu.sv', 1, 5),
+(6, 'Facultad de Ciencias Agronomicas', '2154-9037', 'ci_agr@ues.edu.sv', 1, 6),
+(7, 'Facultad de Medicina', '2530-0010', 'medicina@ues.edu.sv', 1, 4),
+(8, 'Facultad de Ciencias Juridicas', '2280-0515', 'ciencias@ues.edu.sv', 1, 8);
 
 -- --------------------------------------------------------
 
@@ -539,7 +611,23 @@ CREATE TABLE IF NOT EXISTS `inventario_af` (
   `observacion_af` text NOT NULL,
   `idproveedorfk` int(11) NOT NULL,
   PRIMARY KEY (`idinaf`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `inventario_af`
+--
+
+INSERT INTO `inventario_af` (`idinaf`, `categoria_inv`, `tipo_bien_inv`, `codigo`, `descripcion`, `observacion`, `calidad`, `marca`, `modelo`, `nserie`, `lote`, `fecha_adquisicion`, `financiamiento`, `valor_adq`, `valor_estimado`, `doc_adquisicion`, `estado_af`, `observacion_af`, `idproveedorfk`) VALUES
+(1, 1, 1, '11792-01000-00001-00001', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(2, 1, 1, '11792-01000-00001-00002', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(3, 1, 1, '11792-01000-00001-00003', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(4, 1, 1, '11792-01000-00001-00004', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(5, 1, 1, '11792-01000-00001-00005', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(6, 1, 1, '11792-01000-00001-00006', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(7, 1, 1, '11792-01000-00001-00007', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(8, 1, 1, '11792-01000-00001-00008', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(9, 1, 1, '11792-01000-00001-00009', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2),
+(10, 1, 1, '11792-01000-00001-00010', 'espara toda la oficina', 'asi es', 'Bueno', 'la mejor', '12MLX', '', 'lote-1-1', '2019-01-15', 1, '100', 'si', '', 1, 'Registro', 2);
 
 -- --------------------------------------------------------
 
@@ -555,7 +643,7 @@ CREATE TABLE IF NOT EXISTS `plan_estudio` (
   `estadolleno_pe` int(11) NOT NULL,
   `idcarrerafk` int(11) NOT NULL,
   PRIMARY KEY (`idplanestudio`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `plan_estudio`
@@ -567,7 +655,8 @@ INSERT INTO `plan_estudio` (`idplanestudio`, `anio_pe`, `estado_pe`, `estadollen
 (3, '2015', 1, 0, 3),
 (4, '2016', 1, 0, 4),
 (5, '2017', 1, 0, 5),
-(6, '2017', 1, 0, 6);
+(6, '2017', 1, 0, 6),
+(7, '2019', 1, 0, 6);
 
 -- --------------------------------------------------------
 
@@ -590,15 +679,16 @@ CREATE TABLE IF NOT EXISTS `proveedor` (
   `estado_p` int(11) NOT NULL,
   `observacion` text NOT NULL,
   PRIMARY KEY (`idproveedor`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `proveedor`
 --
 
 INSERT INTO `proveedor` (`idproveedor`, `nombre_c`, `apellido_c`, `proveedor`, `NIT_p`, `telefono_p`, `correo_p`, `direccion_p`, `descripcion_p`, `observacion_p`, `estado_p`, `observacion`) VALUES
-(1, 'Ana Maria', 'Martinez Duran', 'Sillas S.A de C.V', '1003-529863-524-8', '2285-9698', 'sillass@gmail.com', 'Cojutepequee', 'venta de sillase', 'Primera Compraa', 0, 'pero mejor no'),
-(2, 'Luis Antonio', 'Beltran', 'Mesas S.A de C.V', '1003-205685-101-5', '2258-9663', 'mesas@gmail.com', 'Cojutepeque', 'es para el aula 23', 'primera compra', 1, 'Registro');
+(1, 'JoaquÃ­n Antonio ', 'Rosal Fraga', 'Inmobiliaria Rodriguez S.A de C.V', '1003-090582-101-5', '2435-9876', 'Juaki_Fraga@gmail.com', 'avenida artillÃ³', '', '', 1, 'Registro'),
+(2, 'David Olivar ', 'RodrÃ­guez Alonso', 'Equipos InformÃ¡ticos el Salvador', '1003-250684-101-6', '2387-9087', 'olivar_78@gmail.com', 'avenida EspaÃ±a', '', '', 1, 'Registro'),
+(3, 'Pedro Antonio ', 'Duran Escamilla', 'Accesorios ElectrÃ³nicos Marrtinez S.A de C.V ', '1003-301280-101-8', '2265-8943', 'accesorios@gmail.com', 'Cojutepeque', '', '', 1, 'Registro');
 
 -- --------------------------------------------------------
 
@@ -617,7 +707,7 @@ CREATE TABLE IF NOT EXISTS `representante_facultad` (
   `estado_rf` int(11) NOT NULL,
   `observacion_rf` text NOT NULL,
   PRIMARY KEY (`id_re_fa`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `representante_facultad`
@@ -627,10 +717,10 @@ INSERT INTO `representante_facultad` (`id_re_fa`, `nombre_rf`, `apellido_rf`, `g
 (1, 'Luis Antonio', 'RodrÃ­guez Lara', 'Masculino', '6785-4125', 'lara_ues@gmail.com', 1, 'Registro'),
 (2, 'JosÃ© Roberto ', 'Carranza DÃ­az', 'Masculino', '6528-9900', 'carranza_ues@gmail.com', 1, 'Registro'),
 (3, 'Anabel MarÃ­a', 'Arias Estrada', 'Femenino', '6021-1541', 'arias_ues@gamil.com', 1, 'Registro'),
-(4, 'Carlos Francisco', 'MartÃ­nez MartÃ­nez ', 'Masculino', '6850-0000', 'martinez_ues@gmail.com', 1, 'se reintegro'),
+(4, 'Carlos Francisco', 'MartÃ­nez MartÃ­nez ', 'Masculino', '6850-0000', 'martinez_ues@gmail.com', 1, 'Reintegro actividades'),
 (5, 'Ana Luisa', 'Duran SÃ¡nchez', 'Femenino', '6030-6676', 'duran_ue@gmail.com', 1, 'Registro'),
 (6, 'VerÃ³nica Elizabeth', 'Escobar Mendoza', 'Femenino', '6155-9118', 'escobar_ues@gmail.com', 1, 'Registro'),
-(7, 'Roberto', 'Vega', 'Masculino', '2256-9846', 'roberto6@gmail.com', 1, 'Registro');
+(8, 'Cristabel de Jesus', 'Diaz Morales', 'Femenino', '6122-8710', 'morales_ues@gmail.com', 1, 'Registro');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

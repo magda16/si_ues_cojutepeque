@@ -10,7 +10,6 @@
       
         function obtenerResultado(){
         $categoria=$_POST["categoria"];
-        $abre_cate=$_POST["abre_cate"];
         $result = 0;
         $result1 = 0;
         $con=conectarMysql();
@@ -27,7 +26,8 @@
 
         $numeroConCeros = str_pad($codigo, 5, "0", STR_PAD_LEFT);
   
-        $consulta  = "INSERT INTO af_categoria(codigo_c, id_nombre_c, nombre_c, idafinsfk) VALUES('$numeroConCeros','$abre_cate','$categoria','1')";
+        $consulta  = "INSERT INTO af_categoria(codigo_c, nombre_c, idafinsfk) VALUES('$numeroConCeros'
+        ,'$categoria','1')";
         $result = $con->query($consulta);
           if ($result) {
             $msj = "Exito";
@@ -42,7 +42,6 @@
       function obtenerResultado(){
       $categoria=$_POST["categoria"];
       $subcategoria=$_POST["subcategoria"];
-      $abre_subcate=$_POST["abre_subcate"];
       $result = 0;
       $result1 = 0;
       $con=conectarMysql();
@@ -59,7 +58,7 @@
 
       $numeroConCeros = str_pad($codigo, 5, "0", STR_PAD_LEFT);
 
-      $consulta  = "INSERT INTO af_subcategoria(codigo_s,id_nombre_s,nombre_s,cantidad_s,idafcategoriafk) VALUES('$numeroConCeros','$abre_subcate','$subcategoria','0','$categoria')";
+      $consulta  = "INSERT INTO af_subcategoria(codigo_s,nombre_s,cantidad_s,idafcategoriafk) VALUES('$numeroConCeros','$subcategoria','0','$categoria')";
       $result = $con->query($consulta);
         if ($result) {
           $msj = "Exito";

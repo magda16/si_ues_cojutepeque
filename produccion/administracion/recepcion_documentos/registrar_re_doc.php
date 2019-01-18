@@ -61,7 +61,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_COJUTEPEQUE</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -269,7 +269,7 @@
                           <div class="modal-body1">
                             <div id="preview" class="thumbnail">
                                           
-                            <iframe src=""  frameborder="0"> </iframe>
+                            <iframe src="" width="500" height="150"  frameborder="0"> </iframe>
 
                             </div>
                             <div class="clearfix"></div>

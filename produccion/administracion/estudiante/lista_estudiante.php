@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_COJUTEPEQUE</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -76,8 +76,7 @@
                       </li>
                       <li><a data-toggle="tooltip" data-placement="top" title="Agregar Estudiante" href="../../../produccion/administracion/estudiante/registrar_estudiante.php"><i class="fa fa-plus-circle"></i></a>
                       </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Reporte Estudiante por Carrera" href="../../../build/configuraciones/reportes/estudiante/reporte_lista_estudiante.php"><i class="fa fa-print"></i></a>
-                      </li>
+                      
                     </ul>
                     <div class="clearfix"></div>
                   </div>

@@ -1,7 +1,5 @@
 $(document).ready(function(){
-
-    $('#info').hide();
-      
+   
     $.validator.addMethod("letrasOespacio", function(value, element) {
         return /^[ a-záéíóúüñ]*$/i.test(value);
     }, "Ingrese sólo letras o espacios.");
@@ -49,73 +47,47 @@ $(document).ready(function(){
         }
       }
     });
-    
-});
 
-$("#evaluacion").blur(function(){
-  
-  var evaluacion = $("#evaluacion").val();
-
-  $.ajax({
-    type: 'POST',
-    url: '../../../build/configuraciones/sql/evaluacion_desempenio/obtenerEvaluacion.php',
-    data: {'evaluacion': evaluacion}
-  })
-  .done(function(obtenerDatos){
-      
-      var datos = eval(obtenerDatos);
-      $('#nombre_ed').val(datos[0]);
-      $('#criterio_ed').val(datos[1]);
-      var cant = 3;
-      for(i=1; i<= cant; i++){
+    var cant = $("#canmax").val();
+      for(i=cant; i<8; i++){
         var cadena="<div class='form-group'><label class='control-label col-md-3 col-sm-3 col-xs-12' for='nombre'>Aspecto "+i+": <span class='required' style='color: #CD5C5C;'> *</span></label><div class='col-md-6 col-sm-6 col-xs-12'><input type='text' id='aspecto[]' name='aspecto[]' required='required' placeholder='Digite Nombre del Aspecto' class='form-control col-md-7 col-xs-12' tabindex='1'></div><span class='help-block' id='error'></span></div>";
         $('#insertaraspecto').append(cadena);
       }
-      $('#ed').hide();
-      $('#info').show();                      
-  })
-  .fail(function(){
-    alert('Hubo un error al cargar la Pagina')
-  })
+    
 });
 
 
-$("#btnguardar").click(function(){
-  if($("#formed").valid()){
-    $('#bandera').val("aspecto");
-    $.ajax({
-      type: 'POST',
-      url: '../../../build/configuraciones/sql/evaluacion_desempenio/crud_evaluaciond.php',
-      data: $("#formed").serialize()
-    })
-    .done(function(resultado_ajax){
-      if(resultado_ajax === "Exito"){
-        swal({ 
-          title:'Éxito',
-          text: 'Datos Almacenados',
-          type: 'success'
-        },
-          function(){
-            //event to perform on click of ok button of sweetalert
-            location.href='../../../produccion/administracion/evaluacion_desempenio/lista_evaluaciond.php';
-        })
-      }
-      if(resultado_ajax === "Error"){
-        swal({ 
-          title:'Advertencia',
-          text: 'Sin Conexión Dase Datos',
-          type: 'warning'
-        },
-          function(){
-              //event to perform on click of ok button of sweetalert
-              location.href='../../../produccion/administracion/evaluacion_desempenio/registrar_asp_evaluaciond.php';
+  $("#btnguardar").click(function(){
+    if($("#formed").valid()){
+     $('#bandera').val("aspecto");
+      $.ajax({
+        type: 'POST',
+        url: '../../../build/configuraciones/sql/evaluacion_desempenio/crud_evaluaciond.php',
+        data: $("#formed").serialize()
+      })
+        .done(function(listas_rep){
+          if(listas_rep === "Exito"){
+            swal({ 
+              title:'Éxito',
+              text: 'Datos Almacenados',
+              type: 'success'
+            },
+              function(){
+                //event to perform on click of ok button of sweetalert
+                location.href='../../../produccion/administracion/evaluacion_desempenio/listar_evaluaciond.php';
+              })
+            }
+              if(listas_rep === "Error"){
+                $("#nombre").val("");
+                swal("Advertencia", "Sin Conexión Dase Datos", "warning")
+              }                
+              })
+          .fail(function(){
+            alert('Hubo un error al cargar la Pagina')
           })
-              
-      }                
-    })
-    .fail(function(){
-      alert('Hubo un error al cargar la Pagina')
-    })
-  }
+    }
+    
+  });
+
+
   
-});

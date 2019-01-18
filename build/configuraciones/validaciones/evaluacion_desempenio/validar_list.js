@@ -108,6 +108,10 @@ $(document).ready(function(){
       
 });
 
+function agregarasp(id){
+  $('#id').val(id);
+  $("#fromagregaraspectos").submit();
+}
 
 function editaspecto(id, aspecto){
   $('#baccion').val(id);

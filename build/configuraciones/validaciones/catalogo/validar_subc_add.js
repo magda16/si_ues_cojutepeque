@@ -47,12 +47,6 @@ $(document).ready(function(){
           required: true,
           minlength: 6,
           maxlength: 150
-        },
-        abre_subcate: {
-          letrasOespacio: true,
-          required: true,
-          minlength: 1,
-          maxlength: 4
         }
       },
       messages: {
@@ -63,11 +57,6 @@ $(document).ready(function(){
           required: "Por favor, ingrese tipo de bien.",
           maxlength: "Debe ingresar m&aacute;ximo 150 dígitos.",
           minlength: "Debe ingresar m&iacute;nimo 6 dígitos."
-        },
-        abre_subcate: {
-          required: "Por favor, ingrese abreviación tipo de bien.",
-          maxlength: "Debe ingresar m&aacute;ximo 4 dígitos.",
-          minlength: "Debe ingresar m&iacute;nimo 1 dígitos."
         }
       }
     });
@@ -108,28 +97,7 @@ $(document).ready(function(){
       }
   });
 
-  $("#abre_subcate").blur(function(){
-    var nombre = $("#abre_subcate").val();
-    var tabla = "af_subcategoria";
-    var nombre_campo = "id_nombre_s";
-    if(nombre.length>0){
-        $.ajax({
-          type: 'POST',
-          url: '../../../build/configuraciones/sql/validar_nombre.php',
-          data: {'nombre': nombre, 'tabla': tabla, 'nombre_campo': nombre_campo}
-        })
-        .done(function(resultado_ajax){
-          if(resultado_ajax!==""){
-            $("#abre_subcate").val("");
-            $('#resultascerror').text("Abreviación Tipo de Bien Ya Existe");
-            $('#resultasc').removeClass('has-success').addClass('has-error');
-          }
-        })
-        .fail(function(){
-          alert('Hubo un error al cargar la Pagina')
-        })
-      }
-  });
+  
 
   $("#btnguardar").click(function(){
     if($("#formsubcategoria").valid()){
@@ -140,7 +108,6 @@ $(document).ready(function(){
         data: $("#formsubcategoria").serialize()
       })
       .done(function(resultado_ajax){
-        alert(resultado_ajax);
         if(resultado_ajax === "Exito"){
           swal({ 
             title:'Éxito',

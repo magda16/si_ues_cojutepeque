@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_COJUTEPEQUE</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -116,9 +116,8 @@
                 
                     echo "<thead>";
                     echo "<tr>";
-                    echo "<th colspan='4'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_c.".</h4></th>";                    
-                    echo "<th ><div align='center'><a id='paso4' class='btn btn-danger' type='button' onclick='imprecepciondocumentos(".$fila->idafcategoria.")' data-toggle='tooltip' data-placement='top' title='Agregar Tipo de Bien'><i class='fa fa-plus'></i></a>";
-                    echo "<a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idafcategoria.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera por Facultad'><i class='fa fa-print'></i></a></div></th>";
+                    echo "<th colspan='2'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_c.".</h4></th>";                    
+                    echo "<th ><div align='center'><a id='paso4' href='../../../produccion/administracion/catalogo/registrar_subcategoria.php' class='btn btn-danger' type='button' onclick='imprecepciondocumentos(".$fila->idafcategoria.")' data-toggle='tooltip' data-placement='top' title='Agregar Tipo de Bien'><i class='fa fa-plus'></i></a>";
                     echo "</tr>";
                     
                    
@@ -126,10 +125,10 @@
                     echo "<th color: RGB(0, 0, 128);'>No.</th>";
                     echo "<th color: RGB(0, 0, 128);'>C&oacute;digo</th>";
                     echo "<th color: RGB(0, 0, 128);'>Tipo de Bien</th>";
-                    echo "<th color: RGB(0, 0, 128);'>Abreviaci&oacute;n</th>";
+                    
                     
 
-                    echo "<th>Acciones</th>";
+                   
                     echo "</tr>";
                     echo "</thead>";
                     echo "<tbody>";
@@ -145,11 +144,9 @@
                                     echo "<td>" .$contador. "</td>";
                                     echo "<td>" . $fila2->codigo_s . "</td>";
                                     echo "<td>" . $fila2->nombre_s . "</td>";
-                                    echo "<td>" . $fila2->id_nombre_s . "</td>";
+                                  
                                    
-                                    echo "<td align='center'> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila2->idafsubc.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
-                                              <a id='paso2' class='btn btn-info' onclick='editarcarrera(".$fila2->idafsubc.")' data-toggle='tooltip' data-placement='top' title='Editar Carrera'><i class='fa fa-edit'></i></a>
-                                              </td>";
+                                   
                                     echo "</tr>";
                                     
                                     $contador++;

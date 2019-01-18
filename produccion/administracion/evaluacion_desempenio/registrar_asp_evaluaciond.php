@@ -61,7 +61,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_Cojutepeque</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -84,8 +84,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -101,15 +101,6 @@
                       </li>
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Settings 1</a>
-                          </li>
-                          <li><a href="#">Settings 2</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
-                      </li>
                     </ul>
                     <div class="clearfix"></div>
                   </div>

@@ -261,7 +261,6 @@ $(document).ready(function(){
           data: $("#formproveedor").serialize()
         })
         .done(function(resultado_ajax){
-          alert(resultado_ajax);
           if(resultado_ajax === "Exito"){
             swal({ 
               title:'Éxito',

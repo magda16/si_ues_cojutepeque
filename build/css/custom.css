@@ -488,11 +488,11 @@ body .container.body .right_col {
 .top_nav .nav .open>a,
 .top_nav .nav .open>a:focus,
 .top_nav .nav .open>a:hover {
-    background:#b90e0e
+    background:#ef4977
 }
 body {
     color: #73879C;
-    background: #2A3F54;
+    background: #173260;
     font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -803,7 +803,7 @@ a:focus {
 }
 .nav.side-menu>li.active>a {
     text-shadow: rgba(0, 0, 0, 0.25) 0 -1px 0;
-    background: linear-gradient(#313884, #1070cc), #2b3138;
+    background: linear-gradient(#2f339e, #4a5d59), #c51313;
     box-shadow: rgba(0, 0, 0, 0.25) 0 1px 0, inset rgba(255, 255, 255, 0.16) 0 1px 0
 }
 .navbar-brand,

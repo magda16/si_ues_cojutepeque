@@ -85,6 +85,12 @@ var tour = {
         placement: 'bottom'
       },
       {
+        target: 'nivel',
+        title: 'Nivel',
+        content: 'Debe Seleccionar el Nivel que Cursa el Estudiante.',
+        placement: 'bottom'
+      },
+      {
         target: 'btnguardar',
         title: 'Guardar',
         content: 'Debe Dar Clic para Almacenar los Datos Ingresados.',

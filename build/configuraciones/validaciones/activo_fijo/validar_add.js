@@ -88,7 +88,6 @@ $('#tipo_bien').on('change', function(){
     data: {'categoria': categoria, 'tipo_bien':tipo_bien}
   })
   .done(function(obtenerDatos){
-   // alert(obtenerDatos);
     var datos = eval(obtenerDatos);
     $('#codigo_inv').val(datos[0]);
     $('#numcorrelativo').val(datos[1]);

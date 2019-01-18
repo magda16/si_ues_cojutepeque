@@ -34,7 +34,7 @@
                           echo "<td >" . $fila->criterio_ed . "</td>";
                           echo "<td WIDTH='20%' align='center'>  <ACRONYM title='Modificar Evaluación'><a class=\"btn btn-info\" onclick=\"edited(".$fila->id_ed." , '". $fila->nombre_ed ."', '". $fila->criterio_ed ."')\" ><i class=\"fa fa-edit\"></i></a></ACRONYM>";
                                       if($fila->maximo<7){
-                          echo " <ACRONYM title='Agregar Aspecto'><a class='btn btn-success' onclick='agregar(".$fila->id_ed.")' ><i class='fa fa-plus-circle'></i></a></ACRONYM>";
+                          echo " <ACRONYM title='Agregar Aspecto'><a class='btn btn-success' onclick='agregarasp(".$fila->id_ed.")' ><i class='fa fa-plus-circle'></i></a></ACRONYM>";
                                       }
                                       echo "<ACRONYM title='Asignar Porcentajes'><a class='btn btn-primary' onclick='additem(".$fila->id_ed.")' ><i class='fa fa-send-o'></i></a></ACRONYM>";
                                       echo "</td>";

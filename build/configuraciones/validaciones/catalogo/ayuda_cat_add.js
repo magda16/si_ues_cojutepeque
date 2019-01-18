@@ -12,12 +12,6 @@ var tour = {
         content: 'Debe Ingresar la Categor&iacute;a.',
         placement: 'bottom'
       },
-      { 
-        target: 'abre_cate',
-        title: 'Abreviac&oacute;n Categor&iacute;a',
-        content: 'Debe Ingresar la Abreviac&oacute;n de la Categor&iacute;a.',
-        placement: 'bottom'
-      },
       {
         target: 'btnguardar',
         title: 'Guardar',

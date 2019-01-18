@@ -43,12 +43,6 @@ $(document).ready(function(){
             required: true,
             minlength: 6,
             maxlength: 150
-          },
-          abre_cate: {
-            letrasOespacio: true,
-            required: true,
-            minlength: 1,
-            maxlength: 4
           }
         },
         messages: {
@@ -56,11 +50,6 @@ $(document).ready(function(){
             required: "Por favor, ingrese categoría.",
             maxlength: "Debe ingresar m&aacute;ximo 150 dígitos.",
             minlength: "Debe ingresar m&iacute;nimo 6 dígitos."
-          },
-          abre_cate: {
-            required: "Por favor, ingrese abreviación categoría.",
-            maxlength: "Debe ingresar m&aacute;ximo 4 dígitos.",
-            minlength: "Debe ingresar m&iacute;nimo 1 dígitos."
           }
         }
       });
@@ -89,28 +78,7 @@ $(document).ready(function(){
         }
     });
 
-    $("#abre_cate").blur(function(){
-      var nombre = $("#abre_cate").val();
-      var tabla = "af_categoria";
-      var nombre_campo = "id_nombre_c";
-      if(nombre.length>0){
-          $.ajax({
-            type: 'POST',
-            url: '../../../build/configuraciones/sql/validar_nombre.php',
-            data: {'nombre': nombre, 'tabla': tabla, 'nombre_campo': nombre_campo}
-          })
-          .done(function(resultado_ajax){
-            if(resultado_ajax!==""){
-              $("#abre_cate").val("");
-              $('#resultacerror').text("Abreviación Categoría Ya Existe");
-              $('#resultac').removeClass('has-success').addClass('has-error');
-            }
-          })
-          .fail(function(){
-            alert('Hubo un error al cargar la Pagina')
-          })
-        }
-    });
+
   
     $("#btnguardar").click(function(){
       if($("#formcategoria").valid()){
@@ -121,7 +89,6 @@ $(document).ready(function(){
           data: $("#formcategoria").serialize()
         })
         .done(function(resultado_ajax){
-          alert(resultado_ajax);
           if(resultado_ajax === "Exito"){
             swal({ 
               title:'Éxito',

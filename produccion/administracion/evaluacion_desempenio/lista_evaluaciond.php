@@ -52,7 +52,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_COJUTEPEQUE</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -75,8 +75,8 @@
               </div>
 
               <div class="title_right">
-                <div class="col-md-1  form-group pull-right top_search">
-                  <a data-toggle="tooltip" data-placement="top" title="Add career" ><i class="fa fa-plus-circle"></i></a>
+                <div class="col-md-2  form-group pull-right top_search">
+                  <img src="../../../produccion/images/ayuda.png" width="55px" height="60px" class="" data-toggle="tooltip" data-placement="top" title="Ayuda"  id="startTourBtn" />
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@
                     <div id="agregar_t">
                     </div>
 
-                    <form id="fromeditarcarrera" name="fromeditarcarrera" action="../../../produccion/administracion/carrera/editar_carrera.php" method="POST">
+                    <form id="fromagregaraspectos" name="fromagregaraspectos" action="../../../produccion/administracion/evaluacion_desempenio/registrar_aspectos.php" method="POST">
                       <input type="hidden" id="id" name="id">
                     </form>
 

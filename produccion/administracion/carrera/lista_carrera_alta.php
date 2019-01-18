@@ -44,7 +44,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i><span>SI-UES_COJUTEPEQUE</span></a>
+            <a  class="site_title"><span>UESaD</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -120,7 +120,7 @@
                     echo "<thead>";
                     echo "<tr>";
                     echo "<th colspan='5'> <h4 style='color: RGB(0, 0, 128);'>".$fila->nombre_fa.".</h4></th>";                    
-                    echo "<th ><div align='center'><a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera por Facultad'><i class='fa fa-print'></i></a></div></th>";
+                   // echo "<th ><div align='center'><a id='paso4' class='btn btn-default' type='button' onclick='imprecepciondocumentos(".$fila->idfacultad.")' data-toggle='tooltip' data-placement='top' title='Imprimir Carrera por Facultad'><i class='fa fa-print'></i></a></div></th>";
                     echo "</tr>";
                     
                    
@@ -128,9 +128,7 @@
                     echo "<th color: RGB(0, 0, 128);'>No.</th>";
                     echo "<th color: RGB(0, 0, 128);'>C&oacute;digo</th>";
                     echo "<th color: RGB(0, 0, 128);'>Carrera</th>";
-                    echo "<th color: RGB(0, 0, 128);'>Plan</th>";
                     echo "<th color: RGB(0, 0, 128);'>Duraci&oacute;n</th>";
-
                     echo "<th>Acciones</th>";
                     echo "</tr>";
                     echo "</thead>";
@@ -147,7 +145,6 @@
                                     echo "<td>" .$contador. "</td>";
                                     echo "<td>" . $fila2->codigo_ca . "</td>";
                                     echo "<td>" . $fila2->nombre_ca . "</td>";
-                                    echo "<td>" . $fila2->duracion_ca . "</td>";
                                     echo "<td>" . $fila2->duracion_ca . " A&ntilde;os</td>";
                                    
                                     echo "<td align='center'> <a id='paso1' class='btn btn-success' type='button' onclick='ver(".$fila2->idcarrera.")' data-toggle='tooltip' data-placement='top' title='Mostrar Carrera'><i class='fa fa-eye'></i></a>
